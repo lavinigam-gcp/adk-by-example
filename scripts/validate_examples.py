@@ -1,0 +1,302 @@
+#!/usr/bin/env python3
+"""
+Validate all ADK by Example examples.
+
+This script checks that all examples:
+1. Have the required files (agent.py, __init__.py, README.md)
+2. Can be imported without errors
+3. Define a root_agent
+4. Have valid metadata.json
+5. Use approved models (gemini-2.5-flash or gemini-2.5-pro)
+"""
+
+import os
+import sys
+import json
+import importlib.util
+from pathlib import Path
+from typing import Tuple, List, Dict, Any
+
+
+class Colors:
+    """Terminal colors for output"""
+    GREEN = '\033[92m'
+    RED = '\033[91m'
+    YELLOW = '\033[93m'
+    BLUE = '\033[94m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
+
+def print_colored(text: str, color: str = Colors.ENDC):
+    """Print colored text to terminal"""
+    print(f"{color}{text}{Colors.ENDC}")
+
+
+def validate_structure(example_path: Path) -> Tuple[bool, str]:
+    """Check if example has required files"""
+    required_files = ['__init__.py', 'agent.py', 'README.md', 'metadata.json']
+    missing_files = []
+
+    for file in required_files:
+        if not (example_path / file).exists():
+            missing_files.append(file)
+
+    if missing_files:
+        return False, f"Missing files: {', '.join(missing_files)}"
+
+    return True, "Structure OK"
+
+
+def validate_metadata(example_path: Path) -> Tuple[bool, str]:
+    """Validate metadata.json content"""
+    metadata_file = example_path / 'metadata.json'
+
+    try:
+        with open(metadata_file, 'r') as f:
+            metadata = json.load(f)
+
+        required_fields = ['title', 'jtbd', 'description', 'difficulty', 'tags']
+        missing_fields = []
+
+        for field in required_fields:
+            if field not in metadata:
+                missing_fields.append(field)
+
+        if missing_fields:
+            return False, f"Metadata missing fields: {', '.join(missing_fields)}"
+
+        # Validate difficulty level
+        valid_difficulties = ['beginner', 'intermediate', 'advanced']
+        if metadata.get('difficulty') not in valid_difficulties:
+            return False, f"Invalid difficulty: {metadata.get('difficulty')}"
+
+        return True, "Metadata valid"
+
+    except json.JSONDecodeError as e:
+        return False, f"Invalid JSON in metadata: {e}"
+    except Exception as e:
+        return False, f"Error reading metadata: {e}"
+
+
+def validate_agent_code(example_path: Path) -> Tuple[bool, str]:
+    """Validate the agent.py file"""
+    agent_file = example_path / 'agent.py'
+
+    try:
+        # Read the agent.py file
+        with open(agent_file, 'r') as f:
+            content = f.read()
+
+        # Check for root_agent definition
+        if 'root_agent' not in content:
+            return False, "No 'root_agent' defined"
+
+        # Check for correct model usage
+        approved_models = ['gemini-2.5-flash', 'gemini-2.5-pro']
+        model_found = False
+        model_used = None
+
+        for model in approved_models:
+            if f'model="{model}"' in content or f"model='{model}'" in content:
+                model_found = True
+                model_used = model
+                break
+
+        # Special cases for alternative models (only in specific examples)
+        alt_model_examples = ['use-claude', 'use-vertex-ai', 'local-ollama', 'use-openai']
+        example_name = example_path.name
+
+        if example_name in alt_model_examples:
+            # These examples are allowed to use alternative models
+            model_found = True
+            model_used = "alternative (allowed)"
+        elif not model_found:
+            # Check if it's using an unapproved model
+            if 'model=' in content:
+                # Extract the model name for reporting
+                import re
+                match = re.search(r'model=["\']([^"\']+)["\']', content)
+                if match:
+                    wrong_model = match.group(1)
+                    return False, f"Using unapproved model: {wrong_model}. Use gemini-2.5-flash or gemini-2.5-pro"
+                else:
+                    return False, "Model specified but couldn't determine which one"
+            else:
+                return False, "No model specified"
+
+        # Try to import and validate
+        spec = importlib.util.spec_from_file_location("agent", agent_file)
+        if spec is None:
+            return False, "Could not load agent module"
+
+        module = importlib.util.module_from_spec(spec)
+
+        try:
+            spec.loader.exec_module(module)
+        except ImportError as e:
+            # This is expected if google.adk is not installed
+            if "google.adk" in str(e):
+                return True, f"Code structure valid (model: {model_used})"
+            else:
+                return False, f"Import error: {e}"
+        except Exception as e:
+            return False, f"Error loading agent: {e}"
+
+        # Check if root_agent exists and is the right type
+        if not hasattr(module, 'root_agent'):
+            return False, "root_agent not found after import"
+
+        return True, f"Agent valid (model: {model_used})"
+
+    except Exception as e:
+        return False, f"Error validating agent: {e}"
+
+
+def validate_readme(example_path: Path) -> Tuple[bool, str]:
+    """Validate README.md content"""
+    readme_file = example_path / 'README.md'
+
+    try:
+        with open(readme_file, 'r') as f:
+            content = f.read()
+
+        # Check for essential sections
+        required_sections = ['Quick Start', 'The Problem', 'The Solution', 'Complete Code']
+        missing_sections = []
+
+        for section in required_sections:
+            if f"## {section}" not in content and f"## 🚀 {section}" not in content and f"## 📋 {section}" not in content and f"## ✅ {section}" not in content and f"## 💻 {section}" not in content:
+                missing_sections.append(section)
+
+        if missing_sections:
+            return False, f"README missing sections: {', '.join(missing_sections)}"
+
+        # Check for JTBD statement
+        if '"When' not in content:
+            return False, "README missing JTBD statement"
+
+        return True, "README complete"
+
+    except Exception as e:
+        return False, f"Error reading README: {e}"
+
+
+def validate_example(example_path: Path) -> Dict[str, Any]:
+    """Run all validations for a single example"""
+    results = {
+        'name': example_path.name,
+        'path': str(example_path),
+        'passed': True,
+        'checks': {}
+    }
+
+    # Run all validation checks
+    checks = [
+        ('structure', validate_structure),
+        ('metadata', validate_metadata),
+        ('agent_code', validate_agent_code),
+        ('readme', validate_readme)
+    ]
+
+    for check_name, check_func in checks:
+        passed, message = check_func(example_path)
+        results['checks'][check_name] = {
+            'passed': passed,
+            'message': message
+        }
+        if not passed:
+            results['passed'] = False
+
+    return results
+
+
+def main():
+    """Main validation function"""
+    print_colored("\n" + "="*60, Colors.BOLD)
+    print_colored("ADK by Example - Validation Script", Colors.BOLD)
+    print_colored("="*60 + "\n", Colors.BOLD)
+
+    # Find examples directory
+    script_dir = Path(__file__).parent
+    examples_dir = script_dir.parent / 'examples'
+
+    if not examples_dir.exists():
+        print_colored(f"❌ Examples directory not found: {examples_dir}", Colors.RED)
+        sys.exit(1)
+
+    # Collect all examples
+    all_examples = []
+    categories = sorted([d for d in examples_dir.iterdir() if d.is_dir() and not d.name.startswith('_')])
+
+    for category in categories:
+        examples = sorted([d for d in category.iterdir() if d.is_dir()])
+        all_examples.extend(examples)
+
+    if not all_examples:
+        print_colored("❌ No examples found!", Colors.RED)
+        sys.exit(1)
+
+    print(f"Found {len(all_examples)} examples in {len(categories)} categories\n")
+
+    # Validate each example
+    all_results = []
+    passed_count = 0
+    failed_count = 0
+
+    for category in categories:
+        print_colored(f"\n📁 Category: {category.name}", Colors.BLUE)
+        print("-" * 40)
+
+        examples = sorted([d for d in category.iterdir() if d.is_dir()])
+
+        for example_path in examples:
+            results = validate_example(example_path)
+            all_results.append(results)
+
+            # Print results
+            if results['passed']:
+                print_colored(f"  ✅ {results['name']}", Colors.GREEN)
+                passed_count += 1
+            else:
+                print_colored(f"  ❌ {results['name']}", Colors.RED)
+                failed_count += 1
+
+            # Show details for failed checks
+            for check_name, check_result in results['checks'].items():
+                if not check_result['passed']:
+                    print(f"     └─ {check_name}: {check_result['message']}")
+                elif '--verbose' in sys.argv:
+                    print(f"     └─ {check_name}: {check_result['message']}")
+
+    # Summary
+    print_colored("\n" + "="*60, Colors.BOLD)
+    print_colored("Validation Summary", Colors.BOLD)
+    print_colored("="*60, Colors.BOLD)
+
+    total = passed_count + failed_count
+    pass_rate = (passed_count / total * 100) if total > 0 else 0
+
+    print(f"\nTotal Examples: {total}")
+    print_colored(f"Passed: {passed_count}", Colors.GREEN)
+    if failed_count > 0:
+        print_colored(f"Failed: {failed_count}", Colors.RED)
+
+    print(f"\nPass Rate: {pass_rate:.1f}%")
+
+    if failed_count > 0:
+        print_colored("\n⚠️  Some examples have issues. Please fix them before committing.", Colors.YELLOW)
+        sys.exit(1)
+    else:
+        print_colored("\n🎉 All examples validated successfully!", Colors.GREEN)
+
+    # Optional: Generate report file
+    if '--report' in sys.argv:
+        report_file = script_dir / 'validation_report.json'
+        with open(report_file, 'w') as f:
+            json.dump(all_results, f, indent=2)
+        print(f"\nReport saved to: {report_file}")
+
+
+if __name__ == "__main__":
+    main()

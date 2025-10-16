@@ -1,0 +1,17 @@
+{
+  "title": "Create Your First Agent",
+  "jtbd": "When I'm new to ADK, I need a working agent in seconds",
+  "description": "The simplest possible ADK agent - just 8 lines of code to get started",
+  "difficulty": "beginner",
+  "tags": ["getting-started", "basics", "hello-world", "minimal"],
+  "related": ["understand-basics", "use-config-yaml", "chat-with-history"],
+  "source_sample": "hello_world",
+  "requirements": ["google-adk"],
+  "time_to_complete": "1 minute",
+  "what_youll_learn": [
+    "Minimal ADK agent setup",
+    "Using Gemini models",
+    "Agent instructions",
+    "root_agent convention"
+  ]
+}

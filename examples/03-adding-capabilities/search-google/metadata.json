@@ -1,0 +1,22 @@
+{
+  "title": "Search Google for Answers",
+  "jtbd": "When users ask questions, I need to search the web for current information",
+  "description": "Add Google search capability to your agent for real-time information retrieval",
+  "difficulty": "beginner",
+  "tags": ["tools", "search", "google", "web", "research"],
+  "related": ["call-rest-api", "execute-code", "parallel-research"],
+  "source_sample": "google_search_agent",
+  "requirements": ["google-adk"],
+  "time_to_complete": "2 minutes",
+  "what_youll_learn": [
+    "Adding tools to agents",
+    "Google Search integration",
+    "Information synthesis",
+    "Research agent patterns"
+  ],
+  "example_queries": [
+    "What happened in tech news this week?",
+    "What's the current price of Google stock?",
+    "What are the latest features in Python 3.13?"
+  ]
+}
