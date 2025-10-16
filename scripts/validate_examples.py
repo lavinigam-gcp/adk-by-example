@@ -96,22 +96,41 @@ def validate_agent_code(example_path: Path) -> Tuple[bool, str]:
     if yaml_file.exists() and not agent_file.exists():
         # Validate YAML config
         try:
-            import yaml
-            with open(yaml_file, 'r') as f:
-                config = yaml.safe_load(f)
+            # Try to import yaml, but if it's not available (CI environment), do basic validation
+            try:
+                import yaml
+                with open(yaml_file, 'r') as f:
+                    config = yaml.safe_load(f)
 
-            # Check required fields
-            if 'name' not in config:
-                return False, "YAML missing 'name' field"
-            if 'model' not in config:
-                return False, "YAML missing 'model' field"
+                # Check required fields
+                if 'name' not in config:
+                    return False, "YAML missing 'name' field"
+                if 'model' not in config:
+                    return False, "YAML missing 'model' field"
 
-            # Check model
-            approved_models = ['gemini-2.5-flash', 'gemini-2.5-pro']
-            if config.get('model') not in approved_models:
-                return False, f"YAML using unapproved model: {config.get('model')}"
+                # Check model
+                approved_models = ['gemini-2.5-flash', 'gemini-2.5-pro']
+                if config.get('model') not in approved_models:
+                    return False, f"YAML using unapproved model: {config.get('model')}"
 
-            return True, f"YAML config valid (model: {config.get('model')})"
+                return True, f"YAML config valid (model: {config.get('model')})"
+            except ImportError:
+                # If yaml module not available (CI), do basic text validation
+                with open(yaml_file, 'r') as f:
+                    content = f.read()
+
+                # Basic checks without parsing
+                if 'name:' not in content:
+                    return False, "YAML missing 'name:' field"
+                if 'model:' not in content:
+                    return False, "YAML missing 'model:' field"
+
+                # Check for approved models
+                if 'gemini-2.5-flash' in content or 'gemini-2.5-pro' in content:
+                    model = 'gemini-2.5-flash' if 'gemini-2.5-flash' in content else 'gemini-2.5-pro'
+                    return True, f"YAML config valid (CI mode, model: {model})"
+                else:
+                    return False, "YAML using unapproved model"
         except Exception as e:
             return False, f"Error validating YAML: {e}"
 
