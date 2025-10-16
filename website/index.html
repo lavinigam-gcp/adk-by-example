@@ -323,36 +323,15 @@
     </footer>
 
     <script>
-        // Example data structure (will be loaded from examples.json)
-        const exampleData = {
-            "Getting Started": [
-                {
-                    title: "Create Your First Agent",
-                    jtbd: "When I'm new to ADK, I need a working agent in seconds",
-                    description: "The simplest possible ADK agent - just 8 lines of code",
-                    difficulty: "beginner",
-                    path: "01-getting-started/first-agent",
-                    command: "adk web # Select 'first_agent'"
-                }
-            ],
-            "Adding Capabilities": [
-                {
-                    title: "Search Google for Answers",
-                    jtbd: "When users ask questions, I need to search the web",
-                    description: "Add Google search capability to your agent",
-                    difficulty: "beginner",
-                    path: "03-adding-capabilities/search-google",
-                    command: "adk web # Select 'search_agent'"
-                }
-            ]
-        };
-
         // Render examples
         function renderExamples(data) {
             const container = document.getElementById('categories-container');
             container.innerHTML = '';
 
-            for (const [category, examples] of Object.entries(data)) {
+            // Use examples_by_category if available, otherwise use the data directly
+            const categoriesData = data.examples_by_category || data;
+
+            for (const [category, examples] of Object.entries(categoriesData)) {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'category';
 
@@ -407,11 +386,23 @@
 
         // Load examples on page load
         window.addEventListener('DOMContentLoaded', () => {
-            // In production, this would load from examples.json
-            // fetch('examples.json').then(r => r.json()).then(renderExamples);
-
-            // For now, use the sample data
-            renderExamples(exampleData);
+            // Try to load from examples.json
+            fetch('examples.json')
+                .then(response => response.json())
+                .then(data => {
+                    renderExamples(data);
+                })
+                .catch(error => {
+                    console.error('Error loading examples:', error);
+                    // Fallback to showing a message
+                    const container = document.getElementById('categories-container');
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <h3>Examples Loading...</h3>
+                            <p>If examples don't appear, please check that examples.json is generated.</p>
+                        </div>
+                    `;
+                });
         });
     </script>
 </body>
