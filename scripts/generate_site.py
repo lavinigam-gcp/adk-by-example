@@ -28,7 +28,7 @@ def load_example_metadata(example_path: Path) -> Dict[str, Any]:
         metadata['category'] = category
         metadata['category_name'] = category_to_name(category)
         metadata['path'] = f"{category}/{example_path.name}"
-        metadata['github_url'] = f"https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/{category}/{example_path.name}"
+        metadata['github_url'] = f"https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/{category}/{example_path.name}"
         metadata['command'] = f"adk web # Select '{example_path.name.replace('-', '_')}'"
 
         return metadata

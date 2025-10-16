@@ -38,7 +38,7 @@
       "category": "01-getting-started",
       "category_name": "Getting Started",
       "path": "01-getting-started/configure-model",
-      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/configure-model",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/configure-model",
       "command": "adk web # Select 'configure_model'"
     },
     {
@@ -72,7 +72,7 @@
       "category": "01-getting-started",
       "category_name": "Getting Started",
       "path": "01-getting-started/craft-instructions",
-      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/craft-instructions",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/craft-instructions",
       "command": "adk web # Select 'craft_instructions'"
     },
     {
@@ -107,7 +107,7 @@
       "category": "01-getting-started",
       "category_name": "Getting Started",
       "path": "01-getting-started/create-with-adk",
-      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/create-with-adk",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/create-with-adk",
       "command": "adk web # Select 'create_with_adk'"
     },
     {
@@ -140,7 +140,7 @@
       "category": "01-getting-started",
       "category_name": "Getting Started",
       "path": "01-getting-started/first-agent",
-      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/first-agent",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/first-agent",
       "command": "adk web # Select 'first_agent'"
     },
     {
@@ -176,7 +176,7 @@
       "category": "01-getting-started",
       "category_name": "Getting Started",
       "path": "01-getting-started/structure-output",
-      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/structure-output",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/structure-output",
       "command": "adk web # Select 'structure_output'"
     },
     {
@@ -210,7 +210,7 @@
       "category": "01-getting-started",
       "category_name": "Getting Started",
       "path": "01-getting-started/use-yaml-config",
-      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/use-yaml-config",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/use-yaml-config",
       "command": "adk web # Select 'use_yaml_config'"
     },
     {
@@ -249,7 +249,7 @@
       "category": "03-adding-capabilities",
       "category_name": "Adding Capabilities",
       "path": "03-adding-capabilities/search-google",
-      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/03-adding-capabilities/search-google",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/search-google",
       "command": "adk web # Select 'search_google'"
     }
   ],
@@ -287,7 +287,7 @@
         "category": "01-getting-started",
         "category_name": "Getting Started",
         "path": "01-getting-started/configure-model",
-        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/configure-model",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/configure-model",
         "command": "adk web # Select 'configure_model'"
       },
       {
@@ -321,7 +321,7 @@
         "category": "01-getting-started",
         "category_name": "Getting Started",
         "path": "01-getting-started/craft-instructions",
-        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/craft-instructions",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/craft-instructions",
         "command": "adk web # Select 'craft_instructions'"
       },
       {
@@ -356,7 +356,7 @@
         "category": "01-getting-started",
         "category_name": "Getting Started",
         "path": "01-getting-started/create-with-adk",
-        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/create-with-adk",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/create-with-adk",
         "command": "adk web # Select 'create_with_adk'"
       },
       {
@@ -389,7 +389,7 @@
         "category": "01-getting-started",
         "category_name": "Getting Started",
         "path": "01-getting-started/first-agent",
-        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/first-agent",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/first-agent",
         "command": "adk web # Select 'first_agent'"
       },
       {
@@ -425,7 +425,7 @@
         "category": "01-getting-started",
         "category_name": "Getting Started",
         "path": "01-getting-started/structure-output",
-        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/structure-output",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/structure-output",
         "command": "adk web # Select 'structure_output'"
       },
       {
@@ -459,7 +459,7 @@
         "category": "01-getting-started",
         "category_name": "Getting Started",
         "path": "01-getting-started/use-yaml-config",
-        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/use-yaml-config",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/use-yaml-config",
         "command": "adk web # Select 'use_yaml_config'"
       }
     ],
@@ -500,7 +500,7 @@
         "category": "03-adding-capabilities",
         "category_name": "Adding Capabilities",
         "path": "03-adding-capabilities/search-google",
-        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/03-adding-capabilities/search-google",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/search-google",
         "command": "adk web # Select 'search_google'"
       }
     ]
