@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADK by Example - Copy-paste solutions for ADK developers</title>
+    <meta name="description" content="Jobs-to-be-Done focused examples for Google's Agent Development Kit. Find working code for your specific needs.">
+    <style>
+        :root {
+            --primary: #4285f4;
+            --primary-dark: #1a73e8;
+            --text: #202124;
+            --text-light: #5f6368;
+            --bg: #ffffff;
+            --bg-gray: #f8f9fa;
+            --card: #ffffff;
+            --border: #dadce0;
+            --success: #1e8e3e;
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn.primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn.primary:hover {
+            background: var(--bg-gray);
+        }
+
+        /* Search */
+        nav {
+            background: var(--bg-gray);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        #search {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            display: block;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            transition: border-color 0.3s ease;
+        }
+
+        #search:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+
+        /* Categories */
+        .category {
+            margin-bottom: 3rem;
+        }
+
+        .category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Examples Grid */
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .example-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .example-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .example-card h4 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .example-card .jtbd {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .example-card .description {
+            color: var(--text);
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        .example-card code {
+            background: var(--bg-gray);
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .difficulty {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .difficulty.beginner {
+            background: #e8f5e9;
+            color: var(--success);
+        }
+
+        .difficulty.intermediate {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .difficulty.advanced {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-gray);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: var(--text-light);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        .empty-state h3 {
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚀 ADK by Example</h1>
+            <p>Copy-paste solutions for common ADK tasks</p>
+            <div class="quick-links">
+                <a href="https://github.com/YOUR_USERNAME/adk-by-example" class="btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="#getting-started" class="btn primary">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <input type="search" id="search"
+                   placeholder="Search: 'google search', 'deploy', 'oauth', 'multi-agent'..."
+                   autocomplete="off">
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="getting-started">
+            <h2 class="section-title">🎯 I need to...</h2>
+
+            <div id="categories-container">
+                <!-- Categories will be loaded here -->
+                <div class="loading">Loading examples...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                Built with ❤️ for the ADK community |
+                <a href="https://github.com/YOUR_USERNAME/adk-by-example">Contribute on GitHub</a> |
+                <a href="https://github.com/google/adk">Official ADK Docs</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Example data structure (will be loaded from examples.json)
+        const exampleData = {
+            "Getting Started": [
+                {
+                    title: "Create Your First Agent",
+                    jtbd: "When I'm new to ADK, I need a working agent in seconds",
+                    description: "The simplest possible ADK agent - just 8 lines of code",
+                    difficulty: "beginner",
+                    path: "01-getting-started/first-agent",
+                    command: "adk web # Select 'first_agent'"
+                }
+            ],
+            "Adding Capabilities": [
+                {
+                    title: "Search Google for Answers",
+                    jtbd: "When users ask questions, I need to search the web",
+                    description: "Add Google search capability to your agent",
+                    difficulty: "beginner",
+                    path: "03-adding-capabilities/search-google",
+                    command: "adk web # Select 'search_agent'"
+                }
+            ]
+        };
+
+        // Render examples
+        function renderExamples(data) {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = '';
+
+            for (const [category, examples] of Object.entries(data)) {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'category';
+
+                const categoryTitle = document.createElement('h3');
+                categoryTitle.textContent = `📁 ${category}`;
+                categoryDiv.appendChild(categoryTitle);
+
+                const grid = document.createElement('div');
+                grid.className = 'examples-grid';
+
+                examples.forEach(example => {
+                    const card = document.createElement('a');
+                    card.href = `https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/${example.path}`;
+                    card.className = 'example-card';
+                    card.innerHTML = `
+                        <h4>${example.title}</h4>
+                        <p class="jtbd">"${example.jtbd}"</p>
+                        <p class="description">${example.description}</p>
+                        <code>${example.command}</code>
+                        <div>
+                            <span class="difficulty ${example.difficulty}">${example.difficulty}</span>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                categoryDiv.appendChild(grid);
+                container.appendChild(categoryDiv);
+            }
+        }
+
+        // Search functionality
+        document.getElementById('search').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.example-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Hide empty categories
+            document.querySelectorAll('.category').forEach(cat => {
+                const visibleCards = cat.querySelectorAll('.example-card[style="display: flex"], .example-card:not([style])');
+                cat.style.display = visibleCards.length > 0 ? 'block' : 'none';
+            });
+        });
+
+        // Load examples on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            // In production, this would load from examples.json
+            // fetch('examples.json').then(r => r.json()).then(renderExamples);
+
+            // For now, use the sample data
+            renderExamples(exampleData);
+        });
+    </script>
+</body>
+</html>
