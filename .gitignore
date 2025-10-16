@@ -42,6 +42,9 @@ agent_logs/
 # Claude Code directory
 .claude/
 
+# Internal documentation
+CLAUDE.md
+
 # IDE
 .vscode/
 .idea/
