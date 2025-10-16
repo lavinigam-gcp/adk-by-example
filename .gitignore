@@ -38,6 +38,7 @@ venv.bak/
 .adk/logs/
 *.log
 agent_logs/
+.docs/
 
 # Claude Code directory
 .claude/

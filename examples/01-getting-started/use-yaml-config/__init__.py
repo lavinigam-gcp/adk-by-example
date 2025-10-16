@@ -12,4 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from . import agent
+# For YAML-based agents, __init__.py just needs to exist
+# ADK will automatically load root_agent.yaml

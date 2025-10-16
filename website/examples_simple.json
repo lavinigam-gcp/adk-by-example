@@ -1,12 +1,52 @@
 {
   "Getting Started": [
     {
+      "title": "Configure Model Parameters",
+      "jtbd": "When I need specific output behavior, I need to tune model parameters",
+      "description": "Control agent behavior with temperature, token limits, safety settings, and response format",
+      "difficulty": "beginner",
+      "path": "01-getting-started/configure-model",
+      "command": "adk web # Select 'configure_model'"
+    },
+    {
+      "title": "Craft Effective Instructions",
+      "jtbd": "When my agent gives wrong responses, I need to write better instructions",
+      "description": "Learn different instruction patterns to shape agent behavior - from simple to comprehensive",
+      "difficulty": "beginner",
+      "path": "01-getting-started/craft-instructions",
+      "command": "adk web # Select 'craft_instructions'"
+    },
+    {
+      "title": "Create Projects with ADK",
+      "jtbd": "When starting a new project, I need proper project structure",
+      "description": "Use the adk create command to scaffold new agent projects with best practices",
+      "difficulty": "beginner",
+      "path": "01-getting-started/create-with-adk",
+      "command": "adk web # Select 'create_with_adk'"
+    },
+    {
       "title": "Create Your First Agent",
       "jtbd": "When I'm new to ADK, I need a working agent in seconds",
       "description": "The simplest possible ADK agent - just 8 lines of code to get started",
       "difficulty": "beginner",
       "path": "01-getting-started/first-agent",
       "command": "adk web # Select 'first_agent'"
+    },
+    {
+      "title": "Structure Output with Pydantic",
+      "jtbd": "When I need predictable response format, I need structured output",
+      "description": "Use Pydantic models to ensure agents return structured, validated JSON data",
+      "difficulty": "beginner",
+      "path": "01-getting-started/structure-output",
+      "command": "adk web # Select 'structure_output'"
+    },
+    {
+      "title": "Use YAML Configuration",
+      "jtbd": "When I want to iterate without code, I need YAML configuration",
+      "description": "Create a complete agent using only YAML configuration - no Python required",
+      "difficulty": "beginner",
+      "path": "01-getting-started/use-yaml-config",
+      "command": "adk web # Select 'use_yaml_config'"
     }
   ],
   "Adding Capabilities": [

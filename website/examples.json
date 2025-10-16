@@ -1,11 +1,115 @@
 {
   "version": "1.0",
-  "total_examples": 2,
+  "total_examples": 7,
   "categories": [
     "Getting Started",
     "Adding Capabilities"
   ],
   "examples": [
+    {
+      "title": "Configure Model Parameters",
+      "jtbd": "When I need specific output behavior, I need to tune model parameters",
+      "description": "Control agent behavior with temperature, token limits, safety settings, and response format",
+      "difficulty": "beginner",
+      "tags": [
+        "getting-started",
+        "configuration",
+        "temperature",
+        "safety",
+        "tokens"
+      ],
+      "related": [
+        "craft-instructions",
+        "use-yaml-config",
+        "structure-output"
+      ],
+      "source_sample": "core_generate_content_config_config",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "5 minutes",
+      "what_youll_learn": [
+        "Temperature control for creativity",
+        "Token limits for response length",
+        "Safety settings for content filtering",
+        "Response MIME types for structured output",
+        "GenerateContentConfig usage"
+      ],
+      "category": "01-getting-started",
+      "category_name": "Getting Started",
+      "path": "01-getting-started/configure-model",
+      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/configure-model",
+      "command": "adk web # Select 'configure_model'"
+    },
+    {
+      "title": "Craft Effective Instructions",
+      "jtbd": "When my agent gives wrong responses, I need to write better instructions",
+      "description": "Learn different instruction patterns to shape agent behavior - from simple to comprehensive",
+      "difficulty": "beginner",
+      "tags": [
+        "getting-started",
+        "instructions",
+        "prompts",
+        "agent-behavior"
+      ],
+      "related": [
+        "configure-model",
+        "use-yaml-config",
+        "structure-output"
+      ],
+      "source_sample": "multiple samples - hello_world, multi_agent examples",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "3 minutes",
+      "what_youll_learn": [
+        "Different instruction patterns",
+        "Role-based instructions",
+        "Adding constraints and boundaries",
+        "Using examples in instructions",
+        "Format-specific instructions"
+      ],
+      "category": "01-getting-started",
+      "category_name": "Getting Started",
+      "path": "01-getting-started/craft-instructions",
+      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/craft-instructions",
+      "command": "adk web # Select 'craft_instructions'"
+    },
+    {
+      "title": "Create Projects with ADK",
+      "jtbd": "When starting a new project, I need proper project structure",
+      "description": "Use the adk create command to scaffold new agent projects with best practices",
+      "difficulty": "beginner",
+      "tags": [
+        "getting-started",
+        "scaffolding",
+        "project-setup",
+        "cli",
+        "adk-create"
+      ],
+      "related": [
+        "first-agent",
+        "use-yaml-config",
+        "craft-instructions"
+      ],
+      "source_sample": "ADK CLI documentation",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "2 minutes",
+      "what_youll_learn": [
+        "adk create command usage",
+        "Project structure best practices",
+        "Python vs YAML project types",
+        "Environment setup",
+        "File organization"
+      ],
+      "category": "01-getting-started",
+      "category_name": "Getting Started",
+      "path": "01-getting-started/create-with-adk",
+      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/create-with-adk",
+      "command": "adk web # Select 'create_with_adk'"
+    },
     {
       "title": "Create Your First Agent",
       "jtbd": "When I'm new to ADK, I need a working agent in seconds",
@@ -38,6 +142,76 @@
       "path": "01-getting-started/first-agent",
       "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/first-agent",
       "command": "adk web # Select 'first_agent'"
+    },
+    {
+      "title": "Structure Output with Pydantic",
+      "jtbd": "When I need predictable response format, I need structured output",
+      "description": "Use Pydantic models to ensure agents return structured, validated JSON data",
+      "difficulty": "beginner",
+      "tags": [
+        "getting-started",
+        "pydantic",
+        "structured-output",
+        "json",
+        "validation"
+      ],
+      "related": [
+        "configure-model",
+        "use-yaml-config",
+        "create-with-adk"
+      ],
+      "source_sample": "fields_output_schema",
+      "requirements": [
+        "google-adk",
+        "pydantic"
+      ],
+      "time_to_complete": "5 minutes",
+      "what_youll_learn": [
+        "Pydantic model definition",
+        "output_schema parameter",
+        "Type validation",
+        "Optional and nested fields",
+        "JSON structured responses"
+      ],
+      "category": "01-getting-started",
+      "category_name": "Getting Started",
+      "path": "01-getting-started/structure-output",
+      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/structure-output",
+      "command": "adk web # Select 'structure_output'"
+    },
+    {
+      "title": "Use YAML Configuration",
+      "jtbd": "When I want to iterate without code, I need YAML configuration",
+      "description": "Create a complete agent using only YAML configuration - no Python required",
+      "difficulty": "beginner",
+      "tags": [
+        "getting-started",
+        "yaml",
+        "configuration",
+        "no-code"
+      ],
+      "related": [
+        "first-agent",
+        "craft-instructions",
+        "configure-model"
+      ],
+      "source_sample": "core_basic_config",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "2 minutes",
+      "what_youll_learn": [
+        "YAML agent configuration",
+        "Schema validation",
+        "No-code agent creation",
+        "Quick iteration patterns",
+        "root_agent.yaml convention"
+      ],
+      "category": "01-getting-started",
+      "category_name": "Getting Started",
+      "path": "01-getting-started/use-yaml-config",
+      "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/use-yaml-config",
+      "command": "adk web # Select 'use_yaml_config'"
     },
     {
       "title": "Search Google for Answers",
@@ -82,6 +256,110 @@
   "examples_by_category": {
     "Getting Started": [
       {
+        "title": "Configure Model Parameters",
+        "jtbd": "When I need specific output behavior, I need to tune model parameters",
+        "description": "Control agent behavior with temperature, token limits, safety settings, and response format",
+        "difficulty": "beginner",
+        "tags": [
+          "getting-started",
+          "configuration",
+          "temperature",
+          "safety",
+          "tokens"
+        ],
+        "related": [
+          "craft-instructions",
+          "use-yaml-config",
+          "structure-output"
+        ],
+        "source_sample": "core_generate_content_config_config",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "5 minutes",
+        "what_youll_learn": [
+          "Temperature control for creativity",
+          "Token limits for response length",
+          "Safety settings for content filtering",
+          "Response MIME types for structured output",
+          "GenerateContentConfig usage"
+        ],
+        "category": "01-getting-started",
+        "category_name": "Getting Started",
+        "path": "01-getting-started/configure-model",
+        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/configure-model",
+        "command": "adk web # Select 'configure_model'"
+      },
+      {
+        "title": "Craft Effective Instructions",
+        "jtbd": "When my agent gives wrong responses, I need to write better instructions",
+        "description": "Learn different instruction patterns to shape agent behavior - from simple to comprehensive",
+        "difficulty": "beginner",
+        "tags": [
+          "getting-started",
+          "instructions",
+          "prompts",
+          "agent-behavior"
+        ],
+        "related": [
+          "configure-model",
+          "use-yaml-config",
+          "structure-output"
+        ],
+        "source_sample": "multiple samples - hello_world, multi_agent examples",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "3 minutes",
+        "what_youll_learn": [
+          "Different instruction patterns",
+          "Role-based instructions",
+          "Adding constraints and boundaries",
+          "Using examples in instructions",
+          "Format-specific instructions"
+        ],
+        "category": "01-getting-started",
+        "category_name": "Getting Started",
+        "path": "01-getting-started/craft-instructions",
+        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/craft-instructions",
+        "command": "adk web # Select 'craft_instructions'"
+      },
+      {
+        "title": "Create Projects with ADK",
+        "jtbd": "When starting a new project, I need proper project structure",
+        "description": "Use the adk create command to scaffold new agent projects with best practices",
+        "difficulty": "beginner",
+        "tags": [
+          "getting-started",
+          "scaffolding",
+          "project-setup",
+          "cli",
+          "adk-create"
+        ],
+        "related": [
+          "first-agent",
+          "use-yaml-config",
+          "craft-instructions"
+        ],
+        "source_sample": "ADK CLI documentation",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "2 minutes",
+        "what_youll_learn": [
+          "adk create command usage",
+          "Project structure best practices",
+          "Python vs YAML project types",
+          "Environment setup",
+          "File organization"
+        ],
+        "category": "01-getting-started",
+        "category_name": "Getting Started",
+        "path": "01-getting-started/create-with-adk",
+        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/create-with-adk",
+        "command": "adk web # Select 'create_with_adk'"
+      },
+      {
         "title": "Create Your First Agent",
         "jtbd": "When I'm new to ADK, I need a working agent in seconds",
         "description": "The simplest possible ADK agent - just 8 lines of code to get started",
@@ -113,6 +391,76 @@
         "path": "01-getting-started/first-agent",
         "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/first-agent",
         "command": "adk web # Select 'first_agent'"
+      },
+      {
+        "title": "Structure Output with Pydantic",
+        "jtbd": "When I need predictable response format, I need structured output",
+        "description": "Use Pydantic models to ensure agents return structured, validated JSON data",
+        "difficulty": "beginner",
+        "tags": [
+          "getting-started",
+          "pydantic",
+          "structured-output",
+          "json",
+          "validation"
+        ],
+        "related": [
+          "configure-model",
+          "use-yaml-config",
+          "create-with-adk"
+        ],
+        "source_sample": "fields_output_schema",
+        "requirements": [
+          "google-adk",
+          "pydantic"
+        ],
+        "time_to_complete": "5 minutes",
+        "what_youll_learn": [
+          "Pydantic model definition",
+          "output_schema parameter",
+          "Type validation",
+          "Optional and nested fields",
+          "JSON structured responses"
+        ],
+        "category": "01-getting-started",
+        "category_name": "Getting Started",
+        "path": "01-getting-started/structure-output",
+        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/structure-output",
+        "command": "adk web # Select 'structure_output'"
+      },
+      {
+        "title": "Use YAML Configuration",
+        "jtbd": "When I want to iterate without code, I need YAML configuration",
+        "description": "Create a complete agent using only YAML configuration - no Python required",
+        "difficulty": "beginner",
+        "tags": [
+          "getting-started",
+          "yaml",
+          "configuration",
+          "no-code"
+        ],
+        "related": [
+          "first-agent",
+          "craft-instructions",
+          "configure-model"
+        ],
+        "source_sample": "core_basic_config",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "2 minutes",
+        "what_youll_learn": [
+          "YAML agent configuration",
+          "Schema validation",
+          "No-code agent creation",
+          "Quick iteration patterns",
+          "root_agent.yaml convention"
+        ],
+        "category": "01-getting-started",
+        "category_name": "Getting Started",
+        "path": "01-getting-started/use-yaml-config",
+        "github_url": "https://github.com/YOUR_USERNAME/adk-by-example/tree/main/examples/01-getting-started/use-yaml-config",
+        "command": "adk web # Select 'use_yaml_config'"
       }
     ],
     "Adding Capabilities": [

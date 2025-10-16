@@ -1,0 +1,18 @@
+{
+  "title": "Create Projects with ADK",
+  "jtbd": "When starting a new project, I need proper project structure",
+  "description": "Use the adk create command to scaffold new agent projects with best practices",
+  "difficulty": "beginner",
+  "tags": ["getting-started", "scaffolding", "project-setup", "cli", "adk-create"],
+  "related": ["first-agent", "use-yaml-config", "craft-instructions"],
+  "source_sample": "ADK CLI documentation",
+  "requirements": ["google-adk"],
+  "time_to_complete": "2 minutes",
+  "what_youll_learn": [
+    "adk create command usage",
+    "Project structure best practices",
+    "Python vs YAML project types",
+    "Environment setup",
+    "File organization"
+  ]
+}

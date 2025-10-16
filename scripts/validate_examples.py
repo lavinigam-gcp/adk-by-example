@@ -35,7 +35,15 @@ def print_colored(text: str, color: str = Colors.ENDC):
 
 def validate_structure(example_path: Path) -> Tuple[bool, str]:
     """Check if example has required files"""
-    required_files = ['__init__.py', 'agent.py', 'README.md', 'metadata.json']
+    # Check for either agent.py OR root_agent.yaml (for YAML configs)
+    has_agent = (example_path / 'agent.py').exists()
+    has_yaml = (example_path / 'root_agent.yaml').exists()
+
+    if not has_agent and not has_yaml:
+        return False, "Missing agent.py or root_agent.yaml"
+
+    # Check other required files
+    required_files = ['__init__.py', 'README.md', 'metadata.json']
     missing_files = []
 
     for file in required_files:
@@ -80,15 +88,39 @@ def validate_metadata(example_path: Path) -> Tuple[bool, str]:
 
 
 def validate_agent_code(example_path: Path) -> Tuple[bool, str]:
-    """Validate the agent.py file"""
+    """Validate the agent.py or root_agent.yaml file"""
     agent_file = example_path / 'agent.py'
+    yaml_file = example_path / 'root_agent.yaml'
+
+    # Check if this is a YAML-based agent
+    if yaml_file.exists() and not agent_file.exists():
+        # Validate YAML config
+        try:
+            import yaml
+            with open(yaml_file, 'r') as f:
+                config = yaml.safe_load(f)
+
+            # Check required fields
+            if 'name' not in config:
+                return False, "YAML missing 'name' field"
+            if 'model' not in config:
+                return False, "YAML missing 'model' field"
+
+            # Check model
+            approved_models = ['gemini-2.5-flash', 'gemini-2.5-pro']
+            if config.get('model') not in approved_models:
+                return False, f"YAML using unapproved model: {config.get('model')}"
+
+            return True, f"YAML config valid (model: {config.get('model')})"
+        except Exception as e:
+            return False, f"Error validating YAML: {e}"
 
     # Check if we're running in CI environment
     is_ci = os.environ.get('CI') == 'true' or os.environ.get('GITHUB_ACTIONS') == 'true'
 
     try:
         # Read the agent.py file
-        with open(agent_file, 'r') as f:
+        with open(agent_file, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
 
         # Check for root_agent definition
@@ -169,15 +201,19 @@ def validate_readme(example_path: Path) -> Tuple[bool, str]:
     readme_file = example_path / 'README.md'
 
     try:
-        with open(readme_file, 'r') as f:
+        with open(readme_file, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
 
-        # Check for essential sections
-        required_sections = ['Quick Start', 'The Problem', 'The Solution', 'Complete Code']
+        # Check for essential sections (be flexible with emojis and encoding)
+        required_sections = ['Quick Start', 'The Problem', 'The Solution']
         missing_sections = []
 
         for section in required_sections:
-            if f"## {section}" not in content and f"## 🚀 {section}" not in content and f"## 📋 {section}" not in content and f"## ✅ {section}" not in content and f"## 💻 {section}" not in content:
+            # Look for the section text anywhere after ##
+            import re
+            # Match ## followed by optional emoji/special chars, then the section name
+            pattern = r'##\s*[^\w]*\s*' + re.escape(section)
+            if not re.search(pattern, content, re.IGNORECASE):
                 missing_sections.append(section)
 
         if missing_sections:

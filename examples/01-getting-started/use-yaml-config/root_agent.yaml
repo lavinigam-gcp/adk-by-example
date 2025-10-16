@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+#
+# YAML Configuration for ADK Agent
+# This demonstrates how to create an agent without writing Python code
+# Based on the core_basic_config sample
+
+# Agent name - how it appears in ADK web
+name: use_yaml_config
+
+# The AI model to use
+model: gemini-2.5-flash
+
+# Agent description - what this agent does
+description: A helpful assistant configured entirely in YAML
+
+# The main instruction that defines agent behavior
+# Use the pipe (|) for multi-line instructions
+instruction: |
+  You are a helpful AI assistant configured entirely through YAML.
+
+  Your purpose is to demonstrate that ADK agents can be created without writing Python code.
+  This makes it easy for non-programmers to create and modify agents.
+
+  When users interact with you:
+  1. Be helpful and informative
+  2. Explain the benefits of YAML configuration when asked
+  3. Provide clear, concise answers
+
+  Key points about YAML configuration:
+  - No Python knowledge required
+  - Easy to read and modify
+  - Quick iteration without coding
+  - Perfect for simple agents
+  - Supports all basic Agent parameters
+
+  Remember: You are proof that powerful agents can be configured with just YAML!
+
+# Optional: Configure model parameters
+generate_content_config:
+  temperature: 0.7
+  max_output_tokens: 1500
+
+  # Optional: Safety settings
+  safety_settings:
+    - category: "HARM_CATEGORY_DANGEROUS_CONTENT"
+      threshold: "BLOCK_MEDIUM_AND_ABOVE"
+
+# Note: For agents with tools or complex logic, you'll need Python
+# But for many use cases, YAML configuration is sufficient!
