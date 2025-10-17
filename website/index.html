@@ -7,6 +7,7 @@
     <meta name="description" content="Jobs-to-be-Done focused examples for Google's Agent Development Kit. Find working code for your specific needs.">
     <style>
         :root {
+            /* Light mode colors */
             --primary: #4285f4;
             --primary-dark: #1a73e8;
             --text: #202124;
@@ -16,7 +17,28 @@
             --card: #ffffff;
             --border: #dadce0;
             --success: #1e8e3e;
+            --warning: #f57c00;
+            --danger: #c2185b;
             --radius: 8px;
+            --shadow: rgba(0,0,0,0.1);
+            --shadow-hover: rgba(0,0,0,0.15);
+        }
+
+        [data-theme="dark"] {
+            /* Dark mode colors */
+            --primary: #8ab4f8;
+            --primary-dark: #669df6;
+            --text: #e8eaed;
+            --text-light: #9aa0a6;
+            --bg: #202124;
+            --bg-gray: #292a2d;
+            --card: #292a2d;
+            --border: #5f6368;
+            --success: #81c995;
+            --warning: #ffa726;
+            --danger: #f48fb1;
+            --shadow: rgba(0,0,0,0.3);
+            --shadow-hover: rgba(0,0,0,0.5);
         }
 
         * {
@@ -30,6 +52,23 @@
             line-height: 1.6;
             color: var(--text);
             background: var(--bg);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
 
         .container {
@@ -38,25 +77,34 @@
             padding: 0 20px;
         }
 
+        /* Focus indicators for accessibility */
+        *:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
         /* Header */
         header {
             background: var(--primary);
             color: white;
             padding: 3rem 0;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px var(--shadow);
+            position: relative;
         }
 
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            animation: fadeInDown 0.6s ease-out;
         }
 
         header p {
             font-size: 1.25rem;
             opacity: 0.95;
             margin-bottom: 1.5rem;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
         }
 
         .quick-links {
@@ -64,6 +112,7 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            animation: fadeInUp 0.6s ease-out 0.4s both;
         }
 
         .btn {
@@ -77,6 +126,9 @@
             border-radius: var(--radius);
             transition: all 0.3s ease;
             font-weight: 500;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
         .btn:hover {
@@ -93,11 +145,39 @@
             background: var(--bg-gray);
         }
 
+        /* Dark mode toggle */
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(180deg);
+        }
+
         /* Search */
         nav {
             background: var(--bg-gray);
             padding: 1.5rem 0;
             border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 90;
+            transition: background-color 0.3s ease;
         }
 
         .search-wrapper {
@@ -112,12 +192,15 @@
             font-size: 1rem;
             border: 2px solid var(--border);
             border-radius: var(--radius);
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
+            background: var(--bg);
+            color: var(--text);
         }
 
         #search:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
         }
 
         .search-clear {
@@ -162,20 +245,23 @@
         }
 
         .search-chip {
-            background: white;
+            background: var(--card);
             border: 1px solid var(--border);
-            padding: 0.4rem 0.8rem;
-            border-radius: 16px;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             font-size: 0.85rem;
             cursor: pointer;
             transition: all 0.2s ease;
             color: var(--text);
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .search-chip:hover {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
+            transform: translateY(-2px);
         }
 
         /* Tag Filters */
@@ -190,7 +276,7 @@
         }
 
         .tag-filter {
-            background: white;
+            background: var(--card);
             border: 2px solid var(--border);
             padding: 0.5rem 1rem;
             border-radius: var(--radius);
@@ -199,17 +285,61 @@
             transition: all 0.2s ease;
             color: var(--text);
             font-weight: 500;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .tag-filter:hover {
             border-color: var(--primary);
             color: var(--primary);
+            transform: translateY(-2px);
         }
 
         .tag-filter.active {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
+        }
+
+        /* Category Quick Jump Navigation */
+        .category-nav {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 80;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            display: none;
+        }
+
+        .category-nav.visible {
+            display: block;
+        }
+
+        .category-nav-items {
+            display: flex;
+            gap: 0.5rem;
+            padding: 0 20px;
+            min-width: max-content;
+        }
+
+        .category-nav-item {
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radius);
+            background: var(--bg-gray);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .category-nav-item:hover,
+        .category-nav-item.active {
+            background: var(--primary);
+            color: white;
         }
 
         /* Main Content */
@@ -221,11 +351,13 @@
             font-size: 2rem;
             margin-bottom: 2rem;
             color: var(--text);
+            animation: fadeIn 0.6s ease-out;
         }
 
         /* Categories */
         .category {
             margin-bottom: 3rem;
+            scroll-margin-top: 100px;
         }
 
         .category h3 {
@@ -255,10 +387,13 @@
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+            position: relative;
+            opacity: 0;
+            animation: fadeInCard 0.5s ease-out forwards;
         }
 
         .example-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px var(--shadow-hover);
             transform: translateY(-4px);
             border-color: var(--primary);
         }
@@ -267,6 +402,7 @@
             font-size: 1.25rem;
             color: var(--primary);
             margin: 0;
+            padding-right: 2rem;
         }
 
         .example-card .jtbd {
@@ -281,22 +417,68 @@
             flex-grow: 1;
         }
 
+        /* Code block with copy button */
+        .code-wrapper {
+            position: relative;
+        }
+
         .example-card code {
             background: var(--bg-gray);
-            padding: 0.5rem;
+            padding: 0.75rem;
+            padding-right: 3rem;
             border-radius: 4px;
             font-family: 'Courier New', monospace;
             font-size: 0.9rem;
             display: block;
             overflow-x: auto;
+            border: 1px solid var(--border);
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.4rem 0.6rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            opacity: 0;
+        }
+
+        .code-wrapper:hover .copy-btn {
+            opacity: 1;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        .copy-btn.copied {
+            background: var(--success);
+            opacity: 1;
+        }
+
+        /* Card footer with badges */
+        .card-footer {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
         }
 
         .difficulty {
             display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .difficulty.beginner {
@@ -306,12 +488,46 @@
 
         .difficulty.intermediate {
             background: #fff3e0;
-            color: #f57c00;
+            color: var(--warning);
         }
 
         .difficulty.advanced {
             background: #fce4ec;
-            color: #c2185b;
+            color: var(--danger);
+        }
+
+        [data-theme="dark"] .difficulty.beginner {
+            background: rgba(129, 201, 149, 0.2);
+        }
+
+        [data-theme="dark"] .difficulty.intermediate {
+            background: rgba(255, 167, 38, 0.2);
+        }
+
+        [data-theme="dark"] .difficulty.advanced {
+            background: rgba(244, 143, 177, 0.2);
+        }
+
+        .time-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            background: var(--bg-gray);
+            color: var(--text-light);
+            border: 1px solid var(--border);
+        }
+
+        .tag-pill {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            background: var(--bg-gray);
+            color: var(--text-light);
+            border: 1px solid var(--border);
         }
 
         /* Highlight matching text */
@@ -322,11 +538,65 @@
             border-radius: 2px;
         }
 
+        [data-theme="dark"] .highlight {
+            background: #f9a825;
+            color: #000;
+        }
+
+        /* Loading skeleton */
+        .skeleton {
+            animation: skeleton-loading 1s linear infinite alternate;
+        }
+
+        @keyframes skeleton-loading {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .skeleton-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .skeleton-line {
+            height: 1rem;
+            background: var(--bg-gray);
+            border-radius: 4px;
+        }
+
+        .skeleton-line.title {
+            width: 70%;
+            height: 1.5rem;
+        }
+
+        .skeleton-line.jtbd {
+            width: 90%;
+        }
+
+        .skeleton-line.desc {
+            width: 100%;
+        }
+
+        .skeleton-line.code {
+            width: 60%;
+            height: 2.5rem;
+        }
+
         /* Empty State */
         .empty-state {
             text-align: center;
             padding: 3rem;
             color: var(--text-light);
+            animation: fadeIn 0.5s ease-out;
         }
 
         .empty-state h3 {
@@ -384,7 +654,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.8);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: var(--radius);
@@ -392,13 +662,71 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
+            z-index: 100;
         }
 
         .keyboard-hint.show {
             opacity: 1;
         }
 
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInCard {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation for cards */
+        .example-card:nth-child(1) { animation-delay: 0.05s; }
+        .example-card:nth-child(2) { animation-delay: 0.1s; }
+        .example-card:nth-child(3) { animation-delay: 0.15s; }
+        .example-card:nth-child(4) { animation-delay: 0.2s; }
+        .example-card:nth-child(5) { animation-delay: 0.25s; }
+        .example-card:nth-child(6) { animation-delay: 0.3s; }
+
         /* Responsive */
+        @media (max-width: 1024px) {
+            .examples-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -406,6 +734,11 @@
 
             header p {
                 font-size: 1rem;
+            }
+
+            .theme-toggle {
+                top: 0.5rem;
+                right: 0.5rem;
             }
 
             .examples-grid {
@@ -416,17 +749,74 @@
             .tag-filters {
                 justify-content: flex-start;
             }
+
+            .search-chip,
+            .tag-filter {
+                font-size: 0.85rem;
+                padding: 0.5rem 0.8rem;
+            }
+
+            #search {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+
+            main {
+                padding: 2rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            header {
+                padding: 2rem 0;
+            }
+
+            .quick-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+
+            .card-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            nav, .theme-toggle, .keyboard-hint, .copy-btn {
+                display: none;
+            }
+
+            .example-card {
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Skip to content link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+        </button>
         <div class="container">
             <h1>🚀 ADK by Example</h1>
             <p>Copy-paste solutions for common ADK tasks</p>
             <div class="quick-links">
-                <a href="https://github.com/lavinigam-gcp/adk-by-example" class="btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <a href="https://github.com/lavinigam-gcp/adk-by-example" class="btn" aria-label="View on GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                     GitHub
@@ -436,9 +826,10 @@
         </div>
     </header>
 
-    <nav>
+    <nav role="navigation" aria-label="Search and filters">
         <div class="container">
             <div class="search-wrapper">
+                <label for="search" class="sr-only">Search examples</label>
                 <input type="text"
                        id="search"
                        name="adk-example-search"
@@ -446,31 +837,60 @@
                        autocomplete="new-password"
                        autocorrect="off"
                        autocapitalize="off"
-                       spellcheck="false">
+                       spellcheck="false"
+                       role="searchbox"
+                       aria-label="Search examples">
                 <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
             </div>
-            <div class="search-results-count" id="search-results-count"></div>
+            <div class="search-results-count" id="search-results-count" role="status" aria-live="polite"></div>
 
             <!-- Quick Search Chips -->
-            <div class="search-chips" id="search-chips"></div>
+            <div class="search-chips" id="search-chips" role="group" aria-label="Quick search suggestions"></div>
         </div>
 
         <!-- Tag Filters -->
-        <div class="tag-filters" id="tag-filters"></div>
+        <div class="tag-filters" id="tag-filters" role="group" aria-label="Filter by category"></div>
     </nav>
 
-    <main class="container">
+    <!-- Category Quick Jump Navigation -->
+    <div class="category-nav" id="category-nav" role="navigation" aria-label="Category navigation">
+        <div class="category-nav-items" id="category-nav-items"></div>
+    </div>
+
+    <main class="container" id="main-content" role="main">
         <section id="getting-started">
             <h2 class="section-title">🎯 I need to...</h2>
 
             <div id="categories-container">
-                <!-- Categories will be loaded here -->
-                <div class="empty-state">Loading examples...</div>
+                <!-- Loading skeleton -->
+                <div class="examples-grid" id="loading-skeleton">
+                    <div class="skeleton-card skeleton">
+                        <div class="skeleton-line title"></div>
+                        <div class="skeleton-line jtbd"></div>
+                        <div class="skeleton-line desc"></div>
+                        <div class="skeleton-line desc"></div>
+                        <div class="skeleton-line code"></div>
+                    </div>
+                    <div class="skeleton-card skeleton">
+                        <div class="skeleton-line title"></div>
+                        <div class="skeleton-line jtbd"></div>
+                        <div class="skeleton-line desc"></div>
+                        <div class="skeleton-line desc"></div>
+                        <div class="skeleton-line code"></div>
+                    </div>
+                    <div class="skeleton-card skeleton">
+                        <div class="skeleton-line title"></div>
+                        <div class="skeleton-line jtbd"></div>
+                        <div class="skeleton-line desc"></div>
+                        <div class="skeleton-line desc"></div>
+                        <div class="skeleton-line code"></div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>
                 Built with ❤️ for the ADK community |
@@ -481,9 +901,64 @@
     </footer>
 
     <!-- Keyboard shortcut hint -->
-    <div class="keyboard-hint" id="keyboard-hint">Press / to search</div>
+    <div class="keyboard-hint" id="keyboard-hint" role="status" aria-live="polite">Press / to search</div>
+
+    <!-- Screen reader only class -->
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
 
     <script>
+        // Dark mode handling
+        const themeToggle = document.getElementById('theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const theme = savedTheme || (prefersDark.matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            updateThemeIcon(theme);
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = themeToggle.querySelector('svg');
+            if (theme === 'dark') {
+                icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>';
+            } else {
+                icon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>';
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        // Listen for system theme changes
+        prefersDark.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                const newTheme = e.matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                updateThemeIcon(newTheme);
+            }
+        });
+
+        initTheme();
+
         // Global state
         let allExamplesData = null;
         let currentQuery = '';
@@ -498,6 +973,24 @@
             'configure model'
         ];
 
+        // Copy to clipboard function
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                button.textContent = 'Failed';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
         // Render examples
         function renderExamples(data) {
             allExamplesData = data;
@@ -508,14 +1001,34 @@
                 return;
             }
 
-            container.innerHTML = '';
+            // Remove skeleton
+            const skeleton = document.getElementById('loading-skeleton');
+            if (skeleton) {
+                skeleton.remove();
+            }
 
             // Use examples_by_category if available
             const categoriesData = data.examples_by_category || data;
 
+            // Build category nav
+            const categoryNavItems = document.getElementById('category-nav-items');
+            const categoryNav = document.getElementById('category-nav');
+
             for (const [category, examples] of Object.entries(categoriesData)) {
+                const categoryId = category.toLowerCase().replace(/\s+/g, '-');
+
+                // Add to category nav
+                const navItem = document.createElement('a');
+                navItem.href = `#${categoryId}`;
+                navItem.className = 'category-nav-item';
+                navItem.textContent = category;
+                navItem.dataset.category = categoryId;
+                categoryNavItems.appendChild(navItem);
+
+                // Create category section
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'category';
+                categoryDiv.id = categoryId;
                 categoryDiv.dataset.category = category;
 
                 const categoryTitle = document.createElement('h3');
@@ -525,7 +1038,7 @@
                 const grid = document.createElement('div');
                 grid.className = 'examples-grid';
 
-                examples.forEach(example => {
+                examples.forEach((example, index) => {
                     const card = document.createElement('a');
                     card.href = example.github_url || `https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/${example.path}`;
                     card.className = 'example-card';
@@ -534,22 +1047,76 @@
                     card.dataset.description = example.description.toLowerCase();
                     card.dataset.tags = (example.tags || []).join(' ').toLowerCase();
                     card.dataset.category = example.category;
+                    card.setAttribute('aria-label', `${example.title} - ${example.jtbd}`);
+
+                    // Build tag pills HTML
+                    const topTags = (example.tags || []).slice(0, 3);
+                    const tagPillsHTML = topTags.map(tag =>
+                        `<span class="tag-pill">${tag}</span>`
+                    ).join('');
+
+                    const timeToComplete = example.time_to_complete || '5 minutes';
 
                     card.innerHTML = `
                         <h4>${example.title}</h4>
                         <p class="jtbd">"${example.jtbd}"</p>
                         <p class="description">${example.description}</p>
-                        <code>${example.command}</code>
-                        <div>
+                        <div class="code-wrapper">
+                            <code>${example.command}</code>
+                            <button class="copy-btn" aria-label="Copy command">Copy</button>
+                        </div>
+                        <div class="card-footer">
                             <span class="difficulty ${example.difficulty}">${example.difficulty}</span>
+                            <span class="time-badge" title="Estimated time to complete">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 6v6l4 2"></path>
+                                </svg>
+                                ${timeToComplete}
+                            </span>
+                            ${tagPillsHTML}
                         </div>
                     `;
+
+                    // Add copy button event listener
+                    const copyBtn = card.querySelector('.copy-btn');
+                    const codeElement = card.querySelector('code');
+                    copyBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        copyToClipboard(codeElement.textContent, copyBtn);
+                    });
+
                     grid.appendChild(card);
                 });
 
                 categoryDiv.appendChild(grid);
                 container.appendChild(categoryDiv);
             }
+
+            // Show category nav if more than one category
+            if (Object.keys(categoriesData).length > 1) {
+                categoryNav.classList.add('visible');
+            }
+
+            // Intersection Observer for category nav active state
+            const observerOptions = {
+                rootMargin: '-100px 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const categoryId = entry.target.id;
+                        document.querySelectorAll('.category-nav-item').forEach(item => {
+                            item.classList.toggle('active', item.dataset.category === categoryId);
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.category').forEach(cat => observer.observe(cat));
 
             // Render search chips and tag filters
             renderSearchChips();
@@ -563,16 +1130,24 @@
         function renderSearchChips() {
             const chipsContainer = document.getElementById('search-chips');
             chipsContainer.innerHTML = POPULAR_SEARCHES.map(search =>
-                `<div class="search-chip" data-search="${search}">${search}</div>`
+                `<div class="search-chip" data-search="${search}" role="button" tabindex="0">${search}</div>`
             ).join('');
 
-            // Add click handlers
+            // Add click and keyboard handlers
             chipsContainer.querySelectorAll('.search-chip').forEach(chip => {
-                chip.addEventListener('click', () => {
+                const handler = () => {
                     const searchTerm = chip.dataset.search;
                     document.getElementById('search').value = searchTerm;
                     performSearch(searchTerm);
                     updateURL(searchTerm);
+                };
+
+                chip.addEventListener('click', handler);
+                chip.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handler();
+                    }
                 });
             });
         }
@@ -582,16 +1157,16 @@
             const filtersContainer = document.getElementById('tag-filters');
             const categories = data.categories || [];
 
-            const allFilter = '<div class="tag-filter active" data-filter="all">All Examples</div>';
+            const allFilter = '<div class="tag-filter active" data-filter="all" role="button" tabindex="0">All Examples</div>';
             const categoryFilters = categories.map(cat =>
-                `<div class="tag-filter" data-filter="${cat}">${cat}</div>`
+                `<div class="tag-filter" data-filter="${cat}" role="button" tabindex="0">${cat}</div>`
             ).join('');
 
             filtersContainer.innerHTML = allFilter + categoryFilters;
 
-            // Add click handlers
+            // Add click and keyboard handlers
             filtersContainer.querySelectorAll('.tag-filter').forEach(filter => {
-                filter.addEventListener('click', () => {
+                const handler = () => {
                     // Update active state
                     filtersContainer.querySelectorAll('.tag-filter').forEach(f => f.classList.remove('active'));
                     filter.classList.add('active');
@@ -600,6 +1175,14 @@
                     const filterValue = filter.dataset.filter;
                     activeTagFilter = filterValue === 'all' ? null : filterValue;
                     performSearch(currentQuery);
+                };
+
+                filter.addEventListener('click', handler);
+                filter.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handler();
+                    }
                 });
             });
         }
@@ -734,11 +1317,12 @@
                 <p>We couldn't find any examples matching "${query || 'your filter'}"</p>
                 <div class="suggestions">
                     <p><strong>Try searching for:</strong></p>
-                    ${suggestions.map(s => `<div class="suggestion-chip" data-search="${s}">${s}</div>`).join('')}
+                    ${suggestions.map(s => `<div class="suggestion-chip" data-search="${s}" role="button" tabindex="0">${s}</div>`).join('')}
                 </div>
                 <p style="margin-top: 2rem;">
                     <a href="https://github.com/lavinigam-gcp/adk-by-example/issues/new?title=Request:%20${encodeURIComponent(query)}"
                        target="_blank"
+                       rel="noopener noreferrer"
                        style="color: var(--primary);">
                         Request this example on GitHub →
                     </a>
@@ -751,11 +1335,19 @@
 
             // Add click handlers for suggestions
             noResultsDiv.querySelectorAll('.suggestion-chip').forEach(chip => {
-                chip.addEventListener('click', () => {
+                const handler = () => {
                     const searchTerm = chip.dataset.search;
                     document.getElementById('search').value = searchTerm;
                     performSearch(searchTerm);
                     updateURL(searchTerm);
+                };
+
+                chip.addEventListener('click', handler);
+                chip.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handler();
+                    }
                 });
             });
         }
@@ -866,7 +1458,7 @@
             // Global keyboard shortcut: "/" to focus search
             document.addEventListener('keydown', (e) => {
                 // Only trigger if not already in an input
-                if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+                if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
                     e.preventDefault();
                     searchInput.focus();
 
@@ -915,6 +1507,7 @@
                         <div class="empty-state">
                             <h3>Error Loading Examples</h3>
                             <p>Could not load examples. Please refresh the page.</p>
+                            <button onclick="location.reload()" class="btn primary" style="margin-top: 1rem;">Retry</button>
                         </div>
                     `;
                 });

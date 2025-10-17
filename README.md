@@ -3,8 +3,9 @@
 > **Copy-paste solutions for common ADK (Agent Development Kit) tasks**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Examples](https://img.shields.io/badge/examples-30%2B-green)](./examples)
+[![Examples](https://img.shields.io/badge/examples-7-green)](./examples)
 [![Powered by Gemini](https://img.shields.io/badge/Powered%20by-Gemini-4285F4)](https://ai.google.dev/)
+[![Website](https://img.shields.io/badge/website-live-brightgreen)](https://lavinigam-gcp.github.io/adk-by-example/)
 
 ## What is ADK by Example?
 
@@ -18,13 +19,24 @@ Instead of reading through documentation to understand concepts, find exactly wh
 
 Think of it as **Stack Overflow's best answers**, but organized and tested.
 
+## 🌐 Browse Examples Online
+
+Visit **[https://lavinigam-gcp.github.io/adk-by-example/](https://lavinigam-gcp.github.io/adk-by-example/)** to:
+
+- 🔍 **Search by what you need**: "I want to search Google", "deploy my agent"
+- 🌙 **Dark mode support**: Automatically detects your system preference
+- 📱 **Mobile-friendly**: Responsive design works on all devices
+- ⚡ **Quick actions**: One-click copy for all commands
+- ♿ **Accessible**: WCAG 2.1 AA compliant with keyboard navigation
+- 🏷️ **Smart filtering**: Filter by category and search simultaneously
+
 ## 🎯 Quick Start
 
 ### 1. Clone & Configure (30 seconds)
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/adk-by-example.git
+git clone https://github.com/lavinigam-gcp/adk-by-example.git
 cd adk-by-example
 
 # Set up your environment
@@ -175,16 +187,22 @@ adk-by-example/
 ### Resources
 
 - 📖 [Official ADK Documentation](https://github.com/google/adk)
-- 💬 [GitHub Issues](https://github.com/YOUR_USERNAME/adk-by-example/issues)
+- 💬 [GitHub Issues](https://github.com/lavinigam-gcp/adk-by-example/issues)
 - 🌟 [Contributing Guide](.docs/CONTRIBUTING.md)
 
 ## 📈 Roadmap
 
-- [x] Phase 1: Repository structure and core examples
-- [ ] Phase 2: 30+ JTBD examples across all categories
-- [ ] Phase 3: Interactive website with search
-- [ ] Phase 4: Community contributions
-- [ ] Phase 5: Video tutorials for complex patterns
+- [x] **Phase 1**: Repository structure and foundation (✅ Complete)
+- [x] **Phase 2**: Getting Started category with 6 examples (✅ Complete)
+- [x] **Phase 3**: Production-ready website with advanced search (✅ Complete)
+  - [x] JTBD-focused search with smart query processing
+  - [x] Dark mode with system preference detection
+  - [x] Full accessibility (WCAG 2.1 AA)
+  - [x] Mobile-responsive design
+  - [x] Category filtering and URL persistence
+- [ ] **Phase 4**: 30+ JTBD examples across all 7 categories (23% complete - 7/30)
+- [ ] **Phase 5**: Community contributions and integrations
+- [ ] **Phase 6**: Video tutorials for complex patterns
 
 ## 🤝 Contributing
 
@@ -211,5 +229,7 @@ MIT License - see [LICENSE](LICENSE) file. Use these examples freely in your pro
 <p align="center">
   Made with ❤️ for the ADK community
   <br>
-  <a href="https://github.com/YOUR_USERNAME/adk-by-example">Star this repo</a> if you find it helpful!
+  <a href="https://github.com/lavinigam-gcp/adk-by-example">⭐ Star this repo</a> if you find it helpful!
+  <br>
+  <a href="https://lavinigam-gcp.github.io/adk-by-example/">🌐 Browse examples online</a>
 </p>
