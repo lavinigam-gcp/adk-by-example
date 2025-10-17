@@ -100,12 +100,15 @@
             border-bottom: 1px solid var(--border);
         }
 
+        .search-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
         #search {
             width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            display: block;
-            padding: 0.75rem 1rem;
+            padding: 0.75rem 3rem 0.75rem 1rem;
             font-size: 1rem;
             border: 2px solid var(--border);
             border-radius: var(--radius);
@@ -114,6 +117,98 @@
 
         #search:focus {
             outline: none;
+            border-color: var(--primary);
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.5rem;
+            display: none;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .search-clear:hover {
+            color: var(--text);
+        }
+
+        .search-clear.visible {
+            display: block;
+        }
+
+        .search-results-count {
+            text-align: center;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            min-height: 1.5rem;
+        }
+
+        /* Search Chips */
+        .search-chips {
+            max-width: 700px;
+            margin: 1rem auto 0;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .search-chip {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.8rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text);
+        }
+
+        .search-chip:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Tag Filters */
+        .tag-filters {
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            padding: 0 20px;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tag-filter {
+            background: white;
+            border: 2px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .tag-filter:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .tag-filter.active {
+            background: var(--primary);
+            color: white;
             border-color: var(--primary);
         }
 
@@ -219,6 +314,49 @@
             color: #c2185b;
         }
 
+        /* Highlight matching text */
+        .highlight {
+            background: #fff59d;
+            font-weight: 600;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        .empty-state h3 {
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .empty-state p {
+            margin-bottom: 1.5rem;
+        }
+
+        .empty-state .suggestions {
+            margin-top: 1.5rem;
+        }
+
+        .empty-state .suggestion-chip {
+            display: inline-block;
+            background: var(--bg-gray);
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .empty-state .suggestion-chip:hover {
+            background: var(--primary);
+            color: white;
+        }
+
         /* Footer */
         footer {
             background: var(--bg-gray);
@@ -241,6 +379,25 @@
             text-decoration: underline;
         }
 
+        /* Keyboard shortcut hint */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            font-size: 0.85rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .keyboard-hint.show {
+            opacity: 1;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             header h1 {
@@ -254,25 +411,11 @@
             .examples-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        /* Loading State */
-        .loading {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-light);
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-light);
-        }
-
-        .empty-state h3 {
-            color: var(--text);
-            margin-bottom: 1rem;
+            .search-chips,
+            .tag-filters {
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
@@ -295,10 +438,25 @@
 
     <nav>
         <div class="container">
-            <input type="search" id="search"
-                   placeholder="Search: 'google search', 'deploy', 'oauth', 'multi-agent'..."
-                   autocomplete="off">
+            <div class="search-wrapper">
+                <input type="text"
+                       id="search"
+                       name="adk-example-search"
+                       placeholder="I want to... (e.g., search Google, deploy my agent, configure models) - Press / to search"
+                       autocomplete="new-password"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       spellcheck="false">
+                <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
+            </div>
+            <div class="search-results-count" id="search-results-count"></div>
+
+            <!-- Quick Search Chips -->
+            <div class="search-chips" id="search-chips"></div>
         </div>
+
+        <!-- Tag Filters -->
+        <div class="tag-filters" id="tag-filters"></div>
     </nav>
 
     <main class="container">
@@ -307,7 +465,7 @@
 
             <div id="categories-container">
                 <!-- Categories will be loaded here -->
-                <div class="loading">Loading examples...</div>
+                <div class="empty-state">Loading examples...</div>
             </div>
         </section>
     </main>
@@ -322,18 +480,43 @@
         </div>
     </footer>
 
+    <!-- Keyboard shortcut hint -->
+    <div class="keyboard-hint" id="keyboard-hint">Press / to search</div>
+
     <script>
+        // Global state
+        let allExamplesData = null;
+        let currentQuery = '';
+        let activeTagFilter = null;
+
+        // Popular search queries
+        const POPULAR_SEARCHES = [
+            'search Google',
+            'YAML config',
+            'first agent',
+            'deploy',
+            'configure model'
+        ];
+
         // Render examples
         function renderExamples(data) {
+            allExamplesData = data;
             const container = document.getElementById('categories-container');
+
+            if (!container) {
+                console.error('Container element not found!');
+                return;
+            }
+
             container.innerHTML = '';
 
-            // Use examples_by_category if available, otherwise use the data directly
+            // Use examples_by_category if available
             const categoriesData = data.examples_by_category || data;
 
             for (const [category, examples] of Object.entries(categoriesData)) {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'category';
+                categoryDiv.dataset.category = category;
 
                 const categoryTitle = document.createElement('h3');
                 categoryTitle.textContent = `📁 ${category}`;
@@ -344,8 +527,14 @@
 
                 examples.forEach(example => {
                     const card = document.createElement('a');
-                    card.href = `https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/${example.path}`;
+                    card.href = example.github_url || `https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/${example.path}`;
                     card.className = 'example-card';
+                    card.dataset.title = example.title.toLowerCase();
+                    card.dataset.jtbd = example.jtbd.toLowerCase();
+                    card.dataset.description = example.description.toLowerCase();
+                    card.dataset.tags = (example.tags || []).join(' ').toLowerCase();
+                    card.dataset.category = example.category;
+
                     card.innerHTML = `
                         <h4>${example.title}</h4>
                         <p class="jtbd">"${example.jtbd}"</p>
@@ -362,51 +551,370 @@
                 container.appendChild(categoryDiv);
             }
 
-            // Setup search functionality AFTER examples are rendered
-            setupSearch();
+            // Render search chips and tag filters
+            renderSearchChips();
+            renderTagFilters(data);
+
+            // Initialize search after examples are rendered
+            initializeSearch();
         }
 
-        // Search functionality
-        function setupSearch() {
-            const searchInput = document.getElementById('search');
+        // Render quick search chips
+        function renderSearchChips() {
+            const chipsContainer = document.getElementById('search-chips');
+            chipsContainer.innerHTML = POPULAR_SEARCHES.map(search =>
+                `<div class="search-chip" data-search="${search}">${search}</div>`
+            ).join('');
 
-            searchInput.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase();
-                const cards = document.querySelectorAll('.example-card');
-
-                cards.forEach(card => {
-                    const text = card.textContent.toLowerCase();
-                    if (query === '' || text.includes(query)) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-
-                // Hide empty categories
-                document.querySelectorAll('.category').forEach(cat => {
-                    const visibleCards = cat.querySelectorAll('.example-card[style="display: flex"], .example-card:not([style])');
-                    cat.style.display = visibleCards.length > 0 ? 'block' : 'none';
+            // Add click handlers
+            chipsContainer.querySelectorAll('.search-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    const searchTerm = chip.dataset.search;
+                    document.getElementById('search').value = searchTerm;
+                    performSearch(searchTerm);
+                    updateURL(searchTerm);
                 });
             });
         }
 
+        // Render tag filters
+        function renderTagFilters(data) {
+            const filtersContainer = document.getElementById('tag-filters');
+            const categories = data.categories || [];
+
+            const allFilter = '<div class="tag-filter active" data-filter="all">All Examples</div>';
+            const categoryFilters = categories.map(cat =>
+                `<div class="tag-filter" data-filter="${cat}">${cat}</div>`
+            ).join('');
+
+            filtersContainer.innerHTML = allFilter + categoryFilters;
+
+            // Add click handlers
+            filtersContainer.querySelectorAll('.tag-filter').forEach(filter => {
+                filter.addEventListener('click', () => {
+                    // Update active state
+                    filtersContainer.querySelectorAll('.tag-filter').forEach(f => f.classList.remove('active'));
+                    filter.classList.add('active');
+
+                    // Apply filter
+                    const filterValue = filter.dataset.filter;
+                    activeTagFilter = filterValue === 'all' ? null : filterValue;
+                    performSearch(currentQuery);
+                });
+            });
+        }
+
+        // Highlight matching text in a string
+        function highlightText(text, query) {
+            if (!query) return text;
+
+            const cleanQuery = query
+                .toLowerCase()
+                .trim()
+                .replace(/^(i want to|i need to|i'm trying to|how do i|how to)\s+/i, '');
+
+            if (!cleanQuery) return text;
+
+            const regex = new RegExp(`(${cleanQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+
+        // Smart JTBD-focused search
+        function performSearch(query) {
+            if (!allExamplesData) return;
+
+            currentQuery = query;
+
+            // Clean the query - remove common JTBD prefixes
+            const cleanQuery = query
+                .toLowerCase()
+                .trim()
+                .replace(/^(i want to|i need to|i'm trying to|how do i|how to)\s+/i, '');
+
+            const cards = document.querySelectorAll('.example-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                let shouldShow = false;
+
+                // Check tag filter first
+                if (activeTagFilter) {
+                    const cardCategory = card.dataset.category;
+                    const categoryName = allExamplesData.examples.find(ex =>
+                        ex.category === cardCategory
+                    )?.category_name;
+
+                    if (categoryName !== activeTagFilter) {
+                        card.style.display = 'none';
+                        return;
+                    }
+                }
+
+                if (cleanQuery === '') {
+                    // Show all if search is empty (and passes tag filter)
+                    shouldShow = true;
+                } else {
+                    // Smart matching: prioritize JTBD, then title, then description, then tags
+                    const jtbd = card.dataset.jtbd || '';
+                    const title = card.dataset.title || '';
+                    const description = card.dataset.description || '';
+                    const tags = card.dataset.tags || '';
+
+                    shouldShow = jtbd.includes(cleanQuery) ||
+                                title.includes(cleanQuery) ||
+                                description.includes(cleanQuery) ||
+                                tags.includes(cleanQuery);
+                }
+
+                if (shouldShow) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+
+                    // Highlight matching text
+                    if (cleanQuery) {
+                        const h4 = card.querySelector('h4');
+                        const jtbdP = card.querySelector('.jtbd');
+                        const descP = card.querySelector('.description');
+
+                        const originalTitle = card.dataset.title;
+                        const originalJtbd = card.dataset.jtbd;
+                        const originalDesc = card.dataset.description;
+
+                        // Store originals if not already stored
+                        if (!card.dataset.originalTitle) {
+                            card.dataset.originalTitle = h4.textContent;
+                            card.dataset.originalJtbd = jtbdP.textContent.replace(/^"|"$/g, '');
+                            card.dataset.originalDesc = descP.textContent;
+                        }
+
+                        h4.innerHTML = highlightText(card.dataset.originalTitle, cleanQuery);
+                        jtbdP.innerHTML = '"' + highlightText(card.dataset.originalJtbd, cleanQuery) + '"';
+                        descP.innerHTML = highlightText(card.dataset.originalDesc, cleanQuery);
+                    } else {
+                        // Restore original text
+                        if (card.dataset.originalTitle) {
+                            card.querySelector('h4').textContent = card.dataset.originalTitle;
+                            card.querySelector('.jtbd').textContent = '"' + card.dataset.originalJtbd + '"';
+                            card.querySelector('.description').textContent = card.dataset.originalDesc;
+                        }
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Hide empty categories
+            document.querySelectorAll('.category').forEach(cat => {
+                const visibleCards = cat.querySelectorAll('.example-card[style="display: flex"], .example-card:not([style*="none"])');
+                cat.style.display = visibleCards.length > 0 ? 'block' : 'none';
+            });
+
+            // Update results count and clear button
+            updateSearchUI(cleanQuery, visibleCount, allExamplesData.total_examples);
+
+            // Show no results state if needed
+            if (visibleCount === 0 && (cleanQuery || activeTagFilter)) {
+                showNoResults(cleanQuery);
+            } else {
+                hideNoResults();
+            }
+        }
+
+        // Show no results state
+        function showNoResults(query) {
+            const container = document.getElementById('categories-container');
+            const noResultsDiv = document.createElement('div');
+            noResultsDiv.className = 'empty-state';
+            noResultsDiv.id = 'no-results';
+
+            const suggestions = POPULAR_SEARCHES.filter(s => s !== query).slice(0, 3);
+
+            noResultsDiv.innerHTML = `
+                <h3>No examples found</h3>
+                <p>We couldn't find any examples matching "${query || 'your filter'}"</p>
+                <div class="suggestions">
+                    <p><strong>Try searching for:</strong></p>
+                    ${suggestions.map(s => `<div class="suggestion-chip" data-search="${s}">${s}</div>`).join('')}
+                </div>
+                <p style="margin-top: 2rem;">
+                    <a href="https://github.com/lavinigam-gcp/adk-by-example/issues/new?title=Request:%20${encodeURIComponent(query)}"
+                       target="_blank"
+                       style="color: var(--primary);">
+                        Request this example on GitHub →
+                    </a>
+                </p>
+            `;
+
+            // Hide categories and show no results
+            document.querySelectorAll('.category').forEach(cat => cat.style.display = 'none');
+            container.appendChild(noResultsDiv);
+
+            // Add click handlers for suggestions
+            noResultsDiv.querySelectorAll('.suggestion-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    const searchTerm = chip.dataset.search;
+                    document.getElementById('search').value = searchTerm;
+                    performSearch(searchTerm);
+                    updateURL(searchTerm);
+                });
+            });
+        }
+
+        // Hide no results state
+        function hideNoResults() {
+            const noResults = document.getElementById('no-results');
+            if (noResults) {
+                noResults.remove();
+            }
+        }
+
+        // Update search UI elements
+        function updateSearchUI(query, visibleCount, totalCount) {
+            const resultsCount = document.getElementById('search-results-count');
+            const clearButton = document.getElementById('search-clear');
+
+            if (query === '' && !activeTagFilter) {
+                resultsCount.textContent = '';
+                clearButton.classList.remove('visible');
+            } else {
+                const filterText = activeTagFilter ? ` in ${activeTagFilter}` : '';
+                resultsCount.textContent = `Showing ${visibleCount} of ${totalCount} examples${filterText}`;
+                clearButton.classList.add('visible');
+            }
+        }
+
+        // Update URL with search query
+        function updateURL(query) {
+            if (query) {
+                window.location.hash = `q=${encodeURIComponent(query)}`;
+            } else {
+                window.location.hash = '';
+            }
+        }
+
+        // Load search from URL
+        function loadSearchFromURL() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#q=')) {
+                const query = decodeURIComponent(hash.substring(3));
+                document.getElementById('search').value = query;
+                performSearch(query);
+            }
+        }
+
+        // Initialize search with bulletproof autofill prevention
+        function initializeSearch() {
+            const searchInput = document.getElementById('search');
+            const clearButton = document.getElementById('search-clear');
+
+            if (!searchInput) return;
+
+            // NUCLEAR OPTION: Force clear the search field (unless loading from URL)
+            if (!window.location.hash.startsWith('#q=')) {
+                searchInput.value = '';
+            }
+
+            // Load search from URL if present
+            loadSearchFromURL();
+
+            // If no URL search, show all examples initially
+            if (!window.location.hash.startsWith('#q=')) {
+                performSearch('');
+            }
+
+            // Watch for browser trying to inject values via MutationObserver
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'value') {
+                        if (searchInput.value !== '' && !window.location.hash.startsWith('#q=')) {
+                            console.log('Browser autofill detected, clearing...');
+                            searchInput.value = '';
+                            performSearch('');
+                        }
+                    }
+                });
+            });
+
+            observer.observe(searchInput, {
+                attributes: true,
+                attributeFilter: ['value']
+            });
+
+            // Set up search event listener
+            searchInput.addEventListener('input', (e) => {
+                performSearch(e.target.value);
+                updateURL(e.target.value);
+            });
+
+            // Clear button functionality
+            clearButton.addEventListener('click', () => {
+                searchInput.value = '';
+                performSearch('');
+                updateURL('');
+                searchInput.focus();
+            });
+
+            // Keyboard shortcut: Escape to clear
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    searchInput.value = '';
+                    performSearch('');
+                    updateURL('');
+                }
+            });
+
+            // Global keyboard shortcut: "/" to focus search
+            document.addEventListener('keydown', (e) => {
+                // Only trigger if not already in an input
+                if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+                    e.preventDefault();
+                    searchInput.focus();
+
+                    // Show hint briefly
+                    const hint = document.getElementById('keyboard-hint');
+                    hint.classList.add('show');
+                    setTimeout(() => hint.classList.remove('show'), 2000);
+                }
+            });
+
+            // Handle browser back/forward with URL hash
+            window.addEventListener('hashchange', loadSearchFromURL);
+
+            // Additional safety: Periodically check for autofill in first 2 seconds
+            let checkCount = 0;
+            const autofillChecker = setInterval(() => {
+                if (searchInput.value !== '' && !window.location.hash.startsWith('#q=')) {
+                    console.log('Late autofill detected, clearing...');
+                    searchInput.value = '';
+                    performSearch('');
+                }
+                checkCount++;
+                if (checkCount >= 4) { // Check 4 times over 2 seconds
+                    clearInterval(autofillChecker);
+                }
+            }, 500);
+        }
+
         // Load examples on page load
         window.addEventListener('DOMContentLoaded', () => {
-            // Try to load from examples.json
+            // Fetch examples data
             fetch('examples.json')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     renderExamples(data);
                 })
                 .catch(error => {
                     console.error('Error loading examples:', error);
-                    // Fallback to showing a message
                     const container = document.getElementById('categories-container');
                     container.innerHTML = `
                         <div class="empty-state">
-                            <h3>Examples Loading...</h3>
-                            <p>If examples don't appear, please check that examples.json is generated.</p>
+                            <h3>Error Loading Examples</h3>
+                            <p>Could not load examples. Please refresh the page.</p>
                         </div>
                     `;
                 });
