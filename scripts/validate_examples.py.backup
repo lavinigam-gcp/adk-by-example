@@ -292,27 +292,13 @@ def validate_example(example_path: Path) -> Dict[str, Any]:
         'checks': {}
     }
 
-    # Check if this is a coming_soon example
-    metadata_file = example_path / 'metadata.json'
-    is_coming_soon = False
-    if metadata_file.exists():
-        try:
-            with open(metadata_file, 'r') as f:
-                metadata = json.load(f)
-                is_coming_soon = metadata.get('status') == 'coming_soon'
-        except:
-            pass
-
     # Run all validation checks
     checks = [
         ('structure', validate_structure),
         ('metadata', validate_metadata),
+        ('agent_code', validate_agent_code),
+        ('readme', validate_readme)
     ]
-
-    # Only validate agent code and README for non-coming_soon examples
-    if not is_coming_soon:
-        checks.append(('agent_code', validate_agent_code))
-        checks.append(('readme', validate_readme))
 
     for check_name, check_func in checks:
         passed, message = check_func(example_path)
