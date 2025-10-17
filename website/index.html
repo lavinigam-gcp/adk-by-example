@@ -49,7 +49,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             color: var(--text);
             background: var(--bg);
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -87,29 +87,29 @@
         header {
             background: var(--primary);
             color: white;
-            padding: 3rem 0;
+            padding: 2.5rem 0;
             text-align: center;
             box-shadow: 0 2px 4px var(--shadow);
             position: relative;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
             animation: fadeInDown 0.6s ease-out;
         }
 
         header p {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             opacity: 0.95;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             animation: fadeInUp 0.6s ease-out 0.2s both;
         }
 
         .quick-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             justify-content: center;
             flex-wrap: wrap;
             animation: fadeInUp 0.6s ease-out 0.4s both;
@@ -118,8 +118,8 @@
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
+            gap: 0.4rem;
+            padding: 0.6rem 1.2rem;
             background: rgba(255,255,255,0.2);
             color: white;
             text-decoration: none;
@@ -128,7 +128,7 @@
             font-weight: 500;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .btn:hover {
@@ -157,8 +157,8 @@
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -172,7 +172,7 @@
         /* Search */
         nav {
             background: var(--bg-gray);
-            padding: 1.5rem 0;
+            padding: 1.2rem 0;
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -188,8 +188,8 @@
 
         #search {
             width: 100%;
-            padding: 0.75rem 3rem 0.75rem 1rem;
-            font-size: 1rem;
+            padding: 0.7rem 3rem 0.7rem 1rem;
+            font-size: 0.95rem;
             border: 2px solid var(--border);
             border-radius: var(--radius);
             transition: all 0.3s ease;
@@ -228,18 +228,18 @@
 
         .search-results-count {
             text-align: center;
-            margin-top: 0.75rem;
-            font-size: 0.9rem;
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
             color: var(--text-light);
-            min-height: 1.5rem;
+            min-height: 1.3rem;
         }
 
         /* Search Chips */
         .search-chips {
             max-width: 700px;
-            margin: 1rem auto 0;
+            margin: 0.8rem auto 0;
             display: flex;
-            gap: 0.5rem;
+            gap: 0.4rem;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -247,9 +247,9 @@
         .search-chip {
             background: var(--card);
             border: 1px solid var(--border);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 16px;
+            font-size: 0.8rem;
             cursor: pointer;
             transition: all 0.2s ease;
             color: var(--text);
@@ -261,107 +261,87 @@
             background: var(--primary);
             color: white;
             border-color: var(--primary);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
-        /* Tag Filters */
-        .tag-filters {
+        /* Category Tabs (replaces tag filters) */
+        .category-tabs {
             max-width: 1200px;
-            margin: 1.5rem auto 0;
+            margin: 1rem auto 0;
             padding: 0 20px;
             display: flex;
-            gap: 0.5rem;
+            gap: 0.4rem;
             flex-wrap: wrap;
             justify-content: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0;
         }
 
-        .tag-filter {
-            background: var(--card);
-            border: 2px solid var(--border);
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius);
+        .category-tab {
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            padding: 0.7rem 1.2rem;
             font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.2s ease;
             color: var(--text);
             font-weight: 500;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            bottom: -2px;
         }
 
-        .tag-filter:hover {
-            border-color: var(--primary);
+        .category-tab:hover {
             color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        .tag-filter.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        /* Category Quick Jump Navigation */
-        .category-nav {
-            background: var(--card);
-            border-bottom: 1px solid var(--border);
-            padding: 0.75rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 80;
-            overflow-x: auto;
-            scrollbar-width: thin;
-            display: none;
-        }
-
-        .category-nav.visible {
-            display: block;
-        }
-
-        .category-nav-items {
-            display: flex;
-            gap: 0.5rem;
-            padding: 0 20px;
-            min-width: max-content;
-        }
-
-        .category-nav-item {
-            padding: 0.4rem 0.8rem;
-            border-radius: var(--radius);
             background: var(--bg-gray);
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-            white-space: nowrap;
+            border-radius: var(--radius) var(--radius) 0 0;
         }
 
-        .category-nav-item:hover,
-        .category-nav-item.active {
+        .category-tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .category-tab .count {
+            display: inline-block;
+            background: var(--bg-gray);
+            color: var(--text-light);
+            padding: 0.1rem 0.4rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-left: 0.3rem;
+        }
+
+        .category-tab.active .count {
             background: var(--primary);
             color: white;
         }
 
         /* Main Content */
         main {
-            padding: 3rem 0;
+            padding: 2rem 0;
         }
 
         .section-title {
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             color: var(--text);
             animation: fadeIn 0.6s ease-out;
         }
 
         /* Categories */
         .category {
-            margin-bottom: 3rem;
-            scroll-margin-top: 100px;
+            margin-bottom: 2.5rem;
+            display: none;
+        }
+
+        .category.active {
+            display: block;
         }
 
         .category h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--text);
             display: flex;
@@ -369,116 +349,86 @@
             gap: 0.5rem;
         }
 
-        /* Examples Grid */
+        /* Examples Grid - COMPACT */
         .examples-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
         }
 
         .example-card {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 1.5rem;
+            padding: 1rem;
             text-decoration: none;
             color: var(--text);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
             position: relative;
             opacity: 0;
             animation: fadeInCard 0.5s ease-out forwards;
         }
 
         .example-card:hover {
-            box-shadow: 0 8px 16px var(--shadow-hover);
-            transform: translateY(-4px);
+            box-shadow: 0 6px 12px var(--shadow-hover);
+            transform: translateY(-3px);
             border-color: var(--primary);
         }
 
         .example-card h4 {
-            font-size: 1.25rem;
+            font-size: 1.05rem;
             color: var(--primary);
             margin: 0;
-            padding-right: 2rem;
+            line-height: 1.3;
+            padding-right: 4.5rem;
         }
 
         .example-card .jtbd {
             font-style: italic;
             color: var(--text-light);
-            font-size: 0.95rem;
+            font-size: 0.82rem;
+            line-height: 1.3;
         }
 
         .example-card .description {
             color: var(--text);
-            font-size: 1rem;
+            font-size: 0.88rem;
             flex-grow: 1;
-        }
-
-        /* Code block with copy button */
-        .code-wrapper {
-            position: relative;
-        }
-
-        .example-card code {
-            background: var(--bg-gray);
-            padding: 0.75rem;
-            padding-right: 3rem;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            display: block;
-            overflow-x: auto;
-            border: 1px solid var(--border);
-        }
-
-        .copy-btn {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 0.4rem 0.6rem;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            opacity: 0;
-        }
-
-        .code-wrapper:hover .copy-btn {
-            opacity: 1;
-        }
-
-        .copy-btn:hover {
-            background: var(--primary-dark);
-            transform: scale(1.05);
-        }
-
-        .copy-btn.copied {
-            background: var(--success);
-            opacity: 1;
+            line-height: 1.4;
         }
 
         /* Card footer with badges */
         .card-footer {
             display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
+            gap: 0.4rem;
+            flex-wrap: nowrap;
             align-items: center;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+
+        .card-footer::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .card-footer::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 2px;
         }
 
         .difficulty {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .difficulty.beginner {
@@ -509,25 +459,38 @@
         }
 
         .time-badge {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.3rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            background: var(--bg-gray);
-            color: var(--text-light);
-            border: 1px solid var(--border);
+            padding: 0.25rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.65rem;
+            background: #e3f2fd;
+            color: #1565c0;
+            border: 1px solid #1976d2;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] .time-badge {
+            background: rgba(66, 133, 244, 0.15);
+            color: var(--primary);
+            border-color: var(--primary);
         }
 
         .tag-pill {
             display: inline-block;
-            padding: 0.2rem 0.6rem;
-            border-radius: 10px;
-            font-size: 0.75rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 8px;
+            font-size: 0.7rem;
             background: var(--bg-gray);
             color: var(--text-light);
             border: 1px solid var(--border);
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         /* Highlight matching text */
@@ -561,21 +524,21 @@
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 1.5rem;
+            padding: 1rem;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
         .skeleton-line {
-            height: 1rem;
+            height: 0.9rem;
             background: var(--bg-gray);
             border-radius: 4px;
         }
 
         .skeleton-line.title {
             width: 70%;
-            height: 1.5rem;
+            height: 1.2rem;
         }
 
         .skeleton-line.jtbd {
@@ -588,13 +551,13 @@
 
         .skeleton-line.code {
             width: 60%;
-            height: 2.5rem;
+            height: 2rem;
         }
 
         /* Empty State */
         .empty-state {
             text-align: center;
-            padding: 3rem;
+            padding: 2.5rem;
             color: var(--text-light);
             animation: fadeIn 0.5s ease-out;
         }
@@ -605,18 +568,18 @@
         }
 
         .empty-state p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .empty-state .suggestions {
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
         }
 
         .empty-state .suggestion-chip {
             display: inline-block;
             background: var(--bg-gray);
             padding: 0.5rem 1rem;
-            margin: 0.25rem;
+            margin: 0.2rem;
             border-radius: var(--radius);
             cursor: pointer;
             transition: all 0.2s ease;
@@ -630,14 +593,15 @@
         /* Footer */
         footer {
             background: var(--bg-gray);
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             text-align: center;
             border-top: 1px solid var(--border);
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
 
         footer p {
             color: var(--text-light);
+            font-size: 0.9rem;
         }
 
         footer a {
@@ -658,7 +622,7 @@
             color: white;
             padding: 0.5rem 1rem;
             border-radius: var(--radius);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
@@ -723,17 +687,17 @@
         /* Responsive */
         @media (max-width: 1024px) {
             .examples-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             }
         }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             header p {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             .theme-toggle {
@@ -746,13 +710,15 @@
             }
 
             .search-chips,
-            .tag-filters {
+            .category-tabs {
                 justify-content: flex-start;
+                overflow-x: auto;
+                scrollbar-width: thin;
             }
 
             .search-chip,
-            .tag-filter {
-                font-size: 0.85rem;
+            .category-tab {
+                font-size: 0.8rem;
                 padding: 0.5rem 0.8rem;
             }
 
@@ -761,7 +727,7 @@
             }
 
             main {
-                padding: 2rem 0;
+                padding: 1.5rem 0;
             }
         }
 
@@ -771,7 +737,7 @@
             }
 
             header {
-                padding: 2rem 0;
+                padding: 1.8rem 0;
             }
 
             .quick-links {
@@ -783,21 +749,38 @@
                 justify-content: center;
             }
 
-            .card-footer {
-                flex-direction: column;
-                align-items: flex-start;
+            .examples-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
             }
         }
 
         /* Print styles */
         @media print {
-            nav, .theme-toggle, .keyboard-hint, .copy-btn {
+            nav, .theme-toggle, .keyboard-hint, .category-tabs {
                 display: none;
             }
 
             .example-card {
                 page-break-inside: avoid;
             }
+
+            .category {
+                display: block !important;
+            }
+        }
+
+        /* Screen reader only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
     </style>
 </head>
@@ -807,7 +790,7 @@
 
     <header role="banner">
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             </svg>
         </button>
@@ -816,7 +799,7 @@
             <p>Copy-paste solutions for common ADK tasks</p>
             <div class="quick-links">
                 <a href="https://github.com/lavinigam-gcp/adk-by-example" class="btn" aria-label="View on GitHub">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                     GitHub
@@ -848,14 +831,9 @@
             <div class="search-chips" id="search-chips" role="group" aria-label="Quick search suggestions"></div>
         </div>
 
-        <!-- Tag Filters -->
-        <div class="tag-filters" id="tag-filters" role="group" aria-label="Filter by category"></div>
+        <!-- Category Tabs (replaces tag filters) -->
+        <div class="category-tabs" id="category-tabs" role="tablist" aria-label="Example categories"></div>
     </nav>
-
-    <!-- Category Quick Jump Navigation -->
-    <div class="category-nav" id="category-nav" role="navigation" aria-label="Category navigation">
-        <div class="category-nav-items" id="category-nav-items"></div>
-    </div>
 
     <main class="container" id="main-content" role="main">
         <section id="getting-started">
@@ -903,21 +881,6 @@
     <!-- Keyboard shortcut hint -->
     <div class="keyboard-hint" id="keyboard-hint" role="status" aria-live="polite">Press / to search</div>
 
-    <!-- Screen reader only class -->
-    <style>
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-    </style>
-
     <script>
         // Dark mode handling
         const themeToggle = document.getElementById('theme-toggle');
@@ -962,7 +925,7 @@
         // Global state
         let allExamplesData = null;
         let currentQuery = '';
-        let activeTagFilter = null;
+        let activeCategory = 'all';
 
         // Popular search queries
         const POPULAR_SEARCHES = [
@@ -991,6 +954,49 @@
             });
         }
 
+        // Switch category tabs
+        function switchCategory(categoryName) {
+            activeCategory = categoryName;
+
+            // Update tab states
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.category === categoryName);
+                tab.setAttribute('aria-selected', tab.dataset.category === categoryName);
+            });
+
+            // Show/hide categories
+            document.querySelectorAll('.category').forEach(cat => {
+                if (categoryName === 'all') {
+                    cat.classList.add('active');
+                } else {
+                    cat.classList.toggle('active', cat.dataset.categoryName === categoryName);
+                }
+            });
+
+            // Update results count
+            updateResultsCount();
+        }
+
+        // Update results count
+        function updateResultsCount() {
+            const resultsCount = document.getElementById('search-results-count');
+            const clearButton = document.getElementById('search-clear');
+
+            let visibleCount = 0;
+            document.querySelectorAll('.example-card').forEach(card => {
+                if (card.style.display !== 'none') visibleCount++;
+            });
+
+            if (currentQuery === '' && activeCategory === 'all') {
+                resultsCount.textContent = '';
+                clearButton.classList.remove('visible');
+            } else {
+                const categoryText = activeCategory !== 'all' ? ` in ${activeCategory}` : '';
+                resultsCount.textContent = `Showing ${visibleCount} of ${allExamplesData.total_examples} examples${categoryText}`;
+                clearButton.classList.add('visible');
+            }
+        }
+
         // Render examples
         function renderExamples(data) {
             allExamplesData = data;
@@ -1010,26 +1016,41 @@
             // Use examples_by_category if available
             const categoriesData = data.examples_by_category || data;
 
-            // Build category nav
-            const categoryNavItems = document.getElementById('category-nav-items');
-            const categoryNav = document.getElementById('category-nav');
+            // Build category tabs
+            const tabsContainer = document.getElementById('category-tabs');
+            const categories = Object.keys(categoriesData);
 
+            // Add "All" tab
+            const allTab = document.createElement('button');
+            allTab.className = 'category-tab active';
+            allTab.dataset.category = 'all';
+            allTab.setAttribute('role', 'tab');
+            allTab.setAttribute('aria-selected', 'true');
+            allTab.innerHTML = `All <span class="count">${data.total_examples}</span>`;
+            allTab.addEventListener('click', () => switchCategory('all'));
+            tabsContainer.appendChild(allTab);
+
+            // Add category tabs
+            categories.forEach(category => {
+                const tab = document.createElement('button');
+                tab.className = 'category-tab';
+                tab.dataset.category = category;
+                tab.setAttribute('role', 'tab');
+                tab.setAttribute('aria-selected', 'false');
+                tab.innerHTML = `${category} <span class="count">${categoriesData[category].length}</span>`;
+                tab.addEventListener('click', () => switchCategory(category));
+                tabsContainer.appendChild(tab);
+            });
+
+            // Build category sections
             for (const [category, examples] of Object.entries(categoriesData)) {
                 const categoryId = category.toLowerCase().replace(/\s+/g, '-');
 
-                // Add to category nav
-                const navItem = document.createElement('a');
-                navItem.href = `#${categoryId}`;
-                navItem.className = 'category-nav-item';
-                navItem.textContent = category;
-                navItem.dataset.category = categoryId;
-                categoryNavItems.appendChild(navItem);
-
                 // Create category section
                 const categoryDiv = document.createElement('div');
-                categoryDiv.className = 'category';
+                categoryDiv.className = 'category active';
                 categoryDiv.id = categoryId;
-                categoryDiv.dataset.category = category;
+                categoryDiv.dataset.categoryName = category;
 
                 const categoryTitle = document.createElement('h3');
                 categoryTitle.textContent = `📁 ${category}`;
@@ -1050,42 +1071,26 @@
                     card.setAttribute('aria-label', `${example.title} - ${example.jtbd}`);
 
                     // Build tag pills HTML
-                    const topTags = (example.tags || []).slice(0, 3);
+                    const topTags = (example.tags || []).slice(0, 2);
                     const tagPillsHTML = topTags.map(tag =>
                         `<span class="tag-pill">${tag}</span>`
                     ).join('');
 
-                    const timeToComplete = example.time_to_complete || '5 minutes';
+                    // Convert "5 minutes" to "5 min" for compact display
+                    const timeToComplete = (example.time_to_complete || '5 min').replace(' minutes', ' min').replace(' minute', ' min');
 
                     card.innerHTML = `
+                        <span class="time-badge" title="Estimated time to complete">
+                            ${timeToComplete}
+                        </span>
                         <h4>${example.title}</h4>
                         <p class="jtbd">"${example.jtbd}"</p>
                         <p class="description">${example.description}</p>
-                        <div class="code-wrapper">
-                            <code>${example.command}</code>
-                            <button class="copy-btn" aria-label="Copy command">Copy</button>
-                        </div>
                         <div class="card-footer">
                             <span class="difficulty ${example.difficulty}">${example.difficulty}</span>
-                            <span class="time-badge" title="Estimated time to complete">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <path d="M12 6v6l4 2"></path>
-                                </svg>
-                                ${timeToComplete}
-                            </span>
                             ${tagPillsHTML}
                         </div>
                     `;
-
-                    // Add copy button event listener
-                    const copyBtn = card.querySelector('.copy-btn');
-                    const codeElement = card.querySelector('code');
-                    copyBtn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        copyToClipboard(codeElement.textContent, copyBtn);
-                    });
 
                     grid.appendChild(card);
                 });
@@ -1094,33 +1099,8 @@
                 container.appendChild(categoryDiv);
             }
 
-            // Show category nav if more than one category
-            if (Object.keys(categoriesData).length > 1) {
-                categoryNav.classList.add('visible');
-            }
-
-            // Intersection Observer for category nav active state
-            const observerOptions = {
-                rootMargin: '-100px 0px -70% 0px',
-                threshold: 0
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const categoryId = entry.target.id;
-                        document.querySelectorAll('.category-nav-item').forEach(item => {
-                            item.classList.toggle('active', item.dataset.category === categoryId);
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.category').forEach(cat => observer.observe(cat));
-
-            // Render search chips and tag filters
+            // Render search chips
             renderSearchChips();
-            renderTagFilters(data);
 
             // Initialize search after examples are rendered
             initializeSearch();
@@ -1144,41 +1124,6 @@
 
                 chip.addEventListener('click', handler);
                 chip.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        handler();
-                    }
-                });
-            });
-        }
-
-        // Render tag filters
-        function renderTagFilters(data) {
-            const filtersContainer = document.getElementById('tag-filters');
-            const categories = data.categories || [];
-
-            const allFilter = '<div class="tag-filter active" data-filter="all" role="button" tabindex="0">All Examples</div>';
-            const categoryFilters = categories.map(cat =>
-                `<div class="tag-filter" data-filter="${cat}" role="button" tabindex="0">${cat}</div>`
-            ).join('');
-
-            filtersContainer.innerHTML = allFilter + categoryFilters;
-
-            // Add click and keyboard handlers
-            filtersContainer.querySelectorAll('.tag-filter').forEach(filter => {
-                const handler = () => {
-                    // Update active state
-                    filtersContainer.querySelectorAll('.tag-filter').forEach(f => f.classList.remove('active'));
-                    filter.classList.add('active');
-
-                    // Apply filter
-                    const filterValue = filter.dataset.filter;
-                    activeTagFilter = filterValue === 'all' ? null : filterValue;
-                    performSearch(currentQuery);
-                };
-
-                filter.addEventListener('click', handler);
-                filter.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
                         handler();
@@ -1215,26 +1160,12 @@
                 .replace(/^(i want to|i need to|i'm trying to|how do i|how to)\s+/i, '');
 
             const cards = document.querySelectorAll('.example-card');
-            let visibleCount = 0;
 
             cards.forEach(card => {
                 let shouldShow = false;
 
-                // Check tag filter first
-                if (activeTagFilter) {
-                    const cardCategory = card.dataset.category;
-                    const categoryName = allExamplesData.examples.find(ex =>
-                        ex.category === cardCategory
-                    )?.category_name;
-
-                    if (categoryName !== activeTagFilter) {
-                        card.style.display = 'none';
-                        return;
-                    }
-                }
-
                 if (cleanQuery === '') {
-                    // Show all if search is empty (and passes tag filter)
+                    // Show all if search is empty
                     shouldShow = true;
                 } else {
                     // Smart matching: prioritize JTBD, then title, then description, then tags
@@ -1251,17 +1182,12 @@
 
                 if (shouldShow) {
                     card.style.display = 'flex';
-                    visibleCount++;
 
                     // Highlight matching text
                     if (cleanQuery) {
                         const h4 = card.querySelector('h4');
                         const jtbdP = card.querySelector('.jtbd');
                         const descP = card.querySelector('.description');
-
-                        const originalTitle = card.dataset.title;
-                        const originalJtbd = card.dataset.jtbd;
-                        const originalDesc = card.dataset.description;
 
                         // Store originals if not already stored
                         if (!card.dataset.originalTitle) {
@@ -1286,17 +1212,12 @@
                 }
             });
 
-            // Hide empty categories
-            document.querySelectorAll('.category').forEach(cat => {
-                const visibleCards = cat.querySelectorAll('.example-card[style="display: flex"], .example-card:not([style*="none"])');
-                cat.style.display = visibleCards.length > 0 ? 'block' : 'none';
-            });
-
-            // Update results count and clear button
-            updateSearchUI(cleanQuery, visibleCount, allExamplesData.total_examples);
+            // Update results count
+            updateResultsCount();
 
             // Show no results state if needed
-            if (visibleCount === 0 && (cleanQuery || activeTagFilter)) {
+            const visibleCount = Array.from(cards).filter(c => c.style.display !== 'none').length;
+            if (visibleCount === 0 && cleanQuery) {
                 showNoResults(cleanQuery);
             } else {
                 hideNoResults();
@@ -1314,12 +1235,12 @@
 
             noResultsDiv.innerHTML = `
                 <h3>No examples found</h3>
-                <p>We couldn't find any examples matching "${query || 'your filter'}"</p>
+                <p>We couldn't find any examples matching "${query}"</p>
                 <div class="suggestions">
                     <p><strong>Try searching for:</strong></p>
                     ${suggestions.map(s => `<div class="suggestion-chip" data-search="${s}" role="button" tabindex="0">${s}</div>`).join('')}
                 </div>
-                <p style="margin-top: 2rem;">
+                <p style="margin-top: 1.5rem;">
                     <a href="https://github.com/lavinigam-gcp/adk-by-example/issues/new?title=Request:%20${encodeURIComponent(query)}"
                        target="_blank"
                        rel="noopener noreferrer"
@@ -1357,21 +1278,14 @@
             const noResults = document.getElementById('no-results');
             if (noResults) {
                 noResults.remove();
-            }
-        }
-
-        // Update search UI elements
-        function updateSearchUI(query, visibleCount, totalCount) {
-            const resultsCount = document.getElementById('search-results-count');
-            const clearButton = document.getElementById('search-clear');
-
-            if (query === '' && !activeTagFilter) {
-                resultsCount.textContent = '';
-                clearButton.classList.remove('visible');
-            } else {
-                const filterText = activeTagFilter ? ` in ${activeTagFilter}` : '';
-                resultsCount.textContent = `Showing ${visibleCount} of ${totalCount} examples${filterText}`;
-                clearButton.classList.add('visible');
+                // Show all categories again
+                document.querySelectorAll('.category').forEach(cat => {
+                    if (activeCategory === 'all') {
+                        cat.classList.add('active');
+                    } else {
+                        cat.classList.toggle('active', cat.dataset.categoryName === activeCategory);
+                    }
+                });
             }
         }
 
