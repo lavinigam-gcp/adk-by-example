@@ -1,0 +1,40 @@
+{
+  "title": "Local Ollama",
+  "jtbd": "When I want offline development, I need local models",
+  "tech_stack": [
+    {
+      "name": "Ollama",
+      "provider": "oss",
+      "icon": "\ud83e\udd99",
+      "description": "Local LLM runtime for offline development"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "ADK agent with local Ollama backend"
+    }
+  ],
+  "description": "Run LLMs locally with Ollama for offline development and testing",
+  "difficulty": "beginner",
+  "tags": [
+    "llm",
+    "ollama",
+    "local",
+    "offline"
+  ],
+  "related": [],
+  "source_sample": "hello_world_ollama",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "8 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "medium",
+  "sprint": 3
+}

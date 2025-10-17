@@ -1,6 +1,26 @@
 {
   "title": "Structure Output with Pydantic",
   "jtbd": "When I need predictable response format, I need structured output",
+  "tech_stack": [
+    {
+      "name": "Pydantic",
+      "provider": "oss",
+      "icon": "📋",
+      "description": "Python data validation using type hints"
+    },
+    {
+      "name": "output_schema",
+      "provider": "adk",
+      "icon": "🔧",
+      "description": "ADK's structured output feature for guaranteed JSON format"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🤖",
+      "description": "ADK's intelligent agent with schema validation"
+    }
+  ],
   "description": "Use Pydantic models to ensure agents return structured, validated JSON data",
   "difficulty": "beginner",
   "tags": ["getting-started", "pydantic", "structured-output", "json", "validation"],

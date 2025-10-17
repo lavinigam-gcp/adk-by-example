@@ -1,0 +1,46 @@
+{
+  "title": "Query Bigquery",
+  "jtbd": "When I need database access, I need to query BigQuery",
+  "tech_stack": [
+    {
+      "name": "BigQuery",
+      "provider": "gcp",
+      "icon": "\ud83d\udcca",
+      "description": "Google Cloud data warehouse"
+    },
+    {
+      "name": "FunctionTool",
+      "provider": "adk",
+      "icon": "\ud83d\udd27",
+      "description": "Wrap BigQuery queries as tools"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Agent that queries data on demand"
+    }
+  ],
+  "description": "Query BigQuery databases for data-driven agent responses",
+  "difficulty": "intermediate",
+  "tags": [
+    "database",
+    "bigquery",
+    "sql",
+    "gcp"
+  ],
+  "related": [],
+  "source_sample": "bigquery sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "12 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "medium",
+  "sprint": 3
+}

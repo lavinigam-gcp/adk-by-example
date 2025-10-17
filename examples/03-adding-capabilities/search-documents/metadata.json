@@ -1,0 +1,46 @@
+{
+  "title": "Search Documents",
+  "jtbd": "When I need enterprise RAG, I need document search capability",
+  "tech_stack": [
+    {
+      "name": "Vertex AI Search",
+      "provider": "gcp",
+      "icon": "\ud83d\udd0d",
+      "description": "Enterprise document search and grounding"
+    },
+    {
+      "name": "Grounding",
+      "provider": "adk",
+      "icon": "\ud83d\udcce",
+      "description": "Ground LLM responses in your documents"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Agent with enterprise RAG capabilities"
+    }
+  ],
+  "description": "Add Vertex AI Search for enterprise document grounding and RAG",
+  "difficulty": "advanced",
+  "tags": [
+    "rag",
+    "search",
+    "vertex-ai",
+    "grounding"
+  ],
+  "related": [],
+  "source_sample": "vertex_ai_search sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "15 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "high",
+  "sprint": 2
+}

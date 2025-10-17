@@ -1,0 +1,46 @@
+{
+  "title": "Custom Orchestration",
+  "jtbd": "When I need dynamic planning, I need custom orchestration logic",
+  "tech_stack": [
+    {
+      "name": "Custom Agent",
+      "provider": "adk",
+      "icon": "\ud83c\udf9b\ufe0f",
+      "description": "Build custom orchestration logic"
+    },
+    {
+      "name": "BaseAgent",
+      "provider": "adk",
+      "icon": "\ud83c\udfd7\ufe0f",
+      "description": "Extend BaseAgent for unique workflows"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Sub-agents in custom orchestration"
+    }
+  ],
+  "description": "Build custom orchestration with dynamic task planning and routing",
+  "difficulty": "advanced",
+  "tags": [
+    "custom",
+    "planning",
+    "orchestration",
+    "dynamic"
+  ],
+  "related": [],
+  "source_sample": "custom_agent sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "20 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "high",
+  "sprint": 2
+}

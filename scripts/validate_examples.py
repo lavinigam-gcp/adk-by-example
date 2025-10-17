@@ -64,7 +64,7 @@ def validate_metadata(example_path: Path) -> Tuple[bool, str]:
         with open(metadata_file, 'r') as f:
             metadata = json.load(f)
 
-        required_fields = ['title', 'jtbd', 'description', 'difficulty', 'tags']
+        required_fields = ['title', 'jtbd', 'description', 'difficulty', 'tags', 'tech_stack']
         missing_fields = []
 
         for field in required_fields:
@@ -79,7 +79,42 @@ def validate_metadata(example_path: Path) -> Tuple[bool, str]:
         if metadata.get('difficulty') not in valid_difficulties:
             return False, f"Invalid difficulty: {metadata.get('difficulty')}"
 
-        return True, "Metadata valid"
+        # Validate tech_stack structure
+        tech_stack = metadata.get('tech_stack', [])
+        if not isinstance(tech_stack, list):
+            return False, "tech_stack must be an array"
+
+        # Validate each tech_stack item
+        valid_providers = ['adk', 'gcp', 'third', 'oss']
+        for idx, tech in enumerate(tech_stack):
+            if not isinstance(tech, dict):
+                return False, f"tech_stack[{idx}] must be an object"
+
+            # Check required fields in each tech item
+            tech_required = ['name', 'provider', 'icon', 'description']
+            for tech_field in tech_required:
+                if tech_field not in tech:
+                    return False, f"tech_stack[{idx}] missing '{tech_field}'"
+
+            # Validate provider code
+            if tech.get('provider') not in valid_providers:
+                return False, f"tech_stack[{idx}] has invalid provider '{tech.get('provider')}'. Valid: {', '.join(valid_providers)}"
+
+        # Validate status if present (for coming_soon/planned examples)
+        if 'status' in metadata:
+            valid_statuses = ['ready', 'coming_soon', 'planned']
+            if metadata.get('status') not in valid_statuses:
+                return False, f"Invalid status: {metadata.get('status')}. Valid: {', '.join(valid_statuses)}"
+
+            # If status is coming_soon, recommend priority and sprint
+            if metadata.get('status') in ['coming_soon', 'planned']:
+                if 'priority' not in metadata or 'sprint' not in metadata:
+                    # This is a warning, not a failure
+                    pass
+
+        tech_count = len(tech_stack)
+        status = metadata.get('status', 'ready')
+        return True, f"Metadata valid (tech_stack: {tech_count}, status: {status})"
 
     except json.JSONDecodeError as e:
         return False, f"Invalid JSON in metadata: {e}"

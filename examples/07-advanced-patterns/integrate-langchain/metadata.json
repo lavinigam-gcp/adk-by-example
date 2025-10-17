@@ -1,0 +1,45 @@
+{
+  "title": "Integrate Langchain",
+  "jtbd": "When I want LangChain tools, I need LangChain integration",
+  "tech_stack": [
+    {
+      "name": "LangChain",
+      "provider": "oss",
+      "icon": "\u26d3\ufe0f",
+      "description": "Popular LLM framework"
+    },
+    {
+      "name": "LangchainTool",
+      "provider": "adk",
+      "icon": "\ud83d\udd27",
+      "description": "Wrapper for LangChain tools"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "ADK agent using LangChain tools"
+    }
+  ],
+  "description": "Use LangChain tools within ADK agents via LangchainTool wrapper",
+  "difficulty": "advanced",
+  "tags": [
+    "langchain",
+    "integration",
+    "tools"
+  ],
+  "related": [],
+  "source_sample": "langchain_tool sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "12 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "low",
+  "sprint": 4
+}

@@ -1,0 +1,46 @@
+{
+  "title": "Persist To Firestore",
+  "jtbd": "When I need durable storage, I need Firestore persistence",
+  "tech_stack": [
+    {
+      "name": "Firestore",
+      "provider": "gcp",
+      "icon": "\ud83d\udd25",
+      "description": "NoSQL database for state persistence"
+    },
+    {
+      "name": "Session State",
+      "provider": "adk",
+      "icon": "\ud83d\udcbe",
+      "description": "Persist agent state to database"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Agent with durable memory"
+    }
+  ],
+  "description": "Store agent state persistently in Firestore for durability",
+  "difficulty": "intermediate",
+  "tags": [
+    "firestore",
+    "persistence",
+    "storage",
+    "gcp"
+  ],
+  "related": [],
+  "source_sample": "firestore_state sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "12 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "medium",
+  "sprint": 3
+}

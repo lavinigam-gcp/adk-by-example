@@ -1,6 +1,14 @@
 {
   "title": "Craft Effective Instructions",
   "jtbd": "When my agent gives wrong responses, I need to write better instructions",
+  "tech_stack": [
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🤖",
+      "description": "ADK's intelligent agent with customizable instructions"
+    }
+  ],
   "description": "Learn different instruction patterns to shape agent behavior - from simple to comprehensive",
   "difficulty": "beginner",
   "tags": ["getting-started", "instructions", "prompts", "agent-behavior"],

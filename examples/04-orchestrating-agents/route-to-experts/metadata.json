@@ -1,0 +1,46 @@
+{
+  "title": "Route To Experts",
+  "jtbd": "When I need multiple agents collaborating, I need specialist routing",
+  "tech_stack": [
+    {
+      "name": "AgentTool",
+      "provider": "adk",
+      "icon": "🤖",
+      "description": "Use agents as tools for delegation and routing"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🧠",
+      "description": "Main coordinator with reasoning capabilities"
+    },
+    {
+      "name": "Session State",
+      "provider": "adk",
+      "icon": "💾",
+      "description": "Share data between specialist agents"
+    }
+  ],
+  "description": "Build a multi-agent system with coordinator routing to specialist agents",
+  "difficulty": "intermediate",
+  "tags": [
+    "multi-agent",
+    "orchestration",
+    "agent-tool",
+    "delegation"
+  ],
+  "related": [],
+  "source_sample": "multi_agent_llm_config",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "12 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "critical",
+  "sprint": 1
+}

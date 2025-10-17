@@ -1,0 +1,45 @@
+{
+  "title": "Handle Errors",
+  "jtbd": "When things fail, I need robust error handling",
+  "tech_stack": [
+    {
+      "name": "Callbacks",
+      "provider": "adk",
+      "icon": "\ud83d\udd14",
+      "description": "Event handlers for errors"
+    },
+    {
+      "name": "Try/Catch",
+      "provider": "adk",
+      "icon": "\ud83d\udee1\ufe0f",
+      "description": "Error handling patterns"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Resilient agent with error handling"
+    }
+  ],
+  "description": "Implement robust error handling patterns with try/catch and callbacks",
+  "difficulty": "intermediate",
+  "tags": [
+    "error-handling",
+    "callbacks",
+    "resilience"
+  ],
+  "related": [],
+  "source_sample": "error_handling best practices",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "10 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "medium",
+  "sprint": 3
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Parallel Research",
+  "jtbd": "When I need concurrent execution, I need parallel agents",
+  "tech_stack": [
+    {
+      "name": "Parallel Execution",
+      "provider": "adk",
+      "icon": "⚡",
+      "description": "Run multiple agents concurrently with asyncio"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🧠",
+      "description": "Independent research agents running in parallel"
+    }
+  ],
+  "description": "Execute multiple agents in parallel for concurrent research and data gathering",
+  "difficulty": "intermediate",
+  "tags": [
+    "parallel",
+    "concurrent",
+    "fan-out"
+  ],
+  "related": [],
+  "source_sample": "parallel_functions",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "10 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "critical",
+  "sprint": 1
+}

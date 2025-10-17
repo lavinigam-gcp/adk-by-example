@@ -1,0 +1,45 @@
+{
+  "title": "Execute Code",
+  "jtbd": "When I need computation, I need safe code execution",
+  "tech_stack": [
+    {
+      "name": "Code Execution",
+      "provider": "adk",
+      "icon": "\u2699\ufe0f",
+      "description": "Safe Python code execution sandbox"
+    },
+    {
+      "name": "FunctionTool",
+      "provider": "adk",
+      "icon": "\ud83d\udd27",
+      "description": "Wrap code execution as a tool"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Agent that generates and runs code"
+    }
+  ],
+  "description": "Execute Python code safely for calculations and data processing",
+  "difficulty": "intermediate",
+  "tags": [
+    "code-execution",
+    "computation",
+    "sandbox"
+  ],
+  "related": [],
+  "source_sample": "code_execution sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "10 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "medium",
+  "sprint": 3
+}

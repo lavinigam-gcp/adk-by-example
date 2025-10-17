@@ -1,0 +1,45 @@
+{
+  "title": "Stream Responses",
+  "jtbd": "When I need real-time updates, I need streaming responses",
+  "tech_stack": [
+    {
+      "name": "Streaming",
+      "provider": "adk",
+      "icon": "\ud83d\udce1",
+      "description": "Real-time bidirectional streaming"
+    },
+    {
+      "name": "WebSocket",
+      "provider": "oss",
+      "icon": "\ud83d\udd0c",
+      "description": "Live connection for streaming"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Agent with streaming responses"
+    }
+  ],
+  "description": "Implement bidirectional streaming for real-time agent responses",
+  "difficulty": "advanced",
+  "tags": [
+    "streaming",
+    "realtime",
+    "websocket"
+  ],
+  "related": [],
+  "source_sample": "live_bidi_streaming_single_agent",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "15 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "medium",
+  "sprint": 3
+}

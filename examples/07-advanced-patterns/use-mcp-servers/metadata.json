@@ -1,0 +1,45 @@
+{
+  "title": "Use Mcp Servers",
+  "jtbd": "When I want to use MCP tools, I need MCP integration",
+  "tech_stack": [
+    {
+      "name": "MCP Protocol",
+      "provider": "third",
+      "icon": "\ud83d\udd0c",
+      "description": "Model Context Protocol standard"
+    },
+    {
+      "name": "MCPToolset",
+      "provider": "adk",
+      "icon": "\ud83e\uddf0",
+      "description": "Integrate MCP servers and tools"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Agent using MCP tools"
+    }
+  ],
+  "description": "Integrate Model Context Protocol (MCP) servers and tools",
+  "difficulty": "advanced",
+  "tags": [
+    "mcp",
+    "protocol",
+    "tools"
+  ],
+  "related": [],
+  "source_sample": "mcp_integration sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "15 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "low",
+  "sprint": 4
+}

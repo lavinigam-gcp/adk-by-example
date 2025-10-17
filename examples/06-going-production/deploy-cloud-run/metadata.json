@@ -1,0 +1,46 @@
+{
+  "title": "Deploy Cloud Run",
+  "jtbd": "When I need serverless deployment, I need Cloud Run integration",
+  "tech_stack": [
+    {
+      "name": "Cloud Run",
+      "provider": "gcp",
+      "icon": "☁️",
+      "description": "Serverless container hosting platform"
+    },
+    {
+      "name": "Dockerfile",
+      "provider": "oss",
+      "icon": "🐳",
+      "description": "Container configuration for deployment"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🧠",
+      "description": "Your ADK agent to deploy"
+    }
+  ],
+  "description": "Deploy your agent to Cloud Run for serverless production hosting",
+  "difficulty": "intermediate",
+  "tags": [
+    "cloud-run",
+    "deployment",
+    "production",
+    "gcp"
+  ],
+  "related": [],
+  "source_sample": "cloud_run deployment docs",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "15 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "critical",
+  "sprint": 1
+}

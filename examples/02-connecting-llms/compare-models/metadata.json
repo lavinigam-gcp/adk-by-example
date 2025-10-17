@@ -1,0 +1,46 @@
+{
+  "title": "Compare Models",
+  "jtbd": "When I need to choose the right model, I need comparison framework",
+  "tech_stack": [
+    {
+      "name": "LiteLLM",
+      "provider": "oss",
+      "icon": "\ud83d\udd00",
+      "description": "Unified interface to 100+ LLM providers"
+    },
+    {
+      "name": "Multiple LLMs",
+      "provider": "third",
+      "icon": "\ud83c\udfaf",
+      "description": "Compare Gemini, Claude, GPT side-by-side"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "ADK agents for evaluation tasks"
+    }
+  ],
+  "description": "Compare multiple LLM providers using LiteLLM for best model selection",
+  "difficulty": "advanced",
+  "tags": [
+    "llm",
+    "litellm",
+    "comparison",
+    "evaluation"
+  ],
+  "related": [],
+  "source_sample": "LiteLLM documentation",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "15 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "low",
+  "sprint": 4
+}

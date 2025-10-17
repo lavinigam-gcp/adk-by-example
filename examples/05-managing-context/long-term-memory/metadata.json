@@ -1,0 +1,46 @@
+{
+  "title": "Long Term Memory",
+  "jtbd": "When I need memory across sessions, I need Memory Bank",
+  "tech_stack": [
+    {
+      "name": "Memory Bank",
+      "provider": "gcp",
+      "icon": "\ud83e\udde0",
+      "description": "Vertex AI long-term memory storage"
+    },
+    {
+      "name": "Session State",
+      "provider": "adk",
+      "icon": "\ud83d\udcbe",
+      "description": "Bridge to Memory Bank"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udd16",
+      "description": "Agent with persistent memory"
+    }
+  ],
+  "description": "Use Vertex AI Memory Bank for long-term agent memory",
+  "difficulty": "advanced",
+  "tags": [
+    "memory-bank",
+    "vertex-ai",
+    "long-term",
+    "memory"
+  ],
+  "related": [],
+  "source_sample": "memory_bank sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "15 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "low",
+  "sprint": 4
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Share Between Agents",
+  "jtbd": "When agents need to pass data, I need shared session state",
+  "tech_stack": [
+    {
+      "name": "Session State",
+      "provider": "adk",
+      "icon": "\ud83d\udcbe",
+      "description": "Shared state dictionary for agents"
+    },
+    {
+      "name": "output_key",
+      "provider": "adk",
+      "icon": "\ud83d\udd11",
+      "description": "Store agent results in state"
+    },
+    {
+      "name": "Multi-Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udd1d",
+      "description": "Agents sharing data via state"
+    }
+  ],
+  "description": "Share data between agents using shared session state",
+  "difficulty": "intermediate",
+  "tags": [
+    "session-state",
+    "shared-state",
+    "multi-agent"
+  ],
+  "related": [],
+  "source_sample": "session_state_agent",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "10 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "high",
+  "sprint": 2
+}

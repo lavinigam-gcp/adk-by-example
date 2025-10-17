@@ -1,0 +1,46 @@
+{
+  "title": "Use Vertex Ai",
+  "jtbd": "When I need production Gemini, I need Vertex AI integration",
+  "tech_stack": [
+    {
+      "name": "Vertex AI",
+      "provider": "gcp",
+      "icon": "\ud83d\udd37",
+      "description": "Enterprise-grade Gemini deployment platform"
+    },
+    {
+      "name": "Service Account",
+      "provider": "gcp",
+      "icon": "\ud83d\udd11",
+      "description": "GCP authentication for production"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "ADK agent with Vertex AI backend"
+    }
+  ],
+  "description": "Production-ready Gemini deployment with Vertex AI and service accounts",
+  "difficulty": "intermediate",
+  "tags": [
+    "llm",
+    "gemini",
+    "vertex-ai",
+    "production"
+  ],
+  "related": [],
+  "source_sample": "vertex_ai_agent",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "10 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "high",
+  "sprint": 2
+}

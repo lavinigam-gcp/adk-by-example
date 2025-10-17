@@ -31,6 +31,14 @@ def load_example_metadata(example_path: Path) -> Dict[str, Any]:
         metadata['github_url'] = f"https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/{category}/{example_path.name}"
         metadata['command'] = f"adk web # Select '{example_path.name.replace('-', '_')}'"
 
+        # Ensure tech_stack field exists (even if empty) for consistent schema
+        if 'tech_stack' not in metadata:
+            metadata['tech_stack'] = []
+
+        # Ensure status field exists (default to 'ready')
+        if 'status' not in metadata:
+            metadata['status'] = 'ready'
+
         return metadata
     except Exception as e:
         print(f"Warning: Could not load metadata for {example_path}: {e}")

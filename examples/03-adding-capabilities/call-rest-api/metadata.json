@@ -1,0 +1,46 @@
+{
+  "title": "Call Rest Api",
+  "jtbd": "When I need to integrate APIs, I need REST API calling capability",
+  "tech_stack": [
+    {
+      "name": "FunctionTool",
+      "provider": "adk",
+      "icon": "🔧",
+      "description": "Wrap Python functions as agent tools"
+    },
+    {
+      "name": "requests",
+      "provider": "oss",
+      "icon": "🌐",
+      "description": "HTTP library for API calls"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🧠",
+      "description": "Agent that decides when to call APIs"
+    }
+  ],
+  "description": "Integrate with any REST API using FunctionTool for data access",
+  "difficulty": "intermediate",
+  "tags": [
+    "api",
+    "rest",
+    "function-tool",
+    "integration"
+  ],
+  "related": [],
+  "source_sample": "jira_agent",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "10 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "high",
+  "sprint": 1
+}

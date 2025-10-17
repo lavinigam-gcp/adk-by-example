@@ -1,6 +1,14 @@
 {
   "title": "Use YAML Configuration",
   "jtbd": "When I want to iterate without code, I need YAML configuration",
+  "tech_stack": [
+    {
+      "name": "Agent Config",
+      "provider": "adk",
+      "icon": "📄",
+      "description": "ADK's YAML-based configuration for no-code agent creation"
+    }
+  ],
   "description": "Create a complete agent using only YAML configuration - no Python required",
   "difficulty": "beginner",
   "tags": ["getting-started", "yaml", "configuration", "no-code"],

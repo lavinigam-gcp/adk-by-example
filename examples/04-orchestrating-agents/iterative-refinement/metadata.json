@@ -1,0 +1,40 @@
+{
+  "title": "Iterative Refinement",
+  "jtbd": "When I want a critique agent reviewing output, I need loop patterns",
+  "tech_stack": [
+    {
+      "name": "Loop Agent",
+      "provider": "adk",
+      "icon": "🔄",
+      "description": "Iteratively refine output with feedback loops"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🧠",
+      "description": "Generator and critic agents in the loop"
+    }
+  ],
+  "description": "Use Loop Agent for iterative refinement with critic-reviewer pattern",
+  "difficulty": "advanced",
+  "tags": [
+    "loop",
+    "iterative",
+    "refinement",
+    "critique"
+  ],
+  "related": [],
+  "source_sample": "loop_agent sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "15 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "critical",
+  "sprint": 1
+}

@@ -1,6 +1,20 @@
 {
   "title": "Configure Model Parameters",
   "jtbd": "When I need specific output behavior, I need to tune model parameters",
+  "tech_stack": [
+    {
+      "name": "GenerateContentConfig",
+      "provider": "adk",
+      "icon": "⚙️",
+      "description": "ADK's configuration system for model parameters"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🤖",
+      "description": "ADK's intelligent agent with configurable behavior"
+    }
+  ],
   "description": "Control agent behavior with temperature, token limits, safety settings, and response format",
   "difficulty": "beginner",
   "tags": ["getting-started", "configuration", "temperature", "safety", "tokens"],

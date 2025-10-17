@@ -1,0 +1,46 @@
+{
+  "title": "Manage Artifacts",
+  "jtbd": "When I need to store files, I need artifact management",
+  "tech_stack": [
+    {
+      "name": "GCS Artifacts",
+      "provider": "gcp",
+      "icon": "\ud83d\udce6",
+      "description": "Google Cloud Storage for files"
+    },
+    {
+      "name": "Artifact Service",
+      "provider": "adk",
+      "icon": "\ud83d\udcc1",
+      "description": "Manage files and artifacts"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Agent that works with files"
+    }
+  ],
+  "description": "Store and retrieve files using GCS Artifacts and Artifact Service",
+  "difficulty": "intermediate",
+  "tags": [
+    "artifacts",
+    "files",
+    "gcs",
+    "storage"
+  ],
+  "related": [],
+  "source_sample": "gcs_artifacts sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "12 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "medium",
+  "sprint": 3
+}

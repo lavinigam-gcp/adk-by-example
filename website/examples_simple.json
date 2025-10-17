@@ -49,7 +49,81 @@
       "command": "adk web # Select 'use_yaml_config'"
     }
   ],
+  "Connecting to LLMs": [
+    {
+      "title": "Compare Models",
+      "jtbd": "When I need to choose the right model, I need comparison framework",
+      "description": "Compare multiple LLM providers using LiteLLM for best model selection",
+      "difficulty": "advanced",
+      "path": "02-connecting-llms/compare-models",
+      "command": "adk web # Select 'compare_models'"
+    },
+    {
+      "title": "Local Ollama",
+      "jtbd": "When I want offline development, I need local models",
+      "description": "Run LLMs locally with Ollama for offline development and testing",
+      "difficulty": "beginner",
+      "path": "02-connecting-llms/local-ollama",
+      "command": "adk web # Select 'local_ollama'"
+    },
+    {
+      "title": "Use Claude",
+      "jtbd": "When I prefer Anthropic models, I need Claude integration",
+      "description": "Integrate Anthropic's Claude models via direct API or LiteLLM",
+      "difficulty": "intermediate",
+      "path": "02-connecting-llms/use-claude",
+      "command": "adk web # Select 'use_claude'"
+    },
+    {
+      "title": "Use Gemini Free",
+      "jtbd": "When I want to start fast with free API, I need Google AI Studio",
+      "description": "Quick start with Gemini using free Google AI Studio API key",
+      "difficulty": "beginner",
+      "path": "02-connecting-llms/use-gemini-free",
+      "command": "adk web # Select 'use_gemini_free'"
+    },
+    {
+      "title": "Use Vertex Ai",
+      "jtbd": "When I need production Gemini, I need Vertex AI integration",
+      "description": "Production-ready Gemini deployment with Vertex AI and service accounts",
+      "difficulty": "intermediate",
+      "path": "02-connecting-llms/use-vertex-ai",
+      "command": "adk web # Select 'use_vertex_ai'"
+    }
+  ],
   "Adding Capabilities": [
+    {
+      "title": "Call Rest Api",
+      "jtbd": "When I need to integrate APIs, I need REST API calling capability",
+      "description": "Integrate with any REST API using FunctionTool for data access",
+      "difficulty": "intermediate",
+      "path": "03-adding-capabilities/call-rest-api",
+      "command": "adk web # Select 'call_rest_api'"
+    },
+    {
+      "title": "Execute Code",
+      "jtbd": "When I need computation, I need safe code execution",
+      "description": "Execute Python code safely for calculations and data processing",
+      "difficulty": "intermediate",
+      "path": "03-adding-capabilities/execute-code",
+      "command": "adk web # Select 'execute_code'"
+    },
+    {
+      "title": "Query Bigquery",
+      "jtbd": "When I need database access, I need to query BigQuery",
+      "description": "Query BigQuery databases for data-driven agent responses",
+      "difficulty": "intermediate",
+      "path": "03-adding-capabilities/query-bigquery",
+      "command": "adk web # Select 'query_bigquery'"
+    },
+    {
+      "title": "Search Documents",
+      "jtbd": "When I need enterprise RAG, I need document search capability",
+      "description": "Add Vertex AI Search for enterprise document grounding and RAG",
+      "difficulty": "advanced",
+      "path": "03-adding-capabilities/search-documents",
+      "command": "adk web # Select 'search_documents'"
+    },
     {
       "title": "Search Google for Answers",
       "jtbd": "When users ask questions, I need to search the web for current information",
@@ -57,6 +131,166 @@
       "difficulty": "beginner",
       "path": "03-adding-capabilities/search-google",
       "command": "adk web # Select 'search_google'"
+    }
+  ],
+  "Orchestrating Agents": [
+    {
+      "title": "Custom Orchestration",
+      "jtbd": "When I need dynamic planning, I need custom orchestration logic",
+      "description": "Build custom orchestration with dynamic task planning and routing",
+      "difficulty": "advanced",
+      "path": "04-orchestrating-agents/custom-orchestration",
+      "command": "adk web # Select 'custom_orchestration'"
+    },
+    {
+      "title": "Iterative Refinement",
+      "jtbd": "When I want a critique agent reviewing output, I need loop patterns",
+      "description": "Use Loop Agent for iterative refinement with critic-reviewer pattern",
+      "difficulty": "advanced",
+      "path": "04-orchestrating-agents/iterative-refinement",
+      "command": "adk web # Select 'iterative_refinement'"
+    },
+    {
+      "title": "Parallel Research",
+      "jtbd": "When I need concurrent execution, I need parallel agents",
+      "description": "Execute multiple agents in parallel for concurrent research and data gathering",
+      "difficulty": "intermediate",
+      "path": "04-orchestrating-agents/parallel-research",
+      "command": "adk web # Select 'parallel_research'"
+    },
+    {
+      "title": "Process Pipeline",
+      "jtbd": "When my workflow is always the same, I need sequential processing",
+      "description": "Create deterministic pipelines with Sequential Agent for step-by-step workflows",
+      "difficulty": "intermediate",
+      "path": "04-orchestrating-agents/process-pipeline",
+      "command": "adk web # Select 'process_pipeline'"
+    },
+    {
+      "title": "Route To Experts",
+      "jtbd": "When I need multiple agents collaborating, I need specialist routing",
+      "description": "Build a multi-agent system with coordinator routing to specialist agents",
+      "difficulty": "intermediate",
+      "path": "04-orchestrating-agents/route-to-experts",
+      "command": "adk web # Select 'route_to_experts'"
+    }
+  ],
+  "Managing State & Context": [
+    {
+      "title": "Chat With History",
+      "jtbd": "When I need conversation memory, I need session state management",
+      "description": "Maintain conversation history and context across multiple turns",
+      "difficulty": "beginner",
+      "path": "05-managing-context/chat-with-history",
+      "command": "adk web # Select 'chat_with_history'"
+    },
+    {
+      "title": "Long Term Memory",
+      "jtbd": "When I need memory across sessions, I need Memory Bank",
+      "description": "Use Vertex AI Memory Bank for long-term agent memory",
+      "difficulty": "advanced",
+      "path": "05-managing-context/long-term-memory",
+      "command": "adk web # Select 'long_term_memory'"
+    },
+    {
+      "title": "Manage Artifacts",
+      "jtbd": "When I need to store files, I need artifact management",
+      "description": "Store and retrieve files using GCS Artifacts and Artifact Service",
+      "difficulty": "intermediate",
+      "path": "05-managing-context/manage-artifacts",
+      "command": "adk web # Select 'manage_artifacts'"
+    },
+    {
+      "title": "Persist To Firestore",
+      "jtbd": "When I need durable storage, I need Firestore persistence",
+      "description": "Store agent state persistently in Firestore for durability",
+      "difficulty": "intermediate",
+      "path": "05-managing-context/persist-to-firestore",
+      "command": "adk web # Select 'persist_to_firestore'"
+    },
+    {
+      "title": "Share Between Agents",
+      "jtbd": "When agents need to pass data, I need shared session state",
+      "description": "Share data between agents using shared session state",
+      "difficulty": "intermediate",
+      "path": "05-managing-context/share-between-agents",
+      "command": "adk web # Select 'share_between_agents'"
+    }
+  ],
+  "Going to Production": [
+    {
+      "title": "Add Monitoring",
+      "jtbd": "When I need observability, I need monitoring and telemetry",
+      "description": "Add OpenTelemetry monitoring for production observability",
+      "difficulty": "intermediate",
+      "path": "06-going-production/add-monitoring",
+      "command": "adk web # Select 'add_monitoring'"
+    },
+    {
+      "title": "Deploy Cloud Run",
+      "jtbd": "When I need serverless deployment, I need Cloud Run integration",
+      "description": "Deploy your agent to Cloud Run for serverless production hosting",
+      "difficulty": "intermediate",
+      "path": "06-going-production/deploy-cloud-run",
+      "command": "adk web # Select 'deploy_cloud_run'"
+    },
+    {
+      "title": "Expose Via A2A",
+      "jtbd": "When my agents need to be exposed to world, I need A2A protocol",
+      "description": "Expose your agent as an A2A microservice for world accessibility",
+      "difficulty": "intermediate",
+      "path": "06-going-production/expose-via-a2a",
+      "command": "adk web # Select 'expose_via_a2a'"
+    },
+    {
+      "title": "Handle Errors",
+      "jtbd": "When things fail, I need robust error handling",
+      "description": "Implement robust error handling patterns with try/catch and callbacks",
+      "difficulty": "intermediate",
+      "path": "06-going-production/handle-errors",
+      "command": "adk web # Select 'handle_errors'"
+    },
+    {
+      "title": "Use Remote A2A",
+      "jtbd": "When I need to call remote agents, I need A2A client",
+      "description": "Consume remote A2A agents as tools in your agent",
+      "difficulty": "intermediate",
+      "path": "06-going-production/use-remote-a2a",
+      "command": "adk web # Select 'use_remote_a2a'"
+    }
+  ],
+  "Advanced Patterns": [
+    {
+      "title": "Human Approval",
+      "jtbd": "When I need manual approval, I need human-in-the-loop pattern",
+      "description": "Add human approval steps to agent workflows for safety",
+      "difficulty": "intermediate",
+      "path": "07-advanced-patterns/human-approval",
+      "command": "adk web # Select 'human_approval'"
+    },
+    {
+      "title": "Integrate Langchain",
+      "jtbd": "When I want LangChain tools, I need LangChain integration",
+      "description": "Use LangChain tools within ADK agents via LangchainTool wrapper",
+      "difficulty": "advanced",
+      "path": "07-advanced-patterns/integrate-langchain",
+      "command": "adk web # Select 'integrate_langchain'"
+    },
+    {
+      "title": "Stream Responses",
+      "jtbd": "When I need real-time updates, I need streaming responses",
+      "description": "Implement bidirectional streaming for real-time agent responses",
+      "difficulty": "advanced",
+      "path": "07-advanced-patterns/stream-responses",
+      "command": "adk web # Select 'stream_responses'"
+    },
+    {
+      "title": "Use Mcp Servers",
+      "jtbd": "When I want to use MCP tools, I need MCP integration",
+      "description": "Integrate Model Context Protocol (MCP) servers and tools",
+      "difficulty": "advanced",
+      "path": "07-advanced-patterns/use-mcp-servers",
+      "command": "adk web # Select 'use_mcp_servers'"
     }
   ]
 }

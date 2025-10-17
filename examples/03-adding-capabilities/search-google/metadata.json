@@ -1,6 +1,26 @@
 {
   "title": "Search Google for Answers",
   "jtbd": "When users ask questions, I need to search the web for current information",
+  "tech_stack": [
+    {
+      "name": "Google Search",
+      "provider": "gcp",
+      "icon": "🔍",
+      "description": "Google's search API for real-time web information"
+    },
+    {
+      "name": "FunctionTool",
+      "provider": "adk",
+      "icon": "🔧",
+      "description": "ADK's wrapper for exposing functions as agent tools"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🤖",
+      "description": "ADK's intelligent agent with tool-calling capabilities"
+    }
+  ],
   "description": "Add Google search capability to your agent for real-time information retrieval",
   "difficulty": "beginner",
   "tags": ["tools", "search", "google", "web", "research"],

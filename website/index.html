@@ -236,12 +236,7 @@
 
         /* Search Chips */
         .search-chips {
-            max-width: 700px;
-            margin: 0.8rem auto 0;
-            display: flex;
-            gap: 0.4rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: none;
         }
 
         .search-chip {
@@ -264,59 +259,123 @@
             transform: translateY(-1px);
         }
 
-        /* Category Tabs (replaces tag filters) */
-        .category-tabs {
+        /* Category Dropdown */
+        .category-selector {
             max-width: 1200px;
             margin: 1rem auto 0;
             padding: 0 20px;
-            display: flex;
-            gap: 0.4rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0;
         }
 
-        .category-tab {
-            background: transparent;
-            border: none;
-            border-bottom: 3px solid transparent;
-            padding: 0.7rem 1.2rem;
-            font-size: 0.9rem;
+        .category-dropdown-wrapper {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto 1rem;
+        }
+
+        #category-dropdown {
+            width: 100%;
+            padding: 0.8rem 2.5rem 0.8rem 1rem;
+            font-size: 1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg);
+            color: var(--text);
+            cursor: pointer;
+            appearance: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        #category-dropdown:hover {
+            border-color: var(--primary);
+        }
+
+        #category-dropdown:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+        }
+
+        .category-dropdown-wrapper::after {
+            content: '▾';
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+
+        /* Tech Stack Filters */
+        .tech-filters {
+            display: flex;
+            gap: 0.6rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .tech-filters-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tech-filter-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
+            user-select: none;
+            background: var(--bg);
             color: var(--text);
-            font-weight: 500;
-            position: relative;
-            bottom: -2px;
         }
 
-        .category-tab:hover {
-            color: var(--primary);
-            background: var(--bg-gray);
-            border-radius: var(--radius) var(--radius) 0 0;
+        .tech-filter-pill:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow);
         }
 
-        .category-tab.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-            font-weight: 600;
-        }
-
-        .category-tab .count {
-            display: inline-block;
-            background: var(--bg-gray);
-            color: var(--text-light);
-            padding: 0.1rem 0.4rem;
-            border-radius: 10px;
-            font-size: 0.75rem;
-            margin-left: 0.3rem;
-        }
-
-        .category-tab.active .count {
+        .tech-filter-pill.active {
             background: var(--primary);
+            border-color: var(--primary);
             color: white;
         }
+
+        .tech-filter-pill .count {
+            display: inline-block;
+            background: rgba(0,0,0,0.1);
+            padding: 0.1rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-left: 0.2rem;
+        }
+
+        .tech-filter-pill.active .count {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Provider-specific colors */
+        .tech-filter-pill[data-provider="adk"]:not(.active) { border-color: #4285f4; color: #4285f4; }
+        .tech-filter-pill[data-provider="gcp"]:not(.active) { border-color: #34a853; color: #34a853; }
+        .tech-filter-pill[data-provider="oss"]:not(.active) { border-color: #9c27b0; color: #9c27b0; }
+        .tech-filter-pill[data-provider="third"]:not(.active) { border-color: #fbbc04; color: #fbbc04; }
+
+        [data-theme="dark"] .tech-filter-pill[data-provider="adk"]:not(.active) { border-color: #8ab4f8; color: #8ab4f8; }
+        [data-theme="dark"] .tech-filter-pill[data-provider="gcp"]:not(.active) { border-color: #81c995; color: #81c995; }
+        [data-theme="dark"] .tech-filter-pill[data-provider="oss"]:not(.active) { border-color: #ce93d8; color: #ce93d8; }
+        [data-theme="dark"] .tech-filter-pill[data-provider="third"]:not(.active) { border-color: #ffc107; color: #ffc107; }
 
         /* Main Content */
         main {
@@ -360,16 +419,17 @@
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 1rem;
+            padding: 1.2rem;
             text-decoration: none;
             color: var(--text);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.6rem;
             position: relative;
             opacity: 0;
             animation: fadeInCard 0.5s ease-out forwards;
+            min-height: 220px;
         }
 
         .example-card:hover {
@@ -384,6 +444,10 @@
             margin: 0;
             line-height: 1.3;
             padding-right: 4.5rem;
+        }
+
+        .example-card.coming-soon h4 {
+            padding-top: 1.8rem;
         }
 
         .example-card .jtbd {
@@ -782,6 +846,114 @@
             white-space: nowrap;
             border-width: 0;
         }
+
+        /* Tech Stack Pills */
+        .tech-stack {
+            margin: 0.6rem 0;
+            padding: 0.7rem;
+            background: var(--bg-gray);
+            border-radius: 6px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .tech-label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .tech-pills {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.35rem 0.6rem;
+            background: var(--bg);
+            border: 1.5px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .tech-pill:hover {
+            border-color: var(--primary);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px var(--shadow);
+        }
+
+        .pill-prefix {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .pill-icon {
+            font-size: 0.85rem;
+            line-height: 1;
+        }
+
+        .pill-text {
+            color: var(--text);
+        }
+
+        /* Provider-specific styling */
+        .tech-pill.adk { border-color: #4285f4; }
+        .tech-pill.gcp { border-color: #34a853; }
+        .tech-pill.third { border-color: #fbbc04; }
+        .tech-pill.oss { border-color: #9c27b0; }
+
+        [data-theme="dark"] .tech-pill.adk { border-color: #8ab4f8; }
+        [data-theme="dark"] .tech-pill.gcp { border-color: #81c995; }
+        [data-theme="dark"] .tech-pill.third { border-color: #ffc107; }
+        [data-theme="dark"] .tech-pill.oss { border-color: #ce93d8; }
+
+        /* Coming Soon Badge - Corner Ribbon */
+        .status-badge.coming-soon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+            color: #664d03;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            z-index: 3;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            border-bottom-right-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-right: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] .status-badge.coming-soon {
+            background: linear-gradient(135deg, #f9a825 0%, #f57f17 100%);
+            color: #000;
+            border-right: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .example-card.coming-soon {
+            opacity: 0.88;
+            border: 2px dashed var(--border);
+        }
+
+        .example-card.coming-soon:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -831,8 +1003,17 @@
             <div class="search-chips" id="search-chips" role="group" aria-label="Quick search suggestions"></div>
         </div>
 
-        <!-- Category Tabs (replaces tag filters) -->
-        <div class="category-tabs" id="category-tabs" role="tablist" aria-label="Example categories"></div>
+        <!-- Category Selector & Tech Stack Filters -->
+        <div class="category-selector">
+            <div class="category-dropdown-wrapper">
+                <select id="category-dropdown" aria-label="Select category">
+                    <option value="all">📂 All Categories (35)</option>
+                </select>
+            </div>
+            <div class="tech-filters" id="tech-filters">
+                <span class="tech-filters-label">🔧 Tech Stack:</span>
+            </div>
+        </div>
     </nav>
 
     <main class="container" id="main-content" role="main">
@@ -926,6 +1107,7 @@
         let allExamplesData = null;
         let currentQuery = '';
         let activeCategory = 'all';
+        let activeTechFilters = new Set(); // Track active tech stack filters
 
         // Popular search queries
         const POPULAR_SEARCHES = [
@@ -954,15 +1136,21 @@
             });
         }
 
-        // Switch category tabs
+        // Clear all tech filters
+        function clearAllFilters() {
+            activeTechFilters.clear();
+            document.querySelectorAll('.tech-filter-pill').forEach(pill => {
+                pill.classList.remove('active');
+            });
+        }
+
+        // Switch category (dropdown version)
         function switchCategory(categoryName) {
             activeCategory = categoryName;
 
-            // Update tab states
-            document.querySelectorAll('.category-tab').forEach(tab => {
-                tab.classList.toggle('active', tab.dataset.category === categoryName);
-                tab.setAttribute('aria-selected', tab.dataset.category === categoryName);
-            });
+            // Update dropdown value
+            const dropdown = document.getElementById('category-dropdown');
+            if (dropdown) dropdown.value = categoryName;
 
             // Show/hide categories
             document.querySelectorAll('.category').forEach(cat => {
@@ -973,7 +1161,75 @@
                 }
             });
 
-            // Update results count
+            // Apply combined filters
+            applyFilters();
+        }
+
+        // Toggle tech stack filter
+        function toggleTechFilter(provider) {
+            if (activeTechFilters.has(provider)) {
+                activeTechFilters.delete(provider);
+            } else {
+                activeTechFilters.add(provider);
+            }
+
+            // Update pill active states
+            document.querySelectorAll('.tech-filter-pill').forEach(pill => {
+                pill.classList.toggle('active', activeTechFilters.has(pill.dataset.provider));
+            });
+
+            // Apply combined filters
+            applyFilters();
+        }
+
+        // Apply all filters (category + tech stack + search)
+        function applyFilters() {
+            const cards = document.querySelectorAll('.example-card');
+
+            cards.forEach(card => {
+                let shouldShow = true;
+
+                // Filter by category
+                if (activeCategory !== 'all') {
+                    const cardCategory = card.dataset.category;
+                    if (cardCategory !== activeCategory) {
+                        shouldShow = false;
+                    }
+                }
+
+                // Filter by tech stack (OR logic - show if has ANY of the selected techs)
+                if (shouldShow && activeTechFilters.size > 0) {
+                    const cardTechStacks = card.dataset.techProviders ? card.dataset.techProviders.split(',') : [];
+                    const hasMatchingTech = cardTechStacks.some(tech => activeTechFilters.has(tech.trim()));
+                    if (!hasMatchingTech) {
+                        shouldShow = false;
+                    }
+                }
+
+                // Filter by search query
+                if (shouldShow && currentQuery) {
+                    const cleanQuery = currentQuery.toLowerCase().trim()
+                        .replace(/^(i want to|i need to|i'm trying to|how do i|how to)\s+/i, '');
+
+                    if (cleanQuery) {
+                        const jtbd = card.dataset.jtbd || '';
+                        const title = card.dataset.title || '';
+                        const description = card.dataset.description || '';
+                        const tags = card.dataset.tags || '';
+
+                        const matchesSearch = jtbd.includes(cleanQuery) ||
+                                            title.includes(cleanQuery) ||
+                                            description.includes(cleanQuery) ||
+                                            tags.includes(cleanQuery);
+                        if (!matchesSearch) {
+                            shouldShow = false;
+                        }
+                    }
+                }
+
+                card.style.display = shouldShow ? 'flex' : 'none';
+            });
+
             updateResultsCount();
         }
 
@@ -987,7 +1243,8 @@
                 if (card.style.display !== 'none') visibleCount++;
             });
 
-            if (currentQuery === '' && activeCategory === 'all') {
+            // Only show count if filters are active
+            if (currentQuery === '' && activeCategory === 'all' && activeTechFilters.size === 0) {
                 resultsCount.textContent = '';
                 clearButton.classList.remove('visible');
             } else {
@@ -1016,30 +1273,55 @@
             // Use examples_by_category if available
             const categoriesData = data.examples_by_category || data;
 
-            // Build category tabs
-            const tabsContainer = document.getElementById('category-tabs');
+            // Build category dropdown
+            const dropdown = document.getElementById('category-dropdown');
             const categories = Object.keys(categoriesData);
 
-            // Add "All" tab
-            const allTab = document.createElement('button');
-            allTab.className = 'category-tab active';
-            allTab.dataset.category = 'all';
-            allTab.setAttribute('role', 'tab');
-            allTab.setAttribute('aria-selected', 'true');
-            allTab.innerHTML = `All <span class="count">${data.total_examples}</span>`;
-            allTab.addEventListener('click', () => switchCategory('all'));
-            tabsContainer.appendChild(allTab);
-
-            // Add category tabs
+            // Clear and rebuild dropdown options
+            dropdown.innerHTML = `<option value="all">📂 All Categories (${data.total_examples})</option>`;
             categories.forEach(category => {
-                const tab = document.createElement('button');
-                tab.className = 'category-tab';
-                tab.dataset.category = category;
-                tab.setAttribute('role', 'tab');
-                tab.setAttribute('aria-selected', 'false');
-                tab.innerHTML = `${category} <span class="count">${categoriesData[category].length}</span>`;
-                tab.addEventListener('click', () => switchCategory(category));
-                tabsContainer.appendChild(tab);
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = `${category} (${categoriesData[category].length})`;
+                dropdown.appendChild(option);
+            });
+
+            // Add dropdown change event
+            dropdown.addEventListener('change', (e) => switchCategory(e.target.value));
+
+            // Calculate tech stack provider counts
+            const techCounts = { adk: 0, gcp: 0, oss: 0, third: 0 };
+            data.examples.forEach(example => {
+                if (example.tech_stack && example.tech_stack.length > 0) {
+                    example.tech_stack.forEach(tech => {
+                        if (techCounts.hasOwnProperty(tech.provider)) {
+                            techCounts[tech.provider]++;
+                        }
+                    });
+                }
+            });
+
+            // Build tech filter pills
+            const filtersContainer = document.getElementById('tech-filters');
+            const techFilters = [
+                { provider: 'adk', label: 'ADK', icon: '🧠' },
+                { provider: 'gcp', label: 'GCP', icon: '☁️' },
+                { provider: 'oss', label: 'OSS', icon: '⚙️' },
+                { provider: 'third', label: '3rd Party', icon: '🔌' }
+            ];
+
+            techFilters.forEach(filter => {
+                const pill = document.createElement('div');
+                pill.className = 'tech-filter-pill'; // Start inactive (no .active class)
+                pill.dataset.provider = filter.provider;
+                pill.innerHTML = `${filter.icon} ${filter.label} <span class="count">${techCounts[filter.provider]}</span>`;
+                pill.addEventListener('click', () => toggleTechFilter(filter.provider));
+                filtersContainer.appendChild(pill);
+            });
+
+            // Ensure all pills start in inactive state
+            document.querySelectorAll('.tech-filter-pill').forEach(pill => {
+                pill.classList.remove('active');
             });
 
             // Build category sections
@@ -1062,12 +1344,16 @@
                 examples.forEach((example, index) => {
                     const card = document.createElement('a');
                     card.href = example.github_url || `https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/${example.path}`;
-                    card.className = 'example-card';
+
+                    // Add coming-soon class if status is coming_soon
+                    card.className = example.status === 'coming_soon' ? 'example-card coming-soon' : 'example-card';
+
                     card.dataset.title = example.title.toLowerCase();
                     card.dataset.jtbd = example.jtbd.toLowerCase();
                     card.dataset.description = example.description.toLowerCase();
                     card.dataset.tags = (example.tags || []).join(' ').toLowerCase();
-                    card.dataset.category = example.category;
+                    card.dataset.category = example.category_name;
+                    card.dataset.techProviders = (example.tech_stack || []).map(t => t.provider).join(',');
                     card.setAttribute('aria-label', `${example.title} - ${example.jtbd}`);
 
                     // Build tag pills HTML
@@ -1079,13 +1365,44 @@
                     // Convert "5 minutes" to "5 min" for compact display
                     const timeToComplete = (example.time_to_complete || '5 min').replace(' minutes', ' min').replace(' minute', ' min');
 
+                    // Generate tech stack pills HTML
+                    const providerMap = {
+                        'adk': { prefix: '[ADK]', class: 'adk' },
+                        'gcp': { prefix: '[GCP]', class: 'gcp' },
+                        'third': { prefix: '[3rd]', class: 'third' },
+                        'oss': { prefix: '[OSS]', class: 'oss' }
+                    };
+
+                    const techStackHTML = (example.tech_stack && example.tech_stack.length > 0)
+                        ? `<div class="tech-stack">
+                             <span class="tech-label">🔧 Tech Stack:</span>
+                             <div class="tech-pills">
+                               ${example.tech_stack.map(tech => {
+                                 const provider = providerMap[tech.provider] || providerMap['third'];
+                                 return `<span class="tech-pill ${provider.class}" title="${tech.description}">
+                                   <span class="pill-prefix">${provider.prefix}</span>
+                                   <span class="pill-icon">${tech.icon}</span>
+                                   <span class="pill-text">${tech.name}</span>
+                                 </span>`;
+                               }).join('')}
+                             </div>
+                           </div>`
+                        : '';
+
+                    // Generate status badge HTML
+                    const statusBadgeHTML = (example.status === 'coming_soon')
+                        ? `<span class="status-badge coming-soon" title="This example is under development">🚧 Coming Soon</span>`
+                        : '';
+
                     card.innerHTML = `
+                        ${statusBadgeHTML}
                         <span class="time-badge" title="Estimated time to complete">
                             ${timeToComplete}
                         </span>
                         <h4>${example.title}</h4>
                         <p class="jtbd">"${example.jtbd}"</p>
                         <p class="description">${example.description}</p>
+                        ${techStackHTML}
                         <div class="card-footer">
                             <span class="difficulty ${example.difficulty}">${example.difficulty}</span>
                             ${tagPillsHTML}

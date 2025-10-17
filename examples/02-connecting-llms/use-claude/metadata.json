@@ -1,0 +1,46 @@
+{
+  "title": "Use Claude",
+  "jtbd": "When I prefer Anthropic models, I need Claude integration",
+  "tech_stack": [
+    {
+      "name": "Claude API",
+      "provider": "third",
+      "icon": "\ud83e\udd16",
+      "description": "Anthropic's Claude model API"
+    },
+    {
+      "name": "LiteLLM",
+      "provider": "oss",
+      "icon": "\ud83d\udd00",
+      "description": "Unified LLM interface library"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "ADK agent with Claude backend"
+    }
+  ],
+  "description": "Integrate Anthropic's Claude models via direct API or LiteLLM",
+  "difficulty": "intermediate",
+  "tags": [
+    "llm",
+    "claude",
+    "anthropic",
+    "litellm"
+  ],
+  "related": [],
+  "source_sample": "hello_world_anthropic",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "7 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "medium",
+  "sprint": 3
+}

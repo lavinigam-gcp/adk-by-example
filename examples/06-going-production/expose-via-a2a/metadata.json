@@ -1,0 +1,46 @@
+{
+  "title": "Expose Via A2A",
+  "jtbd": "When my agents need to be exposed to world, I need A2A protocol",
+  "tech_stack": [
+    {
+      "name": "A2A Protocol",
+      "provider": "third",
+      "icon": "🔌",
+      "description": "Agent-to-Agent communication standard"
+    },
+    {
+      "name": "A2A Server",
+      "provider": "adk",
+      "icon": "🌐",
+      "description": "ADK's A2A server implementation"
+    },
+    {
+      "name": "FastAPI",
+      "provider": "oss",
+      "icon": "⚡",
+      "description": "Modern Python web framework for APIs"
+    }
+  ],
+  "description": "Expose your agent as an A2A microservice for world accessibility",
+  "difficulty": "intermediate",
+  "tags": [
+    "a2a",
+    "protocol",
+    "microservices",
+    "api"
+  ],
+  "related": [],
+  "source_sample": "a2a_basic",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "12 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "critical",
+  "sprint": 1
+}

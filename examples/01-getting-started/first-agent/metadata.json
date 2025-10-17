@@ -1,6 +1,20 @@
 {
   "title": "Create Your First Agent",
   "jtbd": "When I'm new to ADK, I need a working agent in seconds",
+  "tech_stack": [
+    {
+      "name": "Gemini",
+      "provider": "gcp",
+      "icon": "🔮",
+      "description": "Google's LLM via AI Studio (free tier available)"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🤖",
+      "description": "ADK's intelligent agent with reasoning capabilities"
+    }
+  ],
   "description": "The simplest possible ADK agent - just 8 lines of code to get started",
   "difficulty": "beginner",
   "tags": ["getting-started", "basics", "hello-world", "minimal"],

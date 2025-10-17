@@ -1,0 +1,46 @@
+{
+  "title": "Use Remote A2A",
+  "jtbd": "When I need to call remote agents, I need A2A client",
+  "tech_stack": [
+    {
+      "name": "RemoteA2aAgent",
+      "provider": "adk",
+      "icon": "\ud83d\udd0c",
+      "description": "Consume remote A2A agents as tools"
+    },
+    {
+      "name": "A2A Protocol",
+      "provider": "third",
+      "icon": "\ud83c\udf10",
+      "description": "Agent-to-Agent communication standard"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Main agent using remote agents"
+    }
+  ],
+  "description": "Consume remote A2A agents as tools in your agent",
+  "difficulty": "intermediate",
+  "tags": [
+    "a2a",
+    "remote",
+    "client",
+    "distributed"
+  ],
+  "related": [],
+  "source_sample": "a2a_consuming sample",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "10 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "high",
+  "sprint": 2
+}

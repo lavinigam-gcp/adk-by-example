@@ -1,0 +1,45 @@
+{
+  "title": "Human Approval",
+  "jtbd": "When I need manual approval, I need human-in-the-loop pattern",
+  "tech_stack": [
+    {
+      "name": "Human-in-Loop",
+      "provider": "adk",
+      "icon": "\ud83d\udc64",
+      "description": "Manual approval workflow pattern"
+    },
+    {
+      "name": "get_user_choice",
+      "provider": "adk",
+      "icon": "\u270b",
+      "description": "Built-in tool for user confirmation"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Agent that requests approval"
+    }
+  ],
+  "description": "Add human approval steps to agent workflows for safety",
+  "difficulty": "intermediate",
+  "tags": [
+    "human-in-loop",
+    "approval",
+    "confirmation"
+  ],
+  "related": [],
+  "source_sample": "human_in_loop",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "12 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "medium",
+  "sprint": 3
+}

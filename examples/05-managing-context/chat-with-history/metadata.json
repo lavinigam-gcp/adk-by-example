@@ -1,0 +1,46 @@
+{
+  "title": "Chat With History",
+  "jtbd": "When I need conversation memory, I need session state management",
+  "tech_stack": [
+    {
+      "name": "Session State",
+      "provider": "adk",
+      "icon": "\ud83d\udcbe",
+      "description": "Maintain conversation history"
+    },
+    {
+      "name": "InvocationContext",
+      "provider": "adk",
+      "icon": "\ud83d\udccb",
+      "description": "Pass context across turns"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "\ud83e\udde0",
+      "description": "Agent with memory of past interactions"
+    }
+  ],
+  "description": "Maintain conversation history and context across multiple turns",
+  "difficulty": "beginner",
+  "tags": [
+    "session-state",
+    "memory",
+    "conversation",
+    "history"
+  ],
+  "related": [],
+  "source_sample": "history_management",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "8 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "high",
+  "sprint": 2
+}

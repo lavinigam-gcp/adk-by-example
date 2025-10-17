@@ -1,6 +1,14 @@
 {
   "title": "Create Projects with ADK",
   "jtbd": "When starting a new project, I need proper project structure",
+  "tech_stack": [
+    {
+      "name": "ADK CLI",
+      "provider": "adk",
+      "icon": "🛠️",
+      "description": "Command-line tools for scaffolding and managing ADK projects"
+    }
+  ],
   "description": "Use the adk create command to scaffold new agent projects with best practices",
   "difficulty": "beginner",
   "tags": ["getting-started", "scaffolding", "project-setup", "cli", "adk-create"],

@@ -1,0 +1,39 @@
+{
+  "title": "Process Pipeline",
+  "jtbd": "When my workflow is always the same, I need sequential processing",
+  "tech_stack": [
+    {
+      "name": "Sequential Agent",
+      "provider": "adk",
+      "icon": "🔗",
+      "description": "Execute agents in deterministic sequential order"
+    },
+    {
+      "name": "LLM Agent",
+      "provider": "adk",
+      "icon": "🧠",
+      "description": "Processing agents at each pipeline step"
+    }
+  ],
+  "description": "Create deterministic pipelines with Sequential Agent for step-by-step workflows",
+  "difficulty": "intermediate",
+  "tags": [
+    "sequential",
+    "workflow",
+    "pipeline"
+  ],
+  "related": [],
+  "source_sample": "simple_sequential_agent",
+  "requirements": [
+    "google-adk"
+  ],
+  "time_to_complete": "10 minutes",
+  "what_youll_learn": [
+    "TODO: Add learning point 1",
+    "TODO: Add learning point 2",
+    "TODO: Add learning point 3"
+  ],
+  "status": "coming_soon",
+  "priority": "critical",
+  "sprint": 1
+}

@@ -1,14 +1,33 @@
 {
   "version": "1.0",
-  "total_examples": 7,
+  "total_examples": 35,
   "categories": [
     "Getting Started",
-    "Adding Capabilities"
+    "Connecting to LLMs",
+    "Adding Capabilities",
+    "Orchestrating Agents",
+    "Managing State & Context",
+    "Going to Production",
+    "Advanced Patterns"
   ],
   "examples": [
     {
       "title": "Configure Model Parameters",
       "jtbd": "When I need specific output behavior, I need to tune model parameters",
+      "tech_stack": [
+        {
+          "name": "GenerateContentConfig",
+          "provider": "adk",
+          "icon": "\u2699\ufe0f",
+          "description": "ADK's configuration system for model parameters"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udd16",
+          "description": "ADK's intelligent agent with configurable behavior"
+        }
+      ],
       "description": "Control agent behavior with temperature, token limits, safety settings, and response format",
       "difficulty": "beginner",
       "tags": [
@@ -39,11 +58,20 @@
       "category_name": "Getting Started",
       "path": "01-getting-started/configure-model",
       "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/configure-model",
-      "command": "adk web # Select 'configure_model'"
+      "command": "adk web # Select 'configure_model'",
+      "status": "ready"
     },
     {
       "title": "Craft Effective Instructions",
       "jtbd": "When my agent gives wrong responses, I need to write better instructions",
+      "tech_stack": [
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udd16",
+          "description": "ADK's intelligent agent with customizable instructions"
+        }
+      ],
       "description": "Learn different instruction patterns to shape agent behavior - from simple to comprehensive",
       "difficulty": "beginner",
       "tags": [
@@ -73,11 +101,20 @@
       "category_name": "Getting Started",
       "path": "01-getting-started/craft-instructions",
       "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/craft-instructions",
-      "command": "adk web # Select 'craft_instructions'"
+      "command": "adk web # Select 'craft_instructions'",
+      "status": "ready"
     },
     {
       "title": "Create Projects with ADK",
       "jtbd": "When starting a new project, I need proper project structure",
+      "tech_stack": [
+        {
+          "name": "ADK CLI",
+          "provider": "adk",
+          "icon": "\ud83d\udee0\ufe0f",
+          "description": "Command-line tools for scaffolding and managing ADK projects"
+        }
+      ],
       "description": "Use the adk create command to scaffold new agent projects with best practices",
       "difficulty": "beginner",
       "tags": [
@@ -108,11 +145,26 @@
       "category_name": "Getting Started",
       "path": "01-getting-started/create-with-adk",
       "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/create-with-adk",
-      "command": "adk web # Select 'create_with_adk'"
+      "command": "adk web # Select 'create_with_adk'",
+      "status": "ready"
     },
     {
       "title": "Create Your First Agent",
       "jtbd": "When I'm new to ADK, I need a working agent in seconds",
+      "tech_stack": [
+        {
+          "name": "Gemini",
+          "provider": "gcp",
+          "icon": "\ud83d\udd2e",
+          "description": "Google's LLM via AI Studio (free tier available)"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udd16",
+          "description": "ADK's intelligent agent with reasoning capabilities"
+        }
+      ],
       "description": "The simplest possible ADK agent - just 8 lines of code to get started",
       "difficulty": "beginner",
       "tags": [
@@ -141,11 +193,32 @@
       "category_name": "Getting Started",
       "path": "01-getting-started/first-agent",
       "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/first-agent",
-      "command": "adk web # Select 'first_agent'"
+      "command": "adk web # Select 'first_agent'",
+      "status": "ready"
     },
     {
       "title": "Structure Output with Pydantic",
       "jtbd": "When I need predictable response format, I need structured output",
+      "tech_stack": [
+        {
+          "name": "Pydantic",
+          "provider": "oss",
+          "icon": "\ud83d\udccb",
+          "description": "Python data validation using type hints"
+        },
+        {
+          "name": "output_schema",
+          "provider": "adk",
+          "icon": "\ud83d\udd27",
+          "description": "ADK's structured output feature for guaranteed JSON format"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udd16",
+          "description": "ADK's intelligent agent with schema validation"
+        }
+      ],
       "description": "Use Pydantic models to ensure agents return structured, validated JSON data",
       "difficulty": "beginner",
       "tags": [
@@ -177,11 +250,20 @@
       "category_name": "Getting Started",
       "path": "01-getting-started/structure-output",
       "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/structure-output",
-      "command": "adk web # Select 'structure_output'"
+      "command": "adk web # Select 'structure_output'",
+      "status": "ready"
     },
     {
       "title": "Use YAML Configuration",
       "jtbd": "When I want to iterate without code, I need YAML configuration",
+      "tech_stack": [
+        {
+          "name": "Agent Config",
+          "provider": "adk",
+          "icon": "\ud83d\udcc4",
+          "description": "ADK's YAML-based configuration for no-code agent creation"
+        }
+      ],
       "description": "Create a complete agent using only YAML configuration - no Python required",
       "difficulty": "beginner",
       "tags": [
@@ -211,11 +293,484 @@
       "category_name": "Getting Started",
       "path": "01-getting-started/use-yaml-config",
       "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/use-yaml-config",
-      "command": "adk web # Select 'use_yaml_config'"
+      "command": "adk web # Select 'use_yaml_config'",
+      "status": "ready"
+    },
+    {
+      "title": "Compare Models",
+      "jtbd": "When I need to choose the right model, I need comparison framework",
+      "tech_stack": [
+        {
+          "name": "LiteLLM",
+          "provider": "oss",
+          "icon": "\ud83d\udd00",
+          "description": "Unified interface to 100+ LLM providers"
+        },
+        {
+          "name": "Multiple LLMs",
+          "provider": "third",
+          "icon": "\ud83c\udfaf",
+          "description": "Compare Gemini, Claude, GPT side-by-side"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "ADK agents for evaluation tasks"
+        }
+      ],
+      "description": "Compare multiple LLM providers using LiteLLM for best model selection",
+      "difficulty": "advanced",
+      "tags": [
+        "llm",
+        "litellm",
+        "comparison",
+        "evaluation"
+      ],
+      "related": [],
+      "source_sample": "LiteLLM documentation",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "15 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "low",
+      "sprint": 4,
+      "category": "02-connecting-llms",
+      "category_name": "Connecting to LLMs",
+      "path": "02-connecting-llms/compare-models",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/02-connecting-llms/compare-models",
+      "command": "adk web # Select 'compare_models'"
+    },
+    {
+      "title": "Local Ollama",
+      "jtbd": "When I want offline development, I need local models",
+      "tech_stack": [
+        {
+          "name": "Ollama",
+          "provider": "oss",
+          "icon": "\ud83e\udd99",
+          "description": "Local LLM runtime for offline development"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "ADK agent with local Ollama backend"
+        }
+      ],
+      "description": "Run LLMs locally with Ollama for offline development and testing",
+      "difficulty": "beginner",
+      "tags": [
+        "llm",
+        "ollama",
+        "local",
+        "offline"
+      ],
+      "related": [],
+      "source_sample": "hello_world_ollama",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "8 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "medium",
+      "sprint": 3,
+      "category": "02-connecting-llms",
+      "category_name": "Connecting to LLMs",
+      "path": "02-connecting-llms/local-ollama",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/02-connecting-llms/local-ollama",
+      "command": "adk web # Select 'local_ollama'"
+    },
+    {
+      "title": "Use Claude",
+      "jtbd": "When I prefer Anthropic models, I need Claude integration",
+      "tech_stack": [
+        {
+          "name": "Claude API",
+          "provider": "third",
+          "icon": "\ud83e\udd16",
+          "description": "Anthropic's Claude model API"
+        },
+        {
+          "name": "LiteLLM",
+          "provider": "oss",
+          "icon": "\ud83d\udd00",
+          "description": "Unified LLM interface library"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "ADK agent with Claude backend"
+        }
+      ],
+      "description": "Integrate Anthropic's Claude models via direct API or LiteLLM",
+      "difficulty": "intermediate",
+      "tags": [
+        "llm",
+        "claude",
+        "anthropic",
+        "litellm"
+      ],
+      "related": [],
+      "source_sample": "hello_world_anthropic",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "7 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "medium",
+      "sprint": 3,
+      "category": "02-connecting-llms",
+      "category_name": "Connecting to LLMs",
+      "path": "02-connecting-llms/use-claude",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/02-connecting-llms/use-claude",
+      "command": "adk web # Select 'use_claude'"
+    },
+    {
+      "title": "Use Gemini Free",
+      "jtbd": "When I want to start fast with free API, I need Google AI Studio",
+      "tech_stack": [
+        {
+          "name": "Google AI Studio",
+          "provider": "gcp",
+          "icon": "\ud83c\udfa8",
+          "description": "Free tier API access for Gemini models"
+        },
+        {
+          "name": "Gemini API",
+          "provider": "gcp",
+          "icon": "\u2728",
+          "description": "Direct API access via GOOGLE_API_KEY"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "ADK agent powered by Gemini"
+        }
+      ],
+      "description": "Quick start with Gemini using free Google AI Studio API key",
+      "difficulty": "beginner",
+      "tags": [
+        "llm",
+        "gemini",
+        "ai-studio",
+        "free"
+      ],
+      "related": [],
+      "source_sample": "hello_world with AI Studio",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "3 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "high",
+      "sprint": 2,
+      "category": "02-connecting-llms",
+      "category_name": "Connecting to LLMs",
+      "path": "02-connecting-llms/use-gemini-free",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/02-connecting-llms/use-gemini-free",
+      "command": "adk web # Select 'use_gemini_free'"
+    },
+    {
+      "title": "Use Vertex Ai",
+      "jtbd": "When I need production Gemini, I need Vertex AI integration",
+      "tech_stack": [
+        {
+          "name": "Vertex AI",
+          "provider": "gcp",
+          "icon": "\ud83d\udd37",
+          "description": "Enterprise-grade Gemini deployment platform"
+        },
+        {
+          "name": "Service Account",
+          "provider": "gcp",
+          "icon": "\ud83d\udd11",
+          "description": "GCP authentication for production"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "ADK agent with Vertex AI backend"
+        }
+      ],
+      "description": "Production-ready Gemini deployment with Vertex AI and service accounts",
+      "difficulty": "intermediate",
+      "tags": [
+        "llm",
+        "gemini",
+        "vertex-ai",
+        "production"
+      ],
+      "related": [],
+      "source_sample": "vertex_ai_agent",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "10 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "high",
+      "sprint": 2,
+      "category": "02-connecting-llms",
+      "category_name": "Connecting to LLMs",
+      "path": "02-connecting-llms/use-vertex-ai",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/02-connecting-llms/use-vertex-ai",
+      "command": "adk web # Select 'use_vertex_ai'"
+    },
+    {
+      "title": "Call Rest Api",
+      "jtbd": "When I need to integrate APIs, I need REST API calling capability",
+      "tech_stack": [
+        {
+          "name": "FunctionTool",
+          "provider": "adk",
+          "icon": "\ud83d\udd27",
+          "description": "Wrap Python functions as agent tools"
+        },
+        {
+          "name": "requests",
+          "provider": "oss",
+          "icon": "\ud83c\udf10",
+          "description": "HTTP library for API calls"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Agent that decides when to call APIs"
+        }
+      ],
+      "description": "Integrate with any REST API using FunctionTool for data access",
+      "difficulty": "intermediate",
+      "tags": [
+        "api",
+        "rest",
+        "function-tool",
+        "integration"
+      ],
+      "related": [],
+      "source_sample": "jira_agent",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "10 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "high",
+      "sprint": 1,
+      "category": "03-adding-capabilities",
+      "category_name": "Adding Capabilities",
+      "path": "03-adding-capabilities/call-rest-api",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/call-rest-api",
+      "command": "adk web # Select 'call_rest_api'"
+    },
+    {
+      "title": "Execute Code",
+      "jtbd": "When I need computation, I need safe code execution",
+      "tech_stack": [
+        {
+          "name": "Code Execution",
+          "provider": "adk",
+          "icon": "\u2699\ufe0f",
+          "description": "Safe Python code execution sandbox"
+        },
+        {
+          "name": "FunctionTool",
+          "provider": "adk",
+          "icon": "\ud83d\udd27",
+          "description": "Wrap code execution as a tool"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Agent that generates and runs code"
+        }
+      ],
+      "description": "Execute Python code safely for calculations and data processing",
+      "difficulty": "intermediate",
+      "tags": [
+        "code-execution",
+        "computation",
+        "sandbox"
+      ],
+      "related": [],
+      "source_sample": "code_execution sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "10 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "medium",
+      "sprint": 3,
+      "category": "03-adding-capabilities",
+      "category_name": "Adding Capabilities",
+      "path": "03-adding-capabilities/execute-code",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/execute-code",
+      "command": "adk web # Select 'execute_code'"
+    },
+    {
+      "title": "Query Bigquery",
+      "jtbd": "When I need database access, I need to query BigQuery",
+      "tech_stack": [
+        {
+          "name": "BigQuery",
+          "provider": "gcp",
+          "icon": "\ud83d\udcca",
+          "description": "Google Cloud data warehouse"
+        },
+        {
+          "name": "FunctionTool",
+          "provider": "adk",
+          "icon": "\ud83d\udd27",
+          "description": "Wrap BigQuery queries as tools"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Agent that queries data on demand"
+        }
+      ],
+      "description": "Query BigQuery databases for data-driven agent responses",
+      "difficulty": "intermediate",
+      "tags": [
+        "database",
+        "bigquery",
+        "sql",
+        "gcp"
+      ],
+      "related": [],
+      "source_sample": "bigquery sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "12 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "medium",
+      "sprint": 3,
+      "category": "03-adding-capabilities",
+      "category_name": "Adding Capabilities",
+      "path": "03-adding-capabilities/query-bigquery",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/query-bigquery",
+      "command": "adk web # Select 'query_bigquery'"
+    },
+    {
+      "title": "Search Documents",
+      "jtbd": "When I need enterprise RAG, I need document search capability",
+      "tech_stack": [
+        {
+          "name": "Vertex AI Search",
+          "provider": "gcp",
+          "icon": "\ud83d\udd0d",
+          "description": "Enterprise document search and grounding"
+        },
+        {
+          "name": "Grounding",
+          "provider": "adk",
+          "icon": "\ud83d\udcce",
+          "description": "Ground LLM responses in your documents"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Agent with enterprise RAG capabilities"
+        }
+      ],
+      "description": "Add Vertex AI Search for enterprise document grounding and RAG",
+      "difficulty": "advanced",
+      "tags": [
+        "rag",
+        "search",
+        "vertex-ai",
+        "grounding"
+      ],
+      "related": [],
+      "source_sample": "vertex_ai_search sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "15 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "high",
+      "sprint": 2,
+      "category": "03-adding-capabilities",
+      "category_name": "Adding Capabilities",
+      "path": "03-adding-capabilities/search-documents",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/search-documents",
+      "command": "adk web # Select 'search_documents'"
     },
     {
       "title": "Search Google for Answers",
       "jtbd": "When users ask questions, I need to search the web for current information",
+      "tech_stack": [
+        {
+          "name": "Google Search",
+          "provider": "gcp",
+          "icon": "\ud83d\udd0d",
+          "description": "Google's search API for real-time web information"
+        },
+        {
+          "name": "FunctionTool",
+          "provider": "adk",
+          "icon": "\ud83d\udd27",
+          "description": "ADK's wrapper for exposing functions as agent tools"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udd16",
+          "description": "ADK's intelligent agent with tool-calling capabilities"
+        }
+      ],
       "description": "Add Google search capability to your agent for real-time information retrieval",
       "difficulty": "beginner",
       "tags": [
@@ -250,7 +805,951 @@
       "category_name": "Adding Capabilities",
       "path": "03-adding-capabilities/search-google",
       "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/search-google",
-      "command": "adk web # Select 'search_google'"
+      "command": "adk web # Select 'search_google'",
+      "status": "ready"
+    },
+    {
+      "title": "Custom Orchestration",
+      "jtbd": "When I need dynamic planning, I need custom orchestration logic",
+      "tech_stack": [
+        {
+          "name": "Custom Agent",
+          "provider": "adk",
+          "icon": "\ud83c\udf9b\ufe0f",
+          "description": "Build custom orchestration logic"
+        },
+        {
+          "name": "BaseAgent",
+          "provider": "adk",
+          "icon": "\ud83c\udfd7\ufe0f",
+          "description": "Extend BaseAgent for unique workflows"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Sub-agents in custom orchestration"
+        }
+      ],
+      "description": "Build custom orchestration with dynamic task planning and routing",
+      "difficulty": "advanced",
+      "tags": [
+        "custom",
+        "planning",
+        "orchestration",
+        "dynamic"
+      ],
+      "related": [],
+      "source_sample": "custom_agent sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "20 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "high",
+      "sprint": 2,
+      "category": "04-orchestrating-agents",
+      "category_name": "Orchestrating Agents",
+      "path": "04-orchestrating-agents/custom-orchestration",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/04-orchestrating-agents/custom-orchestration",
+      "command": "adk web # Select 'custom_orchestration'"
+    },
+    {
+      "title": "Iterative Refinement",
+      "jtbd": "When I want a critique agent reviewing output, I need loop patterns",
+      "tech_stack": [
+        {
+          "name": "Loop Agent",
+          "provider": "adk",
+          "icon": "\ud83d\udd04",
+          "description": "Iteratively refine output with feedback loops"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Generator and critic agents in the loop"
+        }
+      ],
+      "description": "Use Loop Agent for iterative refinement with critic-reviewer pattern",
+      "difficulty": "advanced",
+      "tags": [
+        "loop",
+        "iterative",
+        "refinement",
+        "critique"
+      ],
+      "related": [],
+      "source_sample": "loop_agent sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "15 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "critical",
+      "sprint": 1,
+      "category": "04-orchestrating-agents",
+      "category_name": "Orchestrating Agents",
+      "path": "04-orchestrating-agents/iterative-refinement",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/04-orchestrating-agents/iterative-refinement",
+      "command": "adk web # Select 'iterative_refinement'"
+    },
+    {
+      "title": "Parallel Research",
+      "jtbd": "When I need concurrent execution, I need parallel agents",
+      "tech_stack": [
+        {
+          "name": "Parallel Execution",
+          "provider": "adk",
+          "icon": "\u26a1",
+          "description": "Run multiple agents concurrently with asyncio"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Independent research agents running in parallel"
+        }
+      ],
+      "description": "Execute multiple agents in parallel for concurrent research and data gathering",
+      "difficulty": "intermediate",
+      "tags": [
+        "parallel",
+        "concurrent",
+        "fan-out"
+      ],
+      "related": [],
+      "source_sample": "parallel_functions",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "10 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "critical",
+      "sprint": 1,
+      "category": "04-orchestrating-agents",
+      "category_name": "Orchestrating Agents",
+      "path": "04-orchestrating-agents/parallel-research",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/04-orchestrating-agents/parallel-research",
+      "command": "adk web # Select 'parallel_research'"
+    },
+    {
+      "title": "Process Pipeline",
+      "jtbd": "When my workflow is always the same, I need sequential processing",
+      "tech_stack": [
+        {
+          "name": "Sequential Agent",
+          "provider": "adk",
+          "icon": "\ud83d\udd17",
+          "description": "Execute agents in deterministic sequential order"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Processing agents at each pipeline step"
+        }
+      ],
+      "description": "Create deterministic pipelines with Sequential Agent for step-by-step workflows",
+      "difficulty": "intermediate",
+      "tags": [
+        "sequential",
+        "workflow",
+        "pipeline"
+      ],
+      "related": [],
+      "source_sample": "simple_sequential_agent",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "10 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "critical",
+      "sprint": 1,
+      "category": "04-orchestrating-agents",
+      "category_name": "Orchestrating Agents",
+      "path": "04-orchestrating-agents/process-pipeline",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/04-orchestrating-agents/process-pipeline",
+      "command": "adk web # Select 'process_pipeline'"
+    },
+    {
+      "title": "Route To Experts",
+      "jtbd": "When I need multiple agents collaborating, I need specialist routing",
+      "tech_stack": [
+        {
+          "name": "AgentTool",
+          "provider": "adk",
+          "icon": "\ud83e\udd16",
+          "description": "Use agents as tools for delegation and routing"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Main coordinator with reasoning capabilities"
+        },
+        {
+          "name": "Session State",
+          "provider": "adk",
+          "icon": "\ud83d\udcbe",
+          "description": "Share data between specialist agents"
+        }
+      ],
+      "description": "Build a multi-agent system with coordinator routing to specialist agents",
+      "difficulty": "intermediate",
+      "tags": [
+        "multi-agent",
+        "orchestration",
+        "agent-tool",
+        "delegation"
+      ],
+      "related": [],
+      "source_sample": "multi_agent_llm_config",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "12 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "critical",
+      "sprint": 1,
+      "category": "04-orchestrating-agents",
+      "category_name": "Orchestrating Agents",
+      "path": "04-orchestrating-agents/route-to-experts",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/04-orchestrating-agents/route-to-experts",
+      "command": "adk web # Select 'route_to_experts'"
+    },
+    {
+      "title": "Chat With History",
+      "jtbd": "When I need conversation memory, I need session state management",
+      "tech_stack": [
+        {
+          "name": "Session State",
+          "provider": "adk",
+          "icon": "\ud83d\udcbe",
+          "description": "Maintain conversation history"
+        },
+        {
+          "name": "InvocationContext",
+          "provider": "adk",
+          "icon": "\ud83d\udccb",
+          "description": "Pass context across turns"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Agent with memory of past interactions"
+        }
+      ],
+      "description": "Maintain conversation history and context across multiple turns",
+      "difficulty": "beginner",
+      "tags": [
+        "session-state",
+        "memory",
+        "conversation",
+        "history"
+      ],
+      "related": [],
+      "source_sample": "history_management",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "8 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "high",
+      "sprint": 2,
+      "category": "05-managing-context",
+      "category_name": "Managing State & Context",
+      "path": "05-managing-context/chat-with-history",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/05-managing-context/chat-with-history",
+      "command": "adk web # Select 'chat_with_history'"
+    },
+    {
+      "title": "Long Term Memory",
+      "jtbd": "When I need memory across sessions, I need Memory Bank",
+      "tech_stack": [
+        {
+          "name": "Memory Bank",
+          "provider": "gcp",
+          "icon": "\ud83e\udde0",
+          "description": "Vertex AI long-term memory storage"
+        },
+        {
+          "name": "Session State",
+          "provider": "adk",
+          "icon": "\ud83d\udcbe",
+          "description": "Bridge to Memory Bank"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udd16",
+          "description": "Agent with persistent memory"
+        }
+      ],
+      "description": "Use Vertex AI Memory Bank for long-term agent memory",
+      "difficulty": "advanced",
+      "tags": [
+        "memory-bank",
+        "vertex-ai",
+        "long-term",
+        "memory"
+      ],
+      "related": [],
+      "source_sample": "memory_bank sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "15 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "low",
+      "sprint": 4,
+      "category": "05-managing-context",
+      "category_name": "Managing State & Context",
+      "path": "05-managing-context/long-term-memory",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/05-managing-context/long-term-memory",
+      "command": "adk web # Select 'long_term_memory'"
+    },
+    {
+      "title": "Manage Artifacts",
+      "jtbd": "When I need to store files, I need artifact management",
+      "tech_stack": [
+        {
+          "name": "GCS Artifacts",
+          "provider": "gcp",
+          "icon": "\ud83d\udce6",
+          "description": "Google Cloud Storage for files"
+        },
+        {
+          "name": "Artifact Service",
+          "provider": "adk",
+          "icon": "\ud83d\udcc1",
+          "description": "Manage files and artifacts"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Agent that works with files"
+        }
+      ],
+      "description": "Store and retrieve files using GCS Artifacts and Artifact Service",
+      "difficulty": "intermediate",
+      "tags": [
+        "artifacts",
+        "files",
+        "gcs",
+        "storage"
+      ],
+      "related": [],
+      "source_sample": "gcs_artifacts sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "12 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "medium",
+      "sprint": 3,
+      "category": "05-managing-context",
+      "category_name": "Managing State & Context",
+      "path": "05-managing-context/manage-artifacts",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/05-managing-context/manage-artifacts",
+      "command": "adk web # Select 'manage_artifacts'"
+    },
+    {
+      "title": "Persist To Firestore",
+      "jtbd": "When I need durable storage, I need Firestore persistence",
+      "tech_stack": [
+        {
+          "name": "Firestore",
+          "provider": "gcp",
+          "icon": "\ud83d\udd25",
+          "description": "NoSQL database for state persistence"
+        },
+        {
+          "name": "Session State",
+          "provider": "adk",
+          "icon": "\ud83d\udcbe",
+          "description": "Persist agent state to database"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Agent with durable memory"
+        }
+      ],
+      "description": "Store agent state persistently in Firestore for durability",
+      "difficulty": "intermediate",
+      "tags": [
+        "firestore",
+        "persistence",
+        "storage",
+        "gcp"
+      ],
+      "related": [],
+      "source_sample": "firestore_state sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "12 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "medium",
+      "sprint": 3,
+      "category": "05-managing-context",
+      "category_name": "Managing State & Context",
+      "path": "05-managing-context/persist-to-firestore",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/05-managing-context/persist-to-firestore",
+      "command": "adk web # Select 'persist_to_firestore'"
+    },
+    {
+      "title": "Share Between Agents",
+      "jtbd": "When agents need to pass data, I need shared session state",
+      "tech_stack": [
+        {
+          "name": "Session State",
+          "provider": "adk",
+          "icon": "\ud83d\udcbe",
+          "description": "Shared state dictionary for agents"
+        },
+        {
+          "name": "output_key",
+          "provider": "adk",
+          "icon": "\ud83d\udd11",
+          "description": "Store agent results in state"
+        },
+        {
+          "name": "Multi-Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udd1d",
+          "description": "Agents sharing data via state"
+        }
+      ],
+      "description": "Share data between agents using shared session state",
+      "difficulty": "intermediate",
+      "tags": [
+        "session-state",
+        "shared-state",
+        "multi-agent"
+      ],
+      "related": [],
+      "source_sample": "session_state_agent",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "10 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "high",
+      "sprint": 2,
+      "category": "05-managing-context",
+      "category_name": "Managing State & Context",
+      "path": "05-managing-context/share-between-agents",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/05-managing-context/share-between-agents",
+      "command": "adk web # Select 'share_between_agents'"
+    },
+    {
+      "title": "Add Monitoring",
+      "jtbd": "When I need observability, I need monitoring and telemetry",
+      "tech_stack": [
+        {
+          "name": "OpenTelemetry",
+          "provider": "oss",
+          "icon": "\ud83d\udce1",
+          "description": "Observability and tracing framework"
+        },
+        {
+          "name": "Cloud Trace",
+          "provider": "gcp",
+          "icon": "\ud83d\udcca",
+          "description": "GCP distributed tracing"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Instrumented agent with telemetry"
+        }
+      ],
+      "description": "Add OpenTelemetry monitoring for production observability",
+      "difficulty": "intermediate",
+      "tags": [
+        "monitoring",
+        "opentelemetry",
+        "observability",
+        "production"
+      ],
+      "related": [],
+      "source_sample": "telemetry sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "12 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "high",
+      "sprint": 2,
+      "category": "06-going-production",
+      "category_name": "Going to Production",
+      "path": "06-going-production/add-monitoring",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/06-going-production/add-monitoring",
+      "command": "adk web # Select 'add_monitoring'"
+    },
+    {
+      "title": "Deploy Cloud Run",
+      "jtbd": "When I need serverless deployment, I need Cloud Run integration",
+      "tech_stack": [
+        {
+          "name": "Cloud Run",
+          "provider": "gcp",
+          "icon": "\u2601\ufe0f",
+          "description": "Serverless container hosting platform"
+        },
+        {
+          "name": "Dockerfile",
+          "provider": "oss",
+          "icon": "\ud83d\udc33",
+          "description": "Container configuration for deployment"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Your ADK agent to deploy"
+        }
+      ],
+      "description": "Deploy your agent to Cloud Run for serverless production hosting",
+      "difficulty": "intermediate",
+      "tags": [
+        "cloud-run",
+        "deployment",
+        "production",
+        "gcp"
+      ],
+      "related": [],
+      "source_sample": "cloud_run deployment docs",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "15 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "critical",
+      "sprint": 1,
+      "category": "06-going-production",
+      "category_name": "Going to Production",
+      "path": "06-going-production/deploy-cloud-run",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/06-going-production/deploy-cloud-run",
+      "command": "adk web # Select 'deploy_cloud_run'"
+    },
+    {
+      "title": "Expose Via A2A",
+      "jtbd": "When my agents need to be exposed to world, I need A2A protocol",
+      "tech_stack": [
+        {
+          "name": "A2A Protocol",
+          "provider": "third",
+          "icon": "\ud83d\udd0c",
+          "description": "Agent-to-Agent communication standard"
+        },
+        {
+          "name": "A2A Server",
+          "provider": "adk",
+          "icon": "\ud83c\udf10",
+          "description": "ADK's A2A server implementation"
+        },
+        {
+          "name": "FastAPI",
+          "provider": "oss",
+          "icon": "\u26a1",
+          "description": "Modern Python web framework for APIs"
+        }
+      ],
+      "description": "Expose your agent as an A2A microservice for world accessibility",
+      "difficulty": "intermediate",
+      "tags": [
+        "a2a",
+        "protocol",
+        "microservices",
+        "api"
+      ],
+      "related": [],
+      "source_sample": "a2a_basic",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "12 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "critical",
+      "sprint": 1,
+      "category": "06-going-production",
+      "category_name": "Going to Production",
+      "path": "06-going-production/expose-via-a2a",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/06-going-production/expose-via-a2a",
+      "command": "adk web # Select 'expose_via_a2a'"
+    },
+    {
+      "title": "Handle Errors",
+      "jtbd": "When things fail, I need robust error handling",
+      "tech_stack": [
+        {
+          "name": "Callbacks",
+          "provider": "adk",
+          "icon": "\ud83d\udd14",
+          "description": "Event handlers for errors"
+        },
+        {
+          "name": "Try/Catch",
+          "provider": "adk",
+          "icon": "\ud83d\udee1\ufe0f",
+          "description": "Error handling patterns"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Resilient agent with error handling"
+        }
+      ],
+      "description": "Implement robust error handling patterns with try/catch and callbacks",
+      "difficulty": "intermediate",
+      "tags": [
+        "error-handling",
+        "callbacks",
+        "resilience"
+      ],
+      "related": [],
+      "source_sample": "error_handling best practices",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "10 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "medium",
+      "sprint": 3,
+      "category": "06-going-production",
+      "category_name": "Going to Production",
+      "path": "06-going-production/handle-errors",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/06-going-production/handle-errors",
+      "command": "adk web # Select 'handle_errors'"
+    },
+    {
+      "title": "Use Remote A2A",
+      "jtbd": "When I need to call remote agents, I need A2A client",
+      "tech_stack": [
+        {
+          "name": "RemoteA2aAgent",
+          "provider": "adk",
+          "icon": "\ud83d\udd0c",
+          "description": "Consume remote A2A agents as tools"
+        },
+        {
+          "name": "A2A Protocol",
+          "provider": "third",
+          "icon": "\ud83c\udf10",
+          "description": "Agent-to-Agent communication standard"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Main agent using remote agents"
+        }
+      ],
+      "description": "Consume remote A2A agents as tools in your agent",
+      "difficulty": "intermediate",
+      "tags": [
+        "a2a",
+        "remote",
+        "client",
+        "distributed"
+      ],
+      "related": [],
+      "source_sample": "a2a_consuming sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "10 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "high",
+      "sprint": 2,
+      "category": "06-going-production",
+      "category_name": "Going to Production",
+      "path": "06-going-production/use-remote-a2a",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/06-going-production/use-remote-a2a",
+      "command": "adk web # Select 'use_remote_a2a'"
+    },
+    {
+      "title": "Human Approval",
+      "jtbd": "When I need manual approval, I need human-in-the-loop pattern",
+      "tech_stack": [
+        {
+          "name": "Human-in-Loop",
+          "provider": "adk",
+          "icon": "\ud83d\udc64",
+          "description": "Manual approval workflow pattern"
+        },
+        {
+          "name": "get_user_choice",
+          "provider": "adk",
+          "icon": "\u270b",
+          "description": "Built-in tool for user confirmation"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Agent that requests approval"
+        }
+      ],
+      "description": "Add human approval steps to agent workflows for safety",
+      "difficulty": "intermediate",
+      "tags": [
+        "human-in-loop",
+        "approval",
+        "confirmation"
+      ],
+      "related": [],
+      "source_sample": "human_in_loop",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "12 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "medium",
+      "sprint": 3,
+      "category": "07-advanced-patterns",
+      "category_name": "Advanced Patterns",
+      "path": "07-advanced-patterns/human-approval",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/07-advanced-patterns/human-approval",
+      "command": "adk web # Select 'human_approval'"
+    },
+    {
+      "title": "Integrate Langchain",
+      "jtbd": "When I want LangChain tools, I need LangChain integration",
+      "tech_stack": [
+        {
+          "name": "LangChain",
+          "provider": "oss",
+          "icon": "\u26d3\ufe0f",
+          "description": "Popular LLM framework"
+        },
+        {
+          "name": "LangchainTool",
+          "provider": "adk",
+          "icon": "\ud83d\udd27",
+          "description": "Wrapper for LangChain tools"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "ADK agent using LangChain tools"
+        }
+      ],
+      "description": "Use LangChain tools within ADK agents via LangchainTool wrapper",
+      "difficulty": "advanced",
+      "tags": [
+        "langchain",
+        "integration",
+        "tools"
+      ],
+      "related": [],
+      "source_sample": "langchain_tool sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "12 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "low",
+      "sprint": 4,
+      "category": "07-advanced-patterns",
+      "category_name": "Advanced Patterns",
+      "path": "07-advanced-patterns/integrate-langchain",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/07-advanced-patterns/integrate-langchain",
+      "command": "adk web # Select 'integrate_langchain'"
+    },
+    {
+      "title": "Stream Responses",
+      "jtbd": "When I need real-time updates, I need streaming responses",
+      "tech_stack": [
+        {
+          "name": "Streaming",
+          "provider": "adk",
+          "icon": "\ud83d\udce1",
+          "description": "Real-time bidirectional streaming"
+        },
+        {
+          "name": "WebSocket",
+          "provider": "oss",
+          "icon": "\ud83d\udd0c",
+          "description": "Live connection for streaming"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Agent with streaming responses"
+        }
+      ],
+      "description": "Implement bidirectional streaming for real-time agent responses",
+      "difficulty": "advanced",
+      "tags": [
+        "streaming",
+        "realtime",
+        "websocket"
+      ],
+      "related": [],
+      "source_sample": "live_bidi_streaming_single_agent",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "15 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "medium",
+      "sprint": 3,
+      "category": "07-advanced-patterns",
+      "category_name": "Advanced Patterns",
+      "path": "07-advanced-patterns/stream-responses",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/07-advanced-patterns/stream-responses",
+      "command": "adk web # Select 'stream_responses'"
+    },
+    {
+      "title": "Use Mcp Servers",
+      "jtbd": "When I want to use MCP tools, I need MCP integration",
+      "tech_stack": [
+        {
+          "name": "MCP Protocol",
+          "provider": "third",
+          "icon": "\ud83d\udd0c",
+          "description": "Model Context Protocol standard"
+        },
+        {
+          "name": "MCPToolset",
+          "provider": "adk",
+          "icon": "\ud83e\uddf0",
+          "description": "Integrate MCP servers and tools"
+        },
+        {
+          "name": "LLM Agent",
+          "provider": "adk",
+          "icon": "\ud83e\udde0",
+          "description": "Agent using MCP tools"
+        }
+      ],
+      "description": "Integrate Model Context Protocol (MCP) servers and tools",
+      "difficulty": "advanced",
+      "tags": [
+        "mcp",
+        "protocol",
+        "tools"
+      ],
+      "related": [],
+      "source_sample": "mcp_integration sample",
+      "requirements": [
+        "google-adk"
+      ],
+      "time_to_complete": "15 minutes",
+      "what_youll_learn": [
+        "TODO: Add learning point 1",
+        "TODO: Add learning point 2",
+        "TODO: Add learning point 3"
+      ],
+      "status": "coming_soon",
+      "priority": "low",
+      "sprint": 4,
+      "category": "07-advanced-patterns",
+      "category_name": "Advanced Patterns",
+      "path": "07-advanced-patterns/use-mcp-servers",
+      "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/07-advanced-patterns/use-mcp-servers",
+      "command": "adk web # Select 'use_mcp_servers'"
     }
   ],
   "examples_by_category": {
@@ -258,6 +1757,20 @@
       {
         "title": "Configure Model Parameters",
         "jtbd": "When I need specific output behavior, I need to tune model parameters",
+        "tech_stack": [
+          {
+            "name": "GenerateContentConfig",
+            "provider": "adk",
+            "icon": "\u2699\ufe0f",
+            "description": "ADK's configuration system for model parameters"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udd16",
+            "description": "ADK's intelligent agent with configurable behavior"
+          }
+        ],
         "description": "Control agent behavior with temperature, token limits, safety settings, and response format",
         "difficulty": "beginner",
         "tags": [
@@ -288,11 +1801,20 @@
         "category_name": "Getting Started",
         "path": "01-getting-started/configure-model",
         "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/configure-model",
-        "command": "adk web # Select 'configure_model'"
+        "command": "adk web # Select 'configure_model'",
+        "status": "ready"
       },
       {
         "title": "Craft Effective Instructions",
         "jtbd": "When my agent gives wrong responses, I need to write better instructions",
+        "tech_stack": [
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udd16",
+            "description": "ADK's intelligent agent with customizable instructions"
+          }
+        ],
         "description": "Learn different instruction patterns to shape agent behavior - from simple to comprehensive",
         "difficulty": "beginner",
         "tags": [
@@ -322,11 +1844,20 @@
         "category_name": "Getting Started",
         "path": "01-getting-started/craft-instructions",
         "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/craft-instructions",
-        "command": "adk web # Select 'craft_instructions'"
+        "command": "adk web # Select 'craft_instructions'",
+        "status": "ready"
       },
       {
         "title": "Create Projects with ADK",
         "jtbd": "When starting a new project, I need proper project structure",
+        "tech_stack": [
+          {
+            "name": "ADK CLI",
+            "provider": "adk",
+            "icon": "\ud83d\udee0\ufe0f",
+            "description": "Command-line tools for scaffolding and managing ADK projects"
+          }
+        ],
         "description": "Use the adk create command to scaffold new agent projects with best practices",
         "difficulty": "beginner",
         "tags": [
@@ -357,11 +1888,26 @@
         "category_name": "Getting Started",
         "path": "01-getting-started/create-with-adk",
         "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/create-with-adk",
-        "command": "adk web # Select 'create_with_adk'"
+        "command": "adk web # Select 'create_with_adk'",
+        "status": "ready"
       },
       {
         "title": "Create Your First Agent",
         "jtbd": "When I'm new to ADK, I need a working agent in seconds",
+        "tech_stack": [
+          {
+            "name": "Gemini",
+            "provider": "gcp",
+            "icon": "\ud83d\udd2e",
+            "description": "Google's LLM via AI Studio (free tier available)"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udd16",
+            "description": "ADK's intelligent agent with reasoning capabilities"
+          }
+        ],
         "description": "The simplest possible ADK agent - just 8 lines of code to get started",
         "difficulty": "beginner",
         "tags": [
@@ -390,11 +1936,32 @@
         "category_name": "Getting Started",
         "path": "01-getting-started/first-agent",
         "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/first-agent",
-        "command": "adk web # Select 'first_agent'"
+        "command": "adk web # Select 'first_agent'",
+        "status": "ready"
       },
       {
         "title": "Structure Output with Pydantic",
         "jtbd": "When I need predictable response format, I need structured output",
+        "tech_stack": [
+          {
+            "name": "Pydantic",
+            "provider": "oss",
+            "icon": "\ud83d\udccb",
+            "description": "Python data validation using type hints"
+          },
+          {
+            "name": "output_schema",
+            "provider": "adk",
+            "icon": "\ud83d\udd27",
+            "description": "ADK's structured output feature for guaranteed JSON format"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udd16",
+            "description": "ADK's intelligent agent with schema validation"
+          }
+        ],
         "description": "Use Pydantic models to ensure agents return structured, validated JSON data",
         "difficulty": "beginner",
         "tags": [
@@ -426,11 +1993,20 @@
         "category_name": "Getting Started",
         "path": "01-getting-started/structure-output",
         "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/structure-output",
-        "command": "adk web # Select 'structure_output'"
+        "command": "adk web # Select 'structure_output'",
+        "status": "ready"
       },
       {
         "title": "Use YAML Configuration",
         "jtbd": "When I want to iterate without code, I need YAML configuration",
+        "tech_stack": [
+          {
+            "name": "Agent Config",
+            "provider": "adk",
+            "icon": "\ud83d\udcc4",
+            "description": "ADK's YAML-based configuration for no-code agent creation"
+          }
+        ],
         "description": "Create a complete agent using only YAML configuration - no Python required",
         "difficulty": "beginner",
         "tags": [
@@ -460,13 +2036,488 @@
         "category_name": "Getting Started",
         "path": "01-getting-started/use-yaml-config",
         "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/01-getting-started/use-yaml-config",
-        "command": "adk web # Select 'use_yaml_config'"
+        "command": "adk web # Select 'use_yaml_config'",
+        "status": "ready"
+      }
+    ],
+    "Connecting to LLMs": [
+      {
+        "title": "Compare Models",
+        "jtbd": "When I need to choose the right model, I need comparison framework",
+        "tech_stack": [
+          {
+            "name": "LiteLLM",
+            "provider": "oss",
+            "icon": "\ud83d\udd00",
+            "description": "Unified interface to 100+ LLM providers"
+          },
+          {
+            "name": "Multiple LLMs",
+            "provider": "third",
+            "icon": "\ud83c\udfaf",
+            "description": "Compare Gemini, Claude, GPT side-by-side"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "ADK agents for evaluation tasks"
+          }
+        ],
+        "description": "Compare multiple LLM providers using LiteLLM for best model selection",
+        "difficulty": "advanced",
+        "tags": [
+          "llm",
+          "litellm",
+          "comparison",
+          "evaluation"
+        ],
+        "related": [],
+        "source_sample": "LiteLLM documentation",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "15 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "low",
+        "sprint": 4,
+        "category": "02-connecting-llms",
+        "category_name": "Connecting to LLMs",
+        "path": "02-connecting-llms/compare-models",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/02-connecting-llms/compare-models",
+        "command": "adk web # Select 'compare_models'"
+      },
+      {
+        "title": "Local Ollama",
+        "jtbd": "When I want offline development, I need local models",
+        "tech_stack": [
+          {
+            "name": "Ollama",
+            "provider": "oss",
+            "icon": "\ud83e\udd99",
+            "description": "Local LLM runtime for offline development"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "ADK agent with local Ollama backend"
+          }
+        ],
+        "description": "Run LLMs locally with Ollama for offline development and testing",
+        "difficulty": "beginner",
+        "tags": [
+          "llm",
+          "ollama",
+          "local",
+          "offline"
+        ],
+        "related": [],
+        "source_sample": "hello_world_ollama",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "8 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "medium",
+        "sprint": 3,
+        "category": "02-connecting-llms",
+        "category_name": "Connecting to LLMs",
+        "path": "02-connecting-llms/local-ollama",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/02-connecting-llms/local-ollama",
+        "command": "adk web # Select 'local_ollama'"
+      },
+      {
+        "title": "Use Claude",
+        "jtbd": "When I prefer Anthropic models, I need Claude integration",
+        "tech_stack": [
+          {
+            "name": "Claude API",
+            "provider": "third",
+            "icon": "\ud83e\udd16",
+            "description": "Anthropic's Claude model API"
+          },
+          {
+            "name": "LiteLLM",
+            "provider": "oss",
+            "icon": "\ud83d\udd00",
+            "description": "Unified LLM interface library"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "ADK agent with Claude backend"
+          }
+        ],
+        "description": "Integrate Anthropic's Claude models via direct API or LiteLLM",
+        "difficulty": "intermediate",
+        "tags": [
+          "llm",
+          "claude",
+          "anthropic",
+          "litellm"
+        ],
+        "related": [],
+        "source_sample": "hello_world_anthropic",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "7 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "medium",
+        "sprint": 3,
+        "category": "02-connecting-llms",
+        "category_name": "Connecting to LLMs",
+        "path": "02-connecting-llms/use-claude",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/02-connecting-llms/use-claude",
+        "command": "adk web # Select 'use_claude'"
+      },
+      {
+        "title": "Use Gemini Free",
+        "jtbd": "When I want to start fast with free API, I need Google AI Studio",
+        "tech_stack": [
+          {
+            "name": "Google AI Studio",
+            "provider": "gcp",
+            "icon": "\ud83c\udfa8",
+            "description": "Free tier API access for Gemini models"
+          },
+          {
+            "name": "Gemini API",
+            "provider": "gcp",
+            "icon": "\u2728",
+            "description": "Direct API access via GOOGLE_API_KEY"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "ADK agent powered by Gemini"
+          }
+        ],
+        "description": "Quick start with Gemini using free Google AI Studio API key",
+        "difficulty": "beginner",
+        "tags": [
+          "llm",
+          "gemini",
+          "ai-studio",
+          "free"
+        ],
+        "related": [],
+        "source_sample": "hello_world with AI Studio",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "3 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "high",
+        "sprint": 2,
+        "category": "02-connecting-llms",
+        "category_name": "Connecting to LLMs",
+        "path": "02-connecting-llms/use-gemini-free",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/02-connecting-llms/use-gemini-free",
+        "command": "adk web # Select 'use_gemini_free'"
+      },
+      {
+        "title": "Use Vertex Ai",
+        "jtbd": "When I need production Gemini, I need Vertex AI integration",
+        "tech_stack": [
+          {
+            "name": "Vertex AI",
+            "provider": "gcp",
+            "icon": "\ud83d\udd37",
+            "description": "Enterprise-grade Gemini deployment platform"
+          },
+          {
+            "name": "Service Account",
+            "provider": "gcp",
+            "icon": "\ud83d\udd11",
+            "description": "GCP authentication for production"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "ADK agent with Vertex AI backend"
+          }
+        ],
+        "description": "Production-ready Gemini deployment with Vertex AI and service accounts",
+        "difficulty": "intermediate",
+        "tags": [
+          "llm",
+          "gemini",
+          "vertex-ai",
+          "production"
+        ],
+        "related": [],
+        "source_sample": "vertex_ai_agent",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "10 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "high",
+        "sprint": 2,
+        "category": "02-connecting-llms",
+        "category_name": "Connecting to LLMs",
+        "path": "02-connecting-llms/use-vertex-ai",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/02-connecting-llms/use-vertex-ai",
+        "command": "adk web # Select 'use_vertex_ai'"
       }
     ],
     "Adding Capabilities": [
       {
+        "title": "Call Rest Api",
+        "jtbd": "When I need to integrate APIs, I need REST API calling capability",
+        "tech_stack": [
+          {
+            "name": "FunctionTool",
+            "provider": "adk",
+            "icon": "\ud83d\udd27",
+            "description": "Wrap Python functions as agent tools"
+          },
+          {
+            "name": "requests",
+            "provider": "oss",
+            "icon": "\ud83c\udf10",
+            "description": "HTTP library for API calls"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Agent that decides when to call APIs"
+          }
+        ],
+        "description": "Integrate with any REST API using FunctionTool for data access",
+        "difficulty": "intermediate",
+        "tags": [
+          "api",
+          "rest",
+          "function-tool",
+          "integration"
+        ],
+        "related": [],
+        "source_sample": "jira_agent",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "10 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "high",
+        "sprint": 1,
+        "category": "03-adding-capabilities",
+        "category_name": "Adding Capabilities",
+        "path": "03-adding-capabilities/call-rest-api",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/call-rest-api",
+        "command": "adk web # Select 'call_rest_api'"
+      },
+      {
+        "title": "Execute Code",
+        "jtbd": "When I need computation, I need safe code execution",
+        "tech_stack": [
+          {
+            "name": "Code Execution",
+            "provider": "adk",
+            "icon": "\u2699\ufe0f",
+            "description": "Safe Python code execution sandbox"
+          },
+          {
+            "name": "FunctionTool",
+            "provider": "adk",
+            "icon": "\ud83d\udd27",
+            "description": "Wrap code execution as a tool"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Agent that generates and runs code"
+          }
+        ],
+        "description": "Execute Python code safely for calculations and data processing",
+        "difficulty": "intermediate",
+        "tags": [
+          "code-execution",
+          "computation",
+          "sandbox"
+        ],
+        "related": [],
+        "source_sample": "code_execution sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "10 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "medium",
+        "sprint": 3,
+        "category": "03-adding-capabilities",
+        "category_name": "Adding Capabilities",
+        "path": "03-adding-capabilities/execute-code",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/execute-code",
+        "command": "adk web # Select 'execute_code'"
+      },
+      {
+        "title": "Query Bigquery",
+        "jtbd": "When I need database access, I need to query BigQuery",
+        "tech_stack": [
+          {
+            "name": "BigQuery",
+            "provider": "gcp",
+            "icon": "\ud83d\udcca",
+            "description": "Google Cloud data warehouse"
+          },
+          {
+            "name": "FunctionTool",
+            "provider": "adk",
+            "icon": "\ud83d\udd27",
+            "description": "Wrap BigQuery queries as tools"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Agent that queries data on demand"
+          }
+        ],
+        "description": "Query BigQuery databases for data-driven agent responses",
+        "difficulty": "intermediate",
+        "tags": [
+          "database",
+          "bigquery",
+          "sql",
+          "gcp"
+        ],
+        "related": [],
+        "source_sample": "bigquery sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "12 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "medium",
+        "sprint": 3,
+        "category": "03-adding-capabilities",
+        "category_name": "Adding Capabilities",
+        "path": "03-adding-capabilities/query-bigquery",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/query-bigquery",
+        "command": "adk web # Select 'query_bigquery'"
+      },
+      {
+        "title": "Search Documents",
+        "jtbd": "When I need enterprise RAG, I need document search capability",
+        "tech_stack": [
+          {
+            "name": "Vertex AI Search",
+            "provider": "gcp",
+            "icon": "\ud83d\udd0d",
+            "description": "Enterprise document search and grounding"
+          },
+          {
+            "name": "Grounding",
+            "provider": "adk",
+            "icon": "\ud83d\udcce",
+            "description": "Ground LLM responses in your documents"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Agent with enterprise RAG capabilities"
+          }
+        ],
+        "description": "Add Vertex AI Search for enterprise document grounding and RAG",
+        "difficulty": "advanced",
+        "tags": [
+          "rag",
+          "search",
+          "vertex-ai",
+          "grounding"
+        ],
+        "related": [],
+        "source_sample": "vertex_ai_search sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "15 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "high",
+        "sprint": 2,
+        "category": "03-adding-capabilities",
+        "category_name": "Adding Capabilities",
+        "path": "03-adding-capabilities/search-documents",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/search-documents",
+        "command": "adk web # Select 'search_documents'"
+      },
+      {
         "title": "Search Google for Answers",
         "jtbd": "When users ask questions, I need to search the web for current information",
+        "tech_stack": [
+          {
+            "name": "Google Search",
+            "provider": "gcp",
+            "icon": "\ud83d\udd0d",
+            "description": "Google's search API for real-time web information"
+          },
+          {
+            "name": "FunctionTool",
+            "provider": "adk",
+            "icon": "\ud83d\udd27",
+            "description": "ADK's wrapper for exposing functions as agent tools"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udd16",
+            "description": "ADK's intelligent agent with tool-calling capabilities"
+          }
+        ],
         "description": "Add Google search capability to your agent for real-time information retrieval",
         "difficulty": "beginner",
         "tags": [
@@ -501,7 +2552,959 @@
         "category_name": "Adding Capabilities",
         "path": "03-adding-capabilities/search-google",
         "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/03-adding-capabilities/search-google",
-        "command": "adk web # Select 'search_google'"
+        "command": "adk web # Select 'search_google'",
+        "status": "ready"
+      }
+    ],
+    "Orchestrating Agents": [
+      {
+        "title": "Custom Orchestration",
+        "jtbd": "When I need dynamic planning, I need custom orchestration logic",
+        "tech_stack": [
+          {
+            "name": "Custom Agent",
+            "provider": "adk",
+            "icon": "\ud83c\udf9b\ufe0f",
+            "description": "Build custom orchestration logic"
+          },
+          {
+            "name": "BaseAgent",
+            "provider": "adk",
+            "icon": "\ud83c\udfd7\ufe0f",
+            "description": "Extend BaseAgent for unique workflows"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Sub-agents in custom orchestration"
+          }
+        ],
+        "description": "Build custom orchestration with dynamic task planning and routing",
+        "difficulty": "advanced",
+        "tags": [
+          "custom",
+          "planning",
+          "orchestration",
+          "dynamic"
+        ],
+        "related": [],
+        "source_sample": "custom_agent sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "20 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "high",
+        "sprint": 2,
+        "category": "04-orchestrating-agents",
+        "category_name": "Orchestrating Agents",
+        "path": "04-orchestrating-agents/custom-orchestration",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/04-orchestrating-agents/custom-orchestration",
+        "command": "adk web # Select 'custom_orchestration'"
+      },
+      {
+        "title": "Iterative Refinement",
+        "jtbd": "When I want a critique agent reviewing output, I need loop patterns",
+        "tech_stack": [
+          {
+            "name": "Loop Agent",
+            "provider": "adk",
+            "icon": "\ud83d\udd04",
+            "description": "Iteratively refine output with feedback loops"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Generator and critic agents in the loop"
+          }
+        ],
+        "description": "Use Loop Agent for iterative refinement with critic-reviewer pattern",
+        "difficulty": "advanced",
+        "tags": [
+          "loop",
+          "iterative",
+          "refinement",
+          "critique"
+        ],
+        "related": [],
+        "source_sample": "loop_agent sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "15 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "critical",
+        "sprint": 1,
+        "category": "04-orchestrating-agents",
+        "category_name": "Orchestrating Agents",
+        "path": "04-orchestrating-agents/iterative-refinement",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/04-orchestrating-agents/iterative-refinement",
+        "command": "adk web # Select 'iterative_refinement'"
+      },
+      {
+        "title": "Parallel Research",
+        "jtbd": "When I need concurrent execution, I need parallel agents",
+        "tech_stack": [
+          {
+            "name": "Parallel Execution",
+            "provider": "adk",
+            "icon": "\u26a1",
+            "description": "Run multiple agents concurrently with asyncio"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Independent research agents running in parallel"
+          }
+        ],
+        "description": "Execute multiple agents in parallel for concurrent research and data gathering",
+        "difficulty": "intermediate",
+        "tags": [
+          "parallel",
+          "concurrent",
+          "fan-out"
+        ],
+        "related": [],
+        "source_sample": "parallel_functions",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "10 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "critical",
+        "sprint": 1,
+        "category": "04-orchestrating-agents",
+        "category_name": "Orchestrating Agents",
+        "path": "04-orchestrating-agents/parallel-research",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/04-orchestrating-agents/parallel-research",
+        "command": "adk web # Select 'parallel_research'"
+      },
+      {
+        "title": "Process Pipeline",
+        "jtbd": "When my workflow is always the same, I need sequential processing",
+        "tech_stack": [
+          {
+            "name": "Sequential Agent",
+            "provider": "adk",
+            "icon": "\ud83d\udd17",
+            "description": "Execute agents in deterministic sequential order"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Processing agents at each pipeline step"
+          }
+        ],
+        "description": "Create deterministic pipelines with Sequential Agent for step-by-step workflows",
+        "difficulty": "intermediate",
+        "tags": [
+          "sequential",
+          "workflow",
+          "pipeline"
+        ],
+        "related": [],
+        "source_sample": "simple_sequential_agent",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "10 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "critical",
+        "sprint": 1,
+        "category": "04-orchestrating-agents",
+        "category_name": "Orchestrating Agents",
+        "path": "04-orchestrating-agents/process-pipeline",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/04-orchestrating-agents/process-pipeline",
+        "command": "adk web # Select 'process_pipeline'"
+      },
+      {
+        "title": "Route To Experts",
+        "jtbd": "When I need multiple agents collaborating, I need specialist routing",
+        "tech_stack": [
+          {
+            "name": "AgentTool",
+            "provider": "adk",
+            "icon": "\ud83e\udd16",
+            "description": "Use agents as tools for delegation and routing"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Main coordinator with reasoning capabilities"
+          },
+          {
+            "name": "Session State",
+            "provider": "adk",
+            "icon": "\ud83d\udcbe",
+            "description": "Share data between specialist agents"
+          }
+        ],
+        "description": "Build a multi-agent system with coordinator routing to specialist agents",
+        "difficulty": "intermediate",
+        "tags": [
+          "multi-agent",
+          "orchestration",
+          "agent-tool",
+          "delegation"
+        ],
+        "related": [],
+        "source_sample": "multi_agent_llm_config",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "12 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "critical",
+        "sprint": 1,
+        "category": "04-orchestrating-agents",
+        "category_name": "Orchestrating Agents",
+        "path": "04-orchestrating-agents/route-to-experts",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/04-orchestrating-agents/route-to-experts",
+        "command": "adk web # Select 'route_to_experts'"
+      }
+    ],
+    "Managing State & Context": [
+      {
+        "title": "Chat With History",
+        "jtbd": "When I need conversation memory, I need session state management",
+        "tech_stack": [
+          {
+            "name": "Session State",
+            "provider": "adk",
+            "icon": "\ud83d\udcbe",
+            "description": "Maintain conversation history"
+          },
+          {
+            "name": "InvocationContext",
+            "provider": "adk",
+            "icon": "\ud83d\udccb",
+            "description": "Pass context across turns"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Agent with memory of past interactions"
+          }
+        ],
+        "description": "Maintain conversation history and context across multiple turns",
+        "difficulty": "beginner",
+        "tags": [
+          "session-state",
+          "memory",
+          "conversation",
+          "history"
+        ],
+        "related": [],
+        "source_sample": "history_management",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "8 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "high",
+        "sprint": 2,
+        "category": "05-managing-context",
+        "category_name": "Managing State & Context",
+        "path": "05-managing-context/chat-with-history",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/05-managing-context/chat-with-history",
+        "command": "adk web # Select 'chat_with_history'"
+      },
+      {
+        "title": "Long Term Memory",
+        "jtbd": "When I need memory across sessions, I need Memory Bank",
+        "tech_stack": [
+          {
+            "name": "Memory Bank",
+            "provider": "gcp",
+            "icon": "\ud83e\udde0",
+            "description": "Vertex AI long-term memory storage"
+          },
+          {
+            "name": "Session State",
+            "provider": "adk",
+            "icon": "\ud83d\udcbe",
+            "description": "Bridge to Memory Bank"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udd16",
+            "description": "Agent with persistent memory"
+          }
+        ],
+        "description": "Use Vertex AI Memory Bank for long-term agent memory",
+        "difficulty": "advanced",
+        "tags": [
+          "memory-bank",
+          "vertex-ai",
+          "long-term",
+          "memory"
+        ],
+        "related": [],
+        "source_sample": "memory_bank sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "15 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "low",
+        "sprint": 4,
+        "category": "05-managing-context",
+        "category_name": "Managing State & Context",
+        "path": "05-managing-context/long-term-memory",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/05-managing-context/long-term-memory",
+        "command": "adk web # Select 'long_term_memory'"
+      },
+      {
+        "title": "Manage Artifacts",
+        "jtbd": "When I need to store files, I need artifact management",
+        "tech_stack": [
+          {
+            "name": "GCS Artifacts",
+            "provider": "gcp",
+            "icon": "\ud83d\udce6",
+            "description": "Google Cloud Storage for files"
+          },
+          {
+            "name": "Artifact Service",
+            "provider": "adk",
+            "icon": "\ud83d\udcc1",
+            "description": "Manage files and artifacts"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Agent that works with files"
+          }
+        ],
+        "description": "Store and retrieve files using GCS Artifacts and Artifact Service",
+        "difficulty": "intermediate",
+        "tags": [
+          "artifacts",
+          "files",
+          "gcs",
+          "storage"
+        ],
+        "related": [],
+        "source_sample": "gcs_artifacts sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "12 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "medium",
+        "sprint": 3,
+        "category": "05-managing-context",
+        "category_name": "Managing State & Context",
+        "path": "05-managing-context/manage-artifacts",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/05-managing-context/manage-artifacts",
+        "command": "adk web # Select 'manage_artifacts'"
+      },
+      {
+        "title": "Persist To Firestore",
+        "jtbd": "When I need durable storage, I need Firestore persistence",
+        "tech_stack": [
+          {
+            "name": "Firestore",
+            "provider": "gcp",
+            "icon": "\ud83d\udd25",
+            "description": "NoSQL database for state persistence"
+          },
+          {
+            "name": "Session State",
+            "provider": "adk",
+            "icon": "\ud83d\udcbe",
+            "description": "Persist agent state to database"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Agent with durable memory"
+          }
+        ],
+        "description": "Store agent state persistently in Firestore for durability",
+        "difficulty": "intermediate",
+        "tags": [
+          "firestore",
+          "persistence",
+          "storage",
+          "gcp"
+        ],
+        "related": [],
+        "source_sample": "firestore_state sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "12 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "medium",
+        "sprint": 3,
+        "category": "05-managing-context",
+        "category_name": "Managing State & Context",
+        "path": "05-managing-context/persist-to-firestore",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/05-managing-context/persist-to-firestore",
+        "command": "adk web # Select 'persist_to_firestore'"
+      },
+      {
+        "title": "Share Between Agents",
+        "jtbd": "When agents need to pass data, I need shared session state",
+        "tech_stack": [
+          {
+            "name": "Session State",
+            "provider": "adk",
+            "icon": "\ud83d\udcbe",
+            "description": "Shared state dictionary for agents"
+          },
+          {
+            "name": "output_key",
+            "provider": "adk",
+            "icon": "\ud83d\udd11",
+            "description": "Store agent results in state"
+          },
+          {
+            "name": "Multi-Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udd1d",
+            "description": "Agents sharing data via state"
+          }
+        ],
+        "description": "Share data between agents using shared session state",
+        "difficulty": "intermediate",
+        "tags": [
+          "session-state",
+          "shared-state",
+          "multi-agent"
+        ],
+        "related": [],
+        "source_sample": "session_state_agent",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "10 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "high",
+        "sprint": 2,
+        "category": "05-managing-context",
+        "category_name": "Managing State & Context",
+        "path": "05-managing-context/share-between-agents",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/05-managing-context/share-between-agents",
+        "command": "adk web # Select 'share_between_agents'"
+      }
+    ],
+    "Going to Production": [
+      {
+        "title": "Add Monitoring",
+        "jtbd": "When I need observability, I need monitoring and telemetry",
+        "tech_stack": [
+          {
+            "name": "OpenTelemetry",
+            "provider": "oss",
+            "icon": "\ud83d\udce1",
+            "description": "Observability and tracing framework"
+          },
+          {
+            "name": "Cloud Trace",
+            "provider": "gcp",
+            "icon": "\ud83d\udcca",
+            "description": "GCP distributed tracing"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Instrumented agent with telemetry"
+          }
+        ],
+        "description": "Add OpenTelemetry monitoring for production observability",
+        "difficulty": "intermediate",
+        "tags": [
+          "monitoring",
+          "opentelemetry",
+          "observability",
+          "production"
+        ],
+        "related": [],
+        "source_sample": "telemetry sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "12 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "high",
+        "sprint": 2,
+        "category": "06-going-production",
+        "category_name": "Going to Production",
+        "path": "06-going-production/add-monitoring",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/06-going-production/add-monitoring",
+        "command": "adk web # Select 'add_monitoring'"
+      },
+      {
+        "title": "Deploy Cloud Run",
+        "jtbd": "When I need serverless deployment, I need Cloud Run integration",
+        "tech_stack": [
+          {
+            "name": "Cloud Run",
+            "provider": "gcp",
+            "icon": "\u2601\ufe0f",
+            "description": "Serverless container hosting platform"
+          },
+          {
+            "name": "Dockerfile",
+            "provider": "oss",
+            "icon": "\ud83d\udc33",
+            "description": "Container configuration for deployment"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Your ADK agent to deploy"
+          }
+        ],
+        "description": "Deploy your agent to Cloud Run for serverless production hosting",
+        "difficulty": "intermediate",
+        "tags": [
+          "cloud-run",
+          "deployment",
+          "production",
+          "gcp"
+        ],
+        "related": [],
+        "source_sample": "cloud_run deployment docs",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "15 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "critical",
+        "sprint": 1,
+        "category": "06-going-production",
+        "category_name": "Going to Production",
+        "path": "06-going-production/deploy-cloud-run",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/06-going-production/deploy-cloud-run",
+        "command": "adk web # Select 'deploy_cloud_run'"
+      },
+      {
+        "title": "Expose Via A2A",
+        "jtbd": "When my agents need to be exposed to world, I need A2A protocol",
+        "tech_stack": [
+          {
+            "name": "A2A Protocol",
+            "provider": "third",
+            "icon": "\ud83d\udd0c",
+            "description": "Agent-to-Agent communication standard"
+          },
+          {
+            "name": "A2A Server",
+            "provider": "adk",
+            "icon": "\ud83c\udf10",
+            "description": "ADK's A2A server implementation"
+          },
+          {
+            "name": "FastAPI",
+            "provider": "oss",
+            "icon": "\u26a1",
+            "description": "Modern Python web framework for APIs"
+          }
+        ],
+        "description": "Expose your agent as an A2A microservice for world accessibility",
+        "difficulty": "intermediate",
+        "tags": [
+          "a2a",
+          "protocol",
+          "microservices",
+          "api"
+        ],
+        "related": [],
+        "source_sample": "a2a_basic",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "12 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "critical",
+        "sprint": 1,
+        "category": "06-going-production",
+        "category_name": "Going to Production",
+        "path": "06-going-production/expose-via-a2a",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/06-going-production/expose-via-a2a",
+        "command": "adk web # Select 'expose_via_a2a'"
+      },
+      {
+        "title": "Handle Errors",
+        "jtbd": "When things fail, I need robust error handling",
+        "tech_stack": [
+          {
+            "name": "Callbacks",
+            "provider": "adk",
+            "icon": "\ud83d\udd14",
+            "description": "Event handlers for errors"
+          },
+          {
+            "name": "Try/Catch",
+            "provider": "adk",
+            "icon": "\ud83d\udee1\ufe0f",
+            "description": "Error handling patterns"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Resilient agent with error handling"
+          }
+        ],
+        "description": "Implement robust error handling patterns with try/catch and callbacks",
+        "difficulty": "intermediate",
+        "tags": [
+          "error-handling",
+          "callbacks",
+          "resilience"
+        ],
+        "related": [],
+        "source_sample": "error_handling best practices",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "10 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "medium",
+        "sprint": 3,
+        "category": "06-going-production",
+        "category_name": "Going to Production",
+        "path": "06-going-production/handle-errors",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/06-going-production/handle-errors",
+        "command": "adk web # Select 'handle_errors'"
+      },
+      {
+        "title": "Use Remote A2A",
+        "jtbd": "When I need to call remote agents, I need A2A client",
+        "tech_stack": [
+          {
+            "name": "RemoteA2aAgent",
+            "provider": "adk",
+            "icon": "\ud83d\udd0c",
+            "description": "Consume remote A2A agents as tools"
+          },
+          {
+            "name": "A2A Protocol",
+            "provider": "third",
+            "icon": "\ud83c\udf10",
+            "description": "Agent-to-Agent communication standard"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Main agent using remote agents"
+          }
+        ],
+        "description": "Consume remote A2A agents as tools in your agent",
+        "difficulty": "intermediate",
+        "tags": [
+          "a2a",
+          "remote",
+          "client",
+          "distributed"
+        ],
+        "related": [],
+        "source_sample": "a2a_consuming sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "10 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "high",
+        "sprint": 2,
+        "category": "06-going-production",
+        "category_name": "Going to Production",
+        "path": "06-going-production/use-remote-a2a",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/06-going-production/use-remote-a2a",
+        "command": "adk web # Select 'use_remote_a2a'"
+      }
+    ],
+    "Advanced Patterns": [
+      {
+        "title": "Human Approval",
+        "jtbd": "When I need manual approval, I need human-in-the-loop pattern",
+        "tech_stack": [
+          {
+            "name": "Human-in-Loop",
+            "provider": "adk",
+            "icon": "\ud83d\udc64",
+            "description": "Manual approval workflow pattern"
+          },
+          {
+            "name": "get_user_choice",
+            "provider": "adk",
+            "icon": "\u270b",
+            "description": "Built-in tool for user confirmation"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Agent that requests approval"
+          }
+        ],
+        "description": "Add human approval steps to agent workflows for safety",
+        "difficulty": "intermediate",
+        "tags": [
+          "human-in-loop",
+          "approval",
+          "confirmation"
+        ],
+        "related": [],
+        "source_sample": "human_in_loop",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "12 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "medium",
+        "sprint": 3,
+        "category": "07-advanced-patterns",
+        "category_name": "Advanced Patterns",
+        "path": "07-advanced-patterns/human-approval",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/07-advanced-patterns/human-approval",
+        "command": "adk web # Select 'human_approval'"
+      },
+      {
+        "title": "Integrate Langchain",
+        "jtbd": "When I want LangChain tools, I need LangChain integration",
+        "tech_stack": [
+          {
+            "name": "LangChain",
+            "provider": "oss",
+            "icon": "\u26d3\ufe0f",
+            "description": "Popular LLM framework"
+          },
+          {
+            "name": "LangchainTool",
+            "provider": "adk",
+            "icon": "\ud83d\udd27",
+            "description": "Wrapper for LangChain tools"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "ADK agent using LangChain tools"
+          }
+        ],
+        "description": "Use LangChain tools within ADK agents via LangchainTool wrapper",
+        "difficulty": "advanced",
+        "tags": [
+          "langchain",
+          "integration",
+          "tools"
+        ],
+        "related": [],
+        "source_sample": "langchain_tool sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "12 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "low",
+        "sprint": 4,
+        "category": "07-advanced-patterns",
+        "category_name": "Advanced Patterns",
+        "path": "07-advanced-patterns/integrate-langchain",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/07-advanced-patterns/integrate-langchain",
+        "command": "adk web # Select 'integrate_langchain'"
+      },
+      {
+        "title": "Stream Responses",
+        "jtbd": "When I need real-time updates, I need streaming responses",
+        "tech_stack": [
+          {
+            "name": "Streaming",
+            "provider": "adk",
+            "icon": "\ud83d\udce1",
+            "description": "Real-time bidirectional streaming"
+          },
+          {
+            "name": "WebSocket",
+            "provider": "oss",
+            "icon": "\ud83d\udd0c",
+            "description": "Live connection for streaming"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Agent with streaming responses"
+          }
+        ],
+        "description": "Implement bidirectional streaming for real-time agent responses",
+        "difficulty": "advanced",
+        "tags": [
+          "streaming",
+          "realtime",
+          "websocket"
+        ],
+        "related": [],
+        "source_sample": "live_bidi_streaming_single_agent",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "15 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "medium",
+        "sprint": 3,
+        "category": "07-advanced-patterns",
+        "category_name": "Advanced Patterns",
+        "path": "07-advanced-patterns/stream-responses",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/07-advanced-patterns/stream-responses",
+        "command": "adk web # Select 'stream_responses'"
+      },
+      {
+        "title": "Use Mcp Servers",
+        "jtbd": "When I want to use MCP tools, I need MCP integration",
+        "tech_stack": [
+          {
+            "name": "MCP Protocol",
+            "provider": "third",
+            "icon": "\ud83d\udd0c",
+            "description": "Model Context Protocol standard"
+          },
+          {
+            "name": "MCPToolset",
+            "provider": "adk",
+            "icon": "\ud83e\uddf0",
+            "description": "Integrate MCP servers and tools"
+          },
+          {
+            "name": "LLM Agent",
+            "provider": "adk",
+            "icon": "\ud83e\udde0",
+            "description": "Agent using MCP tools"
+          }
+        ],
+        "description": "Integrate Model Context Protocol (MCP) servers and tools",
+        "difficulty": "advanced",
+        "tags": [
+          "mcp",
+          "protocol",
+          "tools"
+        ],
+        "related": [],
+        "source_sample": "mcp_integration sample",
+        "requirements": [
+          "google-adk"
+        ],
+        "time_to_complete": "15 minutes",
+        "what_youll_learn": [
+          "TODO: Add learning point 1",
+          "TODO: Add learning point 2",
+          "TODO: Add learning point 3"
+        ],
+        "status": "coming_soon",
+        "priority": "low",
+        "sprint": 4,
+        "category": "07-advanced-patterns",
+        "category_name": "Advanced Patterns",
+        "path": "07-advanced-patterns/use-mcp-servers",
+        "github_url": "https://github.com/lavinigam-gcp/adk-by-example/tree/main/examples/07-advanced-patterns/use-mcp-servers",
+        "command": "adk web # Select 'use_mcp_servers'"
       }
     ]
   }
