@@ -361,28 +361,35 @@
                 categoryDiv.appendChild(grid);
                 container.appendChild(categoryDiv);
             }
+
+            // Setup search functionality AFTER examples are rendered
+            setupSearch();
         }
 
         // Search functionality
-        document.getElementById('search').addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            const cards = document.querySelectorAll('.example-card');
+        function setupSearch() {
+            const searchInput = document.getElementById('search');
 
-            cards.forEach(card => {
-                const text = card.textContent.toLowerCase();
-                if (text.includes(query)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                const cards = document.querySelectorAll('.example-card');
 
-            // Hide empty categories
-            document.querySelectorAll('.category').forEach(cat => {
-                const visibleCards = cat.querySelectorAll('.example-card[style="display: flex"], .example-card:not([style])');
-                cat.style.display = visibleCards.length > 0 ? 'block' : 'none';
+                cards.forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    if (query === '' || text.includes(query)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Hide empty categories
+                document.querySelectorAll('.category').forEach(cat => {
+                    const visibleCards = cat.querySelectorAll('.example-card[style="display: flex"], .example-card:not([style])');
+                    cat.style.display = visibleCards.length > 0 ? 'block' : 'none';
+                });
             });
-        });
+        }
 
         // Load examples on page load
         window.addEventListener('DOMContentLoaded', () => {
