@@ -1,6 +1,7 @@
 {
   "title": "Search Google for Answers",
   "jtbd": "When users ask questions, I need to search the web for current information",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Google Search",
@@ -23,10 +24,22 @@
   ],
   "description": "Add Google search capability to your agent for real-time information retrieval",
   "difficulty": "beginner",
-  "tags": ["tools", "search", "google", "web", "research"],
-  "related": ["call-rest-api", "execute-code", "parallel-research"],
+  "tags": [
+    "tools",
+    "search",
+    "google",
+    "web",
+    "research"
+  ],
+  "related": [
+    "call-rest-api",
+    "execute-code",
+    "parallel-research"
+  ],
   "source_sample": "google_search_agent",
-  "requirements": ["google-adk"],
+  "requirements": [
+    "google-adk"
+  ],
   "time_to_complete": "2 minutes",
   "what_youll_learn": [
     "Adding tools to agents",

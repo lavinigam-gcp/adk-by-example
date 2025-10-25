@@ -39,6 +39,10 @@ def load_example_metadata(example_path: Path) -> Dict[str, Any]:
         if 'status' not in metadata:
             metadata['status'] = 'ready'
 
+        # Ensure language field exists (default to 'python')
+        if 'language' not in metadata:
+            metadata['language'] = 'python'
+
         return metadata
     except Exception as e:
         print(f"Warning: Could not load metadata for {example_path}: {e}")
@@ -99,11 +103,18 @@ def generate_examples_json():
     # Remove empty categories
     examples_by_category = {k: v for k, v in examples_by_category.items() if v}
 
+    # Calculate language statistics
+    language_counts = {}
+    for example in all_examples:
+        lang = example.get('language', 'python')
+        language_counts[lang] = language_counts.get(lang, 0) + 1
+
     # Create the output structure
     output = {
         'version': '1.0',
         'total_examples': len(all_examples),
         'categories': list(examples_by_category.keys()),
+        'language_counts': language_counts,
         'examples': all_examples,
         'examples_by_category': examples_by_category
     }
@@ -115,6 +126,7 @@ def generate_examples_json():
 
     print(f"✅ Generated examples.json with {len(all_examples)} examples")
     print(f"   Categories: {', '.join(examples_by_category.keys())}")
+    print(f"   Languages: {', '.join([f'{lang} ({count})' for lang, count in language_counts.items()])}")
     print(f"   Output: {output_file}")
 
     # Also create a simplified version for the website

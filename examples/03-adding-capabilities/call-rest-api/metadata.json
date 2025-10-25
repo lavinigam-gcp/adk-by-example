@@ -1,6 +1,7 @@
 {
   "title": "Call Rest Api",
   "jtbd": "When I need to integrate APIs, I need REST API calling capability",
+  "language": "python",
   "tech_stack": [
     {
       "name": "FunctionTool",

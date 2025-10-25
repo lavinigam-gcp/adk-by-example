@@ -1,23 +1,24 @@
 {
   "title": "Query Bigquery",
   "jtbd": "When I need database access, I need to query BigQuery",
+  "language": "python",
   "tech_stack": [
     {
       "name": "BigQuery",
       "provider": "gcp",
-      "icon": "\ud83d\udcca",
+      "icon": "📊",
       "description": "Google Cloud data warehouse"
     },
     {
       "name": "FunctionTool",
       "provider": "adk",
-      "icon": "\ud83d\udd27",
+      "icon": "🔧",
       "description": "Wrap BigQuery queries as tools"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Agent that queries data on demand"
     }
   ],

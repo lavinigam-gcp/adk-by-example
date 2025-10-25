@@ -1,23 +1,24 @@
 {
   "title": "Execute Code",
   "jtbd": "When I need computation, I need safe code execution",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Code Execution",
       "provider": "adk",
-      "icon": "\u2699\ufe0f",
+      "icon": "⚙️",
       "description": "Safe Python code execution sandbox"
     },
     {
       "name": "FunctionTool",
       "provider": "adk",
-      "icon": "\ud83d\udd27",
+      "icon": "🔧",
       "description": "Wrap code execution as a tool"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Agent that generates and runs code"
     }
   ],

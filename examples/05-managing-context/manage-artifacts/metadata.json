@@ -1,23 +1,24 @@
 {
   "title": "Manage Artifacts",
   "jtbd": "When I need to store files, I need artifact management",
+  "language": "python",
   "tech_stack": [
     {
       "name": "GCS Artifacts",
       "provider": "gcp",
-      "icon": "\ud83d\udce6",
+      "icon": "📦",
       "description": "Google Cloud Storage for files"
     },
     {
       "name": "Artifact Service",
       "provider": "adk",
-      "icon": "\ud83d\udcc1",
+      "icon": "📁",
       "description": "Manage files and artifacts"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Agent that works with files"
     }
   ],

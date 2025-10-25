@@ -1,23 +1,24 @@
 {
   "title": "Persist To Firestore",
   "jtbd": "When I need durable storage, I need Firestore persistence",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Firestore",
       "provider": "gcp",
-      "icon": "\ud83d\udd25",
+      "icon": "🔥",
       "description": "NoSQL database for state persistence"
     },
     {
       "name": "Session State",
       "provider": "adk",
-      "icon": "\ud83d\udcbe",
+      "icon": "💾",
       "description": "Persist agent state to database"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Agent with durable memory"
     }
   ],

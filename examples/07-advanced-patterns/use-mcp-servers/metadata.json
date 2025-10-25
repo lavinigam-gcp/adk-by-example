@@ -1,23 +1,24 @@
 {
   "title": "Use Mcp Servers",
   "jtbd": "When I want to use MCP tools, I need MCP integration",
+  "language": "python",
   "tech_stack": [
     {
       "name": "MCP Protocol",
       "provider": "third",
-      "icon": "\ud83d\udd0c",
+      "icon": "🔌",
       "description": "Model Context Protocol standard"
     },
     {
       "name": "MCPToolset",
       "provider": "adk",
-      "icon": "\ud83e\uddf0",
+      "icon": "🧰",
       "description": "Integrate MCP servers and tools"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Agent using MCP tools"
     }
   ],

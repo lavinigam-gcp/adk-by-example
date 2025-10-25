@@ -10,10 +10,14 @@
     "Going to Production",
     "Advanced Patterns"
   ],
+  "language_counts": {
+    "python": 35
+  },
   "examples": [
     {
       "title": "Configure Model Parameters",
       "jtbd": "When I need specific output behavior, I need to tune model parameters",
+      "language": "python",
       "tech_stack": [
         {
           "name": "GenerateContentConfig",
@@ -64,6 +68,7 @@
     {
       "title": "Craft Effective Instructions",
       "jtbd": "When my agent gives wrong responses, I need to write better instructions",
+      "language": "python",
       "tech_stack": [
         {
           "name": "LLM Agent",
@@ -107,6 +112,7 @@
     {
       "title": "Create Projects with ADK",
       "jtbd": "When starting a new project, I need proper project structure",
+      "language": "python",
       "tech_stack": [
         {
           "name": "ADK CLI",
@@ -151,6 +157,7 @@
     {
       "title": "Create Your First Agent",
       "jtbd": "When I'm new to ADK, I need a working agent in seconds",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Gemini",
@@ -199,6 +206,7 @@
     {
       "title": "Structure Output with Pydantic",
       "jtbd": "When I need predictable response format, I need structured output",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Pydantic",
@@ -256,6 +264,7 @@
     {
       "title": "Use YAML Configuration",
       "jtbd": "When I want to iterate without code, I need YAML configuration",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Agent Config",
@@ -299,6 +308,7 @@
     {
       "title": "Compare Models",
       "jtbd": "When I need to choose the right model, I need comparison framework",
+      "language": "python",
       "tech_stack": [
         {
           "name": "LiteLLM",
@@ -350,6 +360,7 @@
     {
       "title": "Local Ollama",
       "jtbd": "When I want offline development, I need local models",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Ollama",
@@ -395,6 +406,7 @@
     {
       "title": "Use Claude",
       "jtbd": "When I prefer Anthropic models, I need Claude integration",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Claude API",
@@ -446,6 +458,7 @@
     {
       "title": "Use Gemini Free",
       "jtbd": "When I want to start fast with free API, I need Google AI Studio",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Google AI Studio",
@@ -497,6 +510,7 @@
     {
       "title": "Use Vertex Ai",
       "jtbd": "When I need production Gemini, I need Vertex AI integration",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Vertex AI",
@@ -548,6 +562,7 @@
     {
       "title": "Call Rest Api",
       "jtbd": "When I need to integrate APIs, I need REST API calling capability",
+      "language": "python",
       "tech_stack": [
         {
           "name": "FunctionTool",
@@ -599,6 +614,7 @@
     {
       "title": "Execute Code",
       "jtbd": "When I need computation, I need safe code execution",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Code Execution",
@@ -649,6 +665,7 @@
     {
       "title": "Query Bigquery",
       "jtbd": "When I need database access, I need to query BigQuery",
+      "language": "python",
       "tech_stack": [
         {
           "name": "BigQuery",
@@ -700,6 +717,7 @@
     {
       "title": "Search Documents",
       "jtbd": "When I need enterprise RAG, I need document search capability",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Vertex AI Search",
@@ -751,6 +769,7 @@
     {
       "title": "Search Google for Answers",
       "jtbd": "When users ask questions, I need to search the web for current information",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Google Search",
@@ -811,6 +830,7 @@
     {
       "title": "Custom Orchestration",
       "jtbd": "When I need dynamic planning, I need custom orchestration logic",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Custom Agent",
@@ -862,6 +882,7 @@
     {
       "title": "Iterative Refinement",
       "jtbd": "When I want a critique agent reviewing output, I need loop patterns",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Loop Agent",
@@ -907,6 +928,7 @@
     {
       "title": "Parallel Research",
       "jtbd": "When I need concurrent execution, I need parallel agents",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Parallel Execution",
@@ -951,6 +973,7 @@
     {
       "title": "Process Pipeline",
       "jtbd": "When my workflow is always the same, I need sequential processing",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Sequential Agent",
@@ -995,6 +1018,7 @@
     {
       "title": "Route To Experts",
       "jtbd": "When I need multiple agents collaborating, I need specialist routing",
+      "language": "python",
       "tech_stack": [
         {
           "name": "AgentTool",
@@ -1046,6 +1070,7 @@
     {
       "title": "Chat With History",
       "jtbd": "When I need conversation memory, I need session state management",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Session State",
@@ -1097,6 +1122,7 @@
     {
       "title": "Long Term Memory",
       "jtbd": "When I need memory across sessions, I need Memory Bank",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Memory Bank",
@@ -1148,6 +1174,7 @@
     {
       "title": "Manage Artifacts",
       "jtbd": "When I need to store files, I need artifact management",
+      "language": "python",
       "tech_stack": [
         {
           "name": "GCS Artifacts",
@@ -1199,6 +1226,7 @@
     {
       "title": "Persist To Firestore",
       "jtbd": "When I need durable storage, I need Firestore persistence",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Firestore",
@@ -1250,6 +1278,7 @@
     {
       "title": "Share Between Agents",
       "jtbd": "When agents need to pass data, I need shared session state",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Session State",
@@ -1300,6 +1329,7 @@
     {
       "title": "Add Monitoring",
       "jtbd": "When I need observability, I need monitoring and telemetry",
+      "language": "python",
       "tech_stack": [
         {
           "name": "OpenTelemetry",
@@ -1351,6 +1381,7 @@
     {
       "title": "Deploy Cloud Run",
       "jtbd": "When I need serverless deployment, I need Cloud Run integration",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Cloud Run",
@@ -1402,6 +1433,7 @@
     {
       "title": "Expose Via A2A",
       "jtbd": "When my agents need to be exposed to world, I need A2A protocol",
+      "language": "python",
       "tech_stack": [
         {
           "name": "A2A Protocol",
@@ -1453,6 +1485,7 @@
     {
       "title": "Handle Errors",
       "jtbd": "When things fail, I need robust error handling",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Callbacks",
@@ -1503,6 +1536,7 @@
     {
       "title": "Use Remote A2A",
       "jtbd": "When I need to call remote agents, I need A2A client",
+      "language": "python",
       "tech_stack": [
         {
           "name": "RemoteA2aAgent",
@@ -1554,6 +1588,7 @@
     {
       "title": "Human Approval",
       "jtbd": "When I need manual approval, I need human-in-the-loop pattern",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Human-in-Loop",
@@ -1604,6 +1639,7 @@
     {
       "title": "Integrate Langchain",
       "jtbd": "When I want LangChain tools, I need LangChain integration",
+      "language": "python",
       "tech_stack": [
         {
           "name": "LangChain",
@@ -1654,6 +1690,7 @@
     {
       "title": "Stream Responses",
       "jtbd": "When I need real-time updates, I need streaming responses",
+      "language": "python",
       "tech_stack": [
         {
           "name": "Streaming",
@@ -1704,6 +1741,7 @@
     {
       "title": "Use Mcp Servers",
       "jtbd": "When I want to use MCP tools, I need MCP integration",
+      "language": "python",
       "tech_stack": [
         {
           "name": "MCP Protocol",
@@ -1757,6 +1795,7 @@
       {
         "title": "Configure Model Parameters",
         "jtbd": "When I need specific output behavior, I need to tune model parameters",
+        "language": "python",
         "tech_stack": [
           {
             "name": "GenerateContentConfig",
@@ -1807,6 +1846,7 @@
       {
         "title": "Craft Effective Instructions",
         "jtbd": "When my agent gives wrong responses, I need to write better instructions",
+        "language": "python",
         "tech_stack": [
           {
             "name": "LLM Agent",
@@ -1850,6 +1890,7 @@
       {
         "title": "Create Projects with ADK",
         "jtbd": "When starting a new project, I need proper project structure",
+        "language": "python",
         "tech_stack": [
           {
             "name": "ADK CLI",
@@ -1894,6 +1935,7 @@
       {
         "title": "Create Your First Agent",
         "jtbd": "When I'm new to ADK, I need a working agent in seconds",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Gemini",
@@ -1942,6 +1984,7 @@
       {
         "title": "Structure Output with Pydantic",
         "jtbd": "When I need predictable response format, I need structured output",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Pydantic",
@@ -1999,6 +2042,7 @@
       {
         "title": "Use YAML Configuration",
         "jtbd": "When I want to iterate without code, I need YAML configuration",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Agent Config",
@@ -2044,6 +2088,7 @@
       {
         "title": "Compare Models",
         "jtbd": "When I need to choose the right model, I need comparison framework",
+        "language": "python",
         "tech_stack": [
           {
             "name": "LiteLLM",
@@ -2095,6 +2140,7 @@
       {
         "title": "Local Ollama",
         "jtbd": "When I want offline development, I need local models",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Ollama",
@@ -2140,6 +2186,7 @@
       {
         "title": "Use Claude",
         "jtbd": "When I prefer Anthropic models, I need Claude integration",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Claude API",
@@ -2191,6 +2238,7 @@
       {
         "title": "Use Gemini Free",
         "jtbd": "When I want to start fast with free API, I need Google AI Studio",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Google AI Studio",
@@ -2242,6 +2290,7 @@
       {
         "title": "Use Vertex Ai",
         "jtbd": "When I need production Gemini, I need Vertex AI integration",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Vertex AI",
@@ -2295,6 +2344,7 @@
       {
         "title": "Call Rest Api",
         "jtbd": "When I need to integrate APIs, I need REST API calling capability",
+        "language": "python",
         "tech_stack": [
           {
             "name": "FunctionTool",
@@ -2346,6 +2396,7 @@
       {
         "title": "Execute Code",
         "jtbd": "When I need computation, I need safe code execution",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Code Execution",
@@ -2396,6 +2447,7 @@
       {
         "title": "Query Bigquery",
         "jtbd": "When I need database access, I need to query BigQuery",
+        "language": "python",
         "tech_stack": [
           {
             "name": "BigQuery",
@@ -2447,6 +2499,7 @@
       {
         "title": "Search Documents",
         "jtbd": "When I need enterprise RAG, I need document search capability",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Vertex AI Search",
@@ -2498,6 +2551,7 @@
       {
         "title": "Search Google for Answers",
         "jtbd": "When users ask questions, I need to search the web for current information",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Google Search",
@@ -2560,6 +2614,7 @@
       {
         "title": "Custom Orchestration",
         "jtbd": "When I need dynamic planning, I need custom orchestration logic",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Custom Agent",
@@ -2611,6 +2666,7 @@
       {
         "title": "Iterative Refinement",
         "jtbd": "When I want a critique agent reviewing output, I need loop patterns",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Loop Agent",
@@ -2656,6 +2712,7 @@
       {
         "title": "Parallel Research",
         "jtbd": "When I need concurrent execution, I need parallel agents",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Parallel Execution",
@@ -2700,6 +2757,7 @@
       {
         "title": "Process Pipeline",
         "jtbd": "When my workflow is always the same, I need sequential processing",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Sequential Agent",
@@ -2744,6 +2802,7 @@
       {
         "title": "Route To Experts",
         "jtbd": "When I need multiple agents collaborating, I need specialist routing",
+        "language": "python",
         "tech_stack": [
           {
             "name": "AgentTool",
@@ -2797,6 +2856,7 @@
       {
         "title": "Chat With History",
         "jtbd": "When I need conversation memory, I need session state management",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Session State",
@@ -2848,6 +2908,7 @@
       {
         "title": "Long Term Memory",
         "jtbd": "When I need memory across sessions, I need Memory Bank",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Memory Bank",
@@ -2899,6 +2960,7 @@
       {
         "title": "Manage Artifacts",
         "jtbd": "When I need to store files, I need artifact management",
+        "language": "python",
         "tech_stack": [
           {
             "name": "GCS Artifacts",
@@ -2950,6 +3012,7 @@
       {
         "title": "Persist To Firestore",
         "jtbd": "When I need durable storage, I need Firestore persistence",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Firestore",
@@ -3001,6 +3064,7 @@
       {
         "title": "Share Between Agents",
         "jtbd": "When agents need to pass data, I need shared session state",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Session State",
@@ -3053,6 +3117,7 @@
       {
         "title": "Add Monitoring",
         "jtbd": "When I need observability, I need monitoring and telemetry",
+        "language": "python",
         "tech_stack": [
           {
             "name": "OpenTelemetry",
@@ -3104,6 +3169,7 @@
       {
         "title": "Deploy Cloud Run",
         "jtbd": "When I need serverless deployment, I need Cloud Run integration",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Cloud Run",
@@ -3155,6 +3221,7 @@
       {
         "title": "Expose Via A2A",
         "jtbd": "When my agents need to be exposed to world, I need A2A protocol",
+        "language": "python",
         "tech_stack": [
           {
             "name": "A2A Protocol",
@@ -3206,6 +3273,7 @@
       {
         "title": "Handle Errors",
         "jtbd": "When things fail, I need robust error handling",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Callbacks",
@@ -3256,6 +3324,7 @@
       {
         "title": "Use Remote A2A",
         "jtbd": "When I need to call remote agents, I need A2A client",
+        "language": "python",
         "tech_stack": [
           {
             "name": "RemoteA2aAgent",
@@ -3309,6 +3378,7 @@
       {
         "title": "Human Approval",
         "jtbd": "When I need manual approval, I need human-in-the-loop pattern",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Human-in-Loop",
@@ -3359,6 +3429,7 @@
       {
         "title": "Integrate Langchain",
         "jtbd": "When I want LangChain tools, I need LangChain integration",
+        "language": "python",
         "tech_stack": [
           {
             "name": "LangChain",
@@ -3409,6 +3480,7 @@
       {
         "title": "Stream Responses",
         "jtbd": "When I need real-time updates, I need streaming responses",
+        "language": "python",
         "tech_stack": [
           {
             "name": "Streaming",
@@ -3459,6 +3531,7 @@
       {
         "title": "Use Mcp Servers",
         "jtbd": "When I want to use MCP tools, I need MCP integration",
+        "language": "python",
         "tech_stack": [
           {
             "name": "MCP Protocol",

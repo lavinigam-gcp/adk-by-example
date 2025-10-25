@@ -1,6 +1,7 @@
 {
   "title": "Configure Model Parameters",
   "jtbd": "When I need specific output behavior, I need to tune model parameters",
+  "language": "python",
   "tech_stack": [
     {
       "name": "GenerateContentConfig",
@@ -17,10 +18,22 @@
   ],
   "description": "Control agent behavior with temperature, token limits, safety settings, and response format",
   "difficulty": "beginner",
-  "tags": ["getting-started", "configuration", "temperature", "safety", "tokens"],
-  "related": ["craft-instructions", "use-yaml-config", "structure-output"],
+  "tags": [
+    "getting-started",
+    "configuration",
+    "temperature",
+    "safety",
+    "tokens"
+  ],
+  "related": [
+    "craft-instructions",
+    "use-yaml-config",
+    "structure-output"
+  ],
   "source_sample": "core_generate_content_config_config",
-  "requirements": ["google-adk"],
+  "requirements": [
+    "google-adk"
+  ],
   "time_to_complete": "5 minutes",
   "what_youll_learn": [
     "Temperature control for creativity",

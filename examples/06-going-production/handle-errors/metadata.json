@@ -1,23 +1,24 @@
 {
   "title": "Handle Errors",
   "jtbd": "When things fail, I need robust error handling",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Callbacks",
       "provider": "adk",
-      "icon": "\ud83d\udd14",
+      "icon": "🔔",
       "description": "Event handlers for errors"
     },
     {
       "name": "Try/Catch",
       "provider": "adk",
-      "icon": "\ud83d\udee1\ufe0f",
+      "icon": "🛡️",
       "description": "Error handling patterns"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Resilient agent with error handling"
     }
   ],

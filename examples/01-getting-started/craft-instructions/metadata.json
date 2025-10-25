@@ -1,6 +1,7 @@
 {
   "title": "Craft Effective Instructions",
   "jtbd": "When my agent gives wrong responses, I need to write better instructions",
+  "language": "python",
   "tech_stack": [
     {
       "name": "LLM Agent",
@@ -11,10 +12,21 @@
   ],
   "description": "Learn different instruction patterns to shape agent behavior - from simple to comprehensive",
   "difficulty": "beginner",
-  "tags": ["getting-started", "instructions", "prompts", "agent-behavior"],
-  "related": ["configure-model", "use-yaml-config", "structure-output"],
+  "tags": [
+    "getting-started",
+    "instructions",
+    "prompts",
+    "agent-behavior"
+  ],
+  "related": [
+    "configure-model",
+    "use-yaml-config",
+    "structure-output"
+  ],
   "source_sample": "multiple samples - hello_world, multi_agent examples",
-  "requirements": ["google-adk"],
+  "requirements": [
+    "google-adk"
+  ],
   "time_to_complete": "3 minutes",
   "what_youll_learn": [
     "Different instruction patterns",

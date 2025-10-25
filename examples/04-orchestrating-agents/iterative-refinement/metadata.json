@@ -1,6 +1,7 @@
 {
   "title": "Iterative Refinement",
   "jtbd": "When I want a critique agent reviewing output, I need loop patterns",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Loop Agent",

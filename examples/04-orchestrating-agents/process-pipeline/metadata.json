@@ -1,6 +1,7 @@
 {
   "title": "Process Pipeline",
   "jtbd": "When my workflow is always the same, I need sequential processing",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Sequential Agent",

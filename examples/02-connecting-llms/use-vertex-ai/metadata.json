@@ -1,23 +1,24 @@
 {
   "title": "Use Vertex Ai",
   "jtbd": "When I need production Gemini, I need Vertex AI integration",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Vertex AI",
       "provider": "gcp",
-      "icon": "\ud83d\udd37",
+      "icon": "🔷",
       "description": "Enterprise-grade Gemini deployment platform"
     },
     {
       "name": "Service Account",
       "provider": "gcp",
-      "icon": "\ud83d\udd11",
+      "icon": "🔑",
       "description": "GCP authentication for production"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "ADK agent with Vertex AI backend"
     }
   ],

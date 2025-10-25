@@ -1,6 +1,7 @@
 {
   "title": "Deploy Cloud Run",
   "jtbd": "When I need serverless deployment, I need Cloud Run integration",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Cloud Run",

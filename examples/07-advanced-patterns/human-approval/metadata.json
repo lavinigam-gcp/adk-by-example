@@ -1,23 +1,24 @@
 {
   "title": "Human Approval",
   "jtbd": "When I need manual approval, I need human-in-the-loop pattern",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Human-in-Loop",
       "provider": "adk",
-      "icon": "\ud83d\udc64",
+      "icon": "👤",
       "description": "Manual approval workflow pattern"
     },
     {
       "name": "get_user_choice",
       "provider": "adk",
-      "icon": "\u270b",
+      "icon": "✋",
       "description": "Built-in tool for user confirmation"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Agent that requests approval"
     }
   ],

@@ -1,17 +1,18 @@
 {
   "title": "Local Ollama",
   "jtbd": "When I want offline development, I need local models",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Ollama",
       "provider": "oss",
-      "icon": "\ud83e\udd99",
+      "icon": "🦙",
       "description": "Local LLM runtime for offline development"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "ADK agent with local Ollama backend"
     }
   ],

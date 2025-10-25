@@ -1,6 +1,7 @@
 {
   "title": "Expose Via A2A",
   "jtbd": "When my agents need to be exposed to world, I need A2A protocol",
+  "language": "python",
   "tech_stack": [
     {
       "name": "A2A Protocol",

@@ -1,23 +1,24 @@
 {
   "title": "Long Term Memory",
   "jtbd": "When I need memory across sessions, I need Memory Bank",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Memory Bank",
       "provider": "gcp",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Vertex AI long-term memory storage"
     },
     {
       "name": "Session State",
       "provider": "adk",
-      "icon": "\ud83d\udcbe",
+      "icon": "💾",
       "description": "Bridge to Memory Bank"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udd16",
+      "icon": "🤖",
       "description": "Agent with persistent memory"
     }
   ],

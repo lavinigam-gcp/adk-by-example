@@ -64,7 +64,7 @@ def validate_metadata(example_path: Path) -> Tuple[bool, str]:
         with open(metadata_file, 'r') as f:
             metadata = json.load(f)
 
-        required_fields = ['title', 'jtbd', 'description', 'difficulty', 'tags', 'tech_stack']
+        required_fields = ['title', 'jtbd', 'language', 'description', 'difficulty', 'tags', 'tech_stack']
         missing_fields = []
 
         for field in required_fields:
@@ -73,6 +73,11 @@ def validate_metadata(example_path: Path) -> Tuple[bool, str]:
 
         if missing_fields:
             return False, f"Metadata missing fields: {', '.join(missing_fields)}"
+
+        # Validate language
+        valid_languages = ['python', 'go', 'typescript', 'java']
+        if metadata.get('language') not in valid_languages:
+            return False, f"Invalid language: {metadata.get('language')}. Valid: {', '.join(valid_languages)}"
 
         # Validate difficulty level
         valid_difficulties = ['beginner', 'intermediate', 'advanced']
@@ -114,7 +119,8 @@ def validate_metadata(example_path: Path) -> Tuple[bool, str]:
 
         tech_count = len(tech_stack)
         status = metadata.get('status', 'ready')
-        return True, f"Metadata valid (tech_stack: {tech_count}, status: {status})"
+        language = metadata.get('language', 'unknown')
+        return True, f"Metadata valid (lang: {language}, tech_stack: {tech_count}, status: {status})"
 
     except json.JSONDecodeError as e:
         return False, f"Invalid JSON in metadata: {e}"

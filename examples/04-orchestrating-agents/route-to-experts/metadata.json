@@ -1,6 +1,7 @@
 {
   "title": "Route To Experts",
   "jtbd": "When I need multiple agents collaborating, I need specialist routing",
+  "language": "python",
   "tech_stack": [
     {
       "name": "AgentTool",

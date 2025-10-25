@@ -1,23 +1,24 @@
 {
   "title": "Share Between Agents",
   "jtbd": "When agents need to pass data, I need shared session state",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Session State",
       "provider": "adk",
-      "icon": "\ud83d\udcbe",
+      "icon": "💾",
       "description": "Shared state dictionary for agents"
     },
     {
       "name": "output_key",
       "provider": "adk",
-      "icon": "\ud83d\udd11",
+      "icon": "🔑",
       "description": "Store agent results in state"
     },
     {
       "name": "Multi-Agent",
       "provider": "adk",
-      "icon": "\ud83e\udd1d",
+      "icon": "🤝",
       "description": "Agents sharing data via state"
     }
   ],

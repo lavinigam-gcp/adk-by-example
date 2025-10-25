@@ -1,23 +1,24 @@
 {
   "title": "Use Gemini Free",
   "jtbd": "When I want to start fast with free API, I need Google AI Studio",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Google AI Studio",
       "provider": "gcp",
-      "icon": "\ud83c\udfa8",
+      "icon": "🎨",
       "description": "Free tier API access for Gemini models"
     },
     {
       "name": "Gemini API",
       "provider": "gcp",
-      "icon": "\u2728",
+      "icon": "✨",
       "description": "Direct API access via GOOGLE_API_KEY"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "ADK agent powered by Gemini"
     }
   ],

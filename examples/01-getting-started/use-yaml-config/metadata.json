@@ -1,6 +1,7 @@
 {
   "title": "Use YAML Configuration",
   "jtbd": "When I want to iterate without code, I need YAML configuration",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Agent Config",
@@ -11,10 +12,21 @@
   ],
   "description": "Create a complete agent using only YAML configuration - no Python required",
   "difficulty": "beginner",
-  "tags": ["getting-started", "yaml", "configuration", "no-code"],
-  "related": ["first-agent", "craft-instructions", "configure-model"],
+  "tags": [
+    "getting-started",
+    "yaml",
+    "configuration",
+    "no-code"
+  ],
+  "related": [
+    "first-agent",
+    "craft-instructions",
+    "configure-model"
+  ],
   "source_sample": "core_basic_config",
-  "requirements": ["google-adk"],
+  "requirements": [
+    "google-adk"
+  ],
   "time_to_complete": "2 minutes",
   "what_youll_learn": [
     "YAML agent configuration",

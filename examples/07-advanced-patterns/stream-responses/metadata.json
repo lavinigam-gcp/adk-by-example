@@ -1,23 +1,24 @@
 {
   "title": "Stream Responses",
   "jtbd": "When I need real-time updates, I need streaming responses",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Streaming",
       "provider": "adk",
-      "icon": "\ud83d\udce1",
+      "icon": "📡",
       "description": "Real-time bidirectional streaming"
     },
     {
       "name": "WebSocket",
       "provider": "oss",
-      "icon": "\ud83d\udd0c",
+      "icon": "🔌",
       "description": "Live connection for streaming"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Agent with streaming responses"
     }
   ],

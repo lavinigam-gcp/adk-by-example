@@ -1,6 +1,7 @@
 {
   "title": "Parallel Research",
   "jtbd": "When I need concurrent execution, I need parallel agents",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Parallel Execution",

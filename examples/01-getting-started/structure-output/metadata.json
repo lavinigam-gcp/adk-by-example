@@ -1,6 +1,7 @@
 {
   "title": "Structure Output with Pydantic",
   "jtbd": "When I need predictable response format, I need structured output",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Pydantic",
@@ -23,10 +24,23 @@
   ],
   "description": "Use Pydantic models to ensure agents return structured, validated JSON data",
   "difficulty": "beginner",
-  "tags": ["getting-started", "pydantic", "structured-output", "json", "validation"],
-  "related": ["configure-model", "use-yaml-config", "create-with-adk"],
+  "tags": [
+    "getting-started",
+    "pydantic",
+    "structured-output",
+    "json",
+    "validation"
+  ],
+  "related": [
+    "configure-model",
+    "use-yaml-config",
+    "create-with-adk"
+  ],
   "source_sample": "fields_output_schema",
-  "requirements": ["google-adk", "pydantic"],
+  "requirements": [
+    "google-adk",
+    "pydantic"
+  ],
   "time_to_complete": "5 minutes",
   "what_youll_learn": [
     "Pydantic model definition",

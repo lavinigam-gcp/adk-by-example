@@ -1,23 +1,24 @@
 {
   "title": "Use Remote A2A",
   "jtbd": "When I need to call remote agents, I need A2A client",
+  "language": "python",
   "tech_stack": [
     {
       "name": "RemoteA2aAgent",
       "provider": "adk",
-      "icon": "\ud83d\udd0c",
+      "icon": "🔌",
       "description": "Consume remote A2A agents as tools"
     },
     {
       "name": "A2A Protocol",
       "provider": "third",
-      "icon": "\ud83c\udf10",
+      "icon": "🌐",
       "description": "Agent-to-Agent communication standard"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Main agent using remote agents"
     }
   ],

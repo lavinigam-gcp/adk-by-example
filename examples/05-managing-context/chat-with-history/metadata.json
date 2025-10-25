@@ -1,23 +1,24 @@
 {
   "title": "Chat With History",
   "jtbd": "When I need conversation memory, I need session state management",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Session State",
       "provider": "adk",
-      "icon": "\ud83d\udcbe",
+      "icon": "💾",
       "description": "Maintain conversation history"
     },
     {
       "name": "InvocationContext",
       "provider": "adk",
-      "icon": "\ud83d\udccb",
+      "icon": "📋",
       "description": "Pass context across turns"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Agent with memory of past interactions"
     }
   ],

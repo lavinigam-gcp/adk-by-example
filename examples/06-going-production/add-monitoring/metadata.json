@@ -1,23 +1,24 @@
 {
   "title": "Add Monitoring",
   "jtbd": "When I need observability, I need monitoring and telemetry",
+  "language": "python",
   "tech_stack": [
     {
       "name": "OpenTelemetry",
       "provider": "oss",
-      "icon": "\ud83d\udce1",
+      "icon": "📡",
       "description": "Observability and tracing framework"
     },
     {
       "name": "Cloud Trace",
       "provider": "gcp",
-      "icon": "\ud83d\udcca",
+      "icon": "📊",
       "description": "GCP distributed tracing"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Instrumented agent with telemetry"
     }
   ],

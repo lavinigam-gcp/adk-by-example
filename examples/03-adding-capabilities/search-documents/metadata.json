@@ -1,23 +1,24 @@
 {
   "title": "Search Documents",
   "jtbd": "When I need enterprise RAG, I need document search capability",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Vertex AI Search",
       "provider": "gcp",
-      "icon": "\ud83d\udd0d",
+      "icon": "🔍",
       "description": "Enterprise document search and grounding"
     },
     {
       "name": "Grounding",
       "provider": "adk",
-      "icon": "\ud83d\udcce",
+      "icon": "📎",
       "description": "Ground LLM responses in your documents"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Agent with enterprise RAG capabilities"
     }
   ],

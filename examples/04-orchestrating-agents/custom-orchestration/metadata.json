@@ -1,23 +1,24 @@
 {
   "title": "Custom Orchestration",
   "jtbd": "When I need dynamic planning, I need custom orchestration logic",
+  "language": "python",
   "tech_stack": [
     {
       "name": "Custom Agent",
       "provider": "adk",
-      "icon": "\ud83c\udf9b\ufe0f",
+      "icon": "🎛️",
       "description": "Build custom orchestration logic"
     },
     {
       "name": "BaseAgent",
       "provider": "adk",
-      "icon": "\ud83c\udfd7\ufe0f",
+      "icon": "🏗️",
       "description": "Extend BaseAgent for unique workflows"
     },
     {
       "name": "LLM Agent",
       "provider": "adk",
-      "icon": "\ud83e\udde0",
+      "icon": "🧠",
       "description": "Sub-agents in custom orchestration"
     }
   ],
