@@ -955,27 +955,18 @@
 
         /* Tech Stack Pills */
         .tech-stack {
-            margin: 0.6rem 0;
-            padding: 0.7rem;
-            background: var(--bg-gray);
-            border-radius: 6px;
-            border-left: 3px solid var(--primary);
+            margin: 1rem 0 0.6rem 0;
         }
 
         .tech-label {
-            display: block;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.3px;
+            display: none;
         }
 
         .tech-pills {
             display: flex;
             gap: 0.4rem;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .tech-pill {
@@ -986,7 +977,7 @@
             background: var(--bg);
             border: 1.5px solid var(--border);
             border-radius: 6px;
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 500;
             transition: all 0.2s ease;
             white-space: nowrap;
@@ -999,7 +990,7 @@
         }
 
         .pill-prefix {
-            font-size: 0.62rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--text-light);
             text-transform: uppercase;
@@ -1007,7 +998,7 @@
         }
 
         .pill-icon {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             line-height: 1;
         }
 
@@ -1733,7 +1724,6 @@
 
                     const techStackHTML = (example.tech_stack && example.tech_stack.length > 0)
                         ? `<div class="tech-stack">
-                             <span class="tech-label">🔧 Tech Stack:</span>
                              <div class="tech-pills">
                                ${example.tech_stack.map(tech => {
                                  const provider = providerMap[tech.provider] || providerMap['third'];
