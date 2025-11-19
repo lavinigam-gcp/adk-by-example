@@ -1060,6 +1060,84 @@
         .example-card.coming-soon:hover {
             opacity: 1;
         }
+
+        /* Share Button */
+        .share-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--bg-gray);
+            border: 1.5px solid var(--border);
+            border-radius: 6px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 2;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .share-button:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow);
+        }
+
+        .share-button svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .share-button.copied {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .share-tooltip {
+            position: absolute;
+            top: -35px;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            z-index: 3;
+        }
+
+        .share-button:hover .share-tooltip {
+            opacity: 1;
+        }
+
+        .share-tooltip.show {
+            opacity: 1;
+        }
+
+        @keyframes highlightCard {
+            0%, 100% {
+                box-shadow: 0 6px 12px var(--shadow-hover);
+                border-color: var(--primary);
+            }
+            50% {
+                box-shadow: 0 8px 16px var(--shadow-hover);
+                border-color: var(--primary-dark);
+            }
+        }
+
+        .example-card.highlighted {
+            animation: highlightCard 2s ease-in-out;
+            border-color: var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -1254,6 +1332,101 @@
                     button.textContent = 'Copy';
                 }, 2000);
             });
+        }
+
+        // Share button functionality
+        function shareExample(examplePath, event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const shareUrl = `${window.location.origin}${window.location.pathname}#example=${encodeURIComponent(examplePath)}`;
+
+            // Fallback for older browsers
+            if (!navigator.clipboard) {
+                const tempInput = document.createElement('input');
+                tempInput.value = shareUrl;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+
+                const button = event.currentTarget;
+                const tooltip = button.querySelector('.share-tooltip');
+                button.classList.add('copied');
+                tooltip.textContent = 'Copied!';
+                tooltip.classList.add('show');
+
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    tooltip.textContent = 'Copy link';
+                    tooltip.classList.remove('show');
+                }, 2000);
+                return;
+            }
+
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                const button = event.currentTarget;
+                const tooltip = button.querySelector('.share-tooltip');
+
+                button.classList.add('copied');
+                tooltip.textContent = 'Copied!';
+                tooltip.classList.add('show');
+
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    tooltip.textContent = 'Copy link';
+                    tooltip.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy share link:', err);
+                const button = event.currentTarget;
+                const tooltip = button.querySelector('.share-tooltip');
+                tooltip.textContent = 'Failed to copy';
+                tooltip.classList.add('show');
+
+                setTimeout(() => {
+                    tooltip.textContent = 'Copy link';
+                    tooltip.classList.remove('show');
+                }, 2000);
+            });
+        }
+
+        // Handle deep link navigation on page load
+        function handleDeepLink() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#example=')) {
+                const examplePath = decodeURIComponent(hash.substring(9));
+
+                // Clear any active filters to ensure card is visible
+                clearAllFilters();
+                currentQuery = '';
+                const searchInput = document.getElementById('search');
+                if (searchInput) searchInput.value = '';
+                activeCategory = 'all';
+
+                // Wait for DOM to be ready
+                setTimeout(() => {
+                    const targetCard = document.querySelector(`.example-card[data-path="${examplePath}"]`);
+
+                    if (targetCard) {
+                        // Show all categories first
+                        switchCategory('all');
+
+                        // Scroll to card with smooth behavior
+                        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        // Highlight the card
+                        targetCard.classList.add('highlighted');
+                        setTimeout(() => {
+                            targetCard.classList.remove('highlighted');
+                        }, 3000);
+                    } else {
+                        console.warn(`Example not found: ${examplePath}`);
+                        // Show all examples if target not found
+                        switchCategory('all');
+                    }
+                }, 500); // Wait for examples to render
+            }
         }
 
         // Clear all filters
@@ -1533,6 +1706,7 @@
                     card.dataset.category = example.category_name;
                     card.dataset.language = example.language || 'python';
                     card.dataset.techProviders = (example.tech_stack || []).map(t => t.provider).join(',');
+                    card.dataset.path = example.path; // Add path for deep linking
                     card.setAttribute('aria-label', `${example.title} - ${example.jtbd}`);
 
                     // Convert "5 minutes" to "5 min" for compact display
@@ -1578,8 +1752,23 @@
                         ? `<span class="status-badge coming-soon" title="This example is under development">🚧 Coming Soon</span>`
                         : '';
 
+                    // Share button HTML
+                    const shareButtonHTML = `
+                        <button class="share-button"
+                                onclick="shareExample('${example.path}', event)"
+                                aria-label="Copy link to this example"
+                                title="Share this example">
+                            <span class="share-tooltip">Copy link</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                            </svg>
+                        </button>
+                    `;
+
                     card.innerHTML = `
                         ${statusBadgeHTML}
+                        ${shareButtonHTML}
                         <h4>${example.title}</h4>
                         <p class="jtbd">"${example.jtbd}"</p>
                         <p class="description">${example.description}</p>
@@ -1912,6 +2101,9 @@
                 })
                 .then(data => {
                     renderExamples(data);
+
+                    // Handle deep link after examples are rendered
+                    handleDeepLink();
                 })
                 .catch(error => {
                     console.error('Error loading examples:', error);
@@ -1924,6 +2116,13 @@
                         </div>
                     `;
                 });
+
+            // Handle hash changes (back/forward navigation)
+            window.addEventListener('hashchange', () => {
+                if (window.location.hash.startsWith('#example=')) {
+                    handleDeepLink();
+                }
+            });
         });
     </script>
 </body>
